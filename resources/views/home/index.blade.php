@@ -202,8 +202,8 @@
                   <h4 class="info-title">Become An Investor</h4>
                   <p class="description">
                       <br>
-                    Minimum investment: ₦100,000<br>
-                    Maximum investment: ₦1,000,000<br><br>
+                    Minimum investment: ₦5,000<br>
+                    Maximum investment: ₦500,000<br><br>
                     Once you've invested, your money starts growing from 24 hours:<br><br>
                     <li>Day 1 = 2%</li>
                     <li>Day 2 = 6%</li>
