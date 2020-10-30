@@ -11,7 +11,7 @@
         <h1 style="font-weight: 800">Welcome To Greenrichwide Investment</h1>
         <h3 style="font-weight: 700">We offer you daily growth of your INVESTMENT <del>(cashable every 24 Hours).</del></h3>
         <br />
-        <a href="#" class="btn btn-outline-neutral btn-round"><i class="fa fa-play"></i>Get Started</a>
+        <a href="{{ route('register') }}" class="btn btn-outline-neutral btn-round"><i class="fa fa-play"></i>Get Started</a>
         <button type="button" class="btn btn-outline-neutral btn-round">Read More</button>
       </div>
     </div>
@@ -78,7 +78,7 @@
               </div>
               <div class="description">
                 <h4 class="info-title">Total Investors</h4>
-                <p class="description">37462</p>
+                <p class="description">30</p>
                 {{-- <p class="description">To connect people that shares similar ideas and orientation in making the world financially stable.</p> --}}
               </div>
             </div>
@@ -90,7 +90,7 @@
               </div>
               <div class="description">
                 <h4 class="info-title">Total Brokers</h4>
-                <p>16237</p>
+                <p>10</p>
               </div>
             </div>
           </div>
@@ -101,7 +101,7 @@
               </div>
               <div class="description">
                 <h4 class="info-title">Total Transactions</h4>
-                <p>100142</p>
+                <p>42</p>
               </div>
             </div>
           </div>
