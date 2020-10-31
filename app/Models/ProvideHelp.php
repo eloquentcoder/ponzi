@@ -26,7 +26,7 @@ class ProvideHelp extends Model
 
     public function getExpiryDateAttribute()
     {
-       return $this->created_at->addHours(12)->diffForHumans();
+       return $this->created_at->addHours(24)->diffForHumans();
     }
 
 
