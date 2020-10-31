@@ -44,7 +44,6 @@ Route::group(['middleware' => 'guest'], function () {
 
 
 Route::group(['prefix' => 'user', 'middleware' => ['auth_user']], function () {
-    Route::group(['middleware' => ['verified']], function () {
         Route::group(['middleware' => ['updated_profile']], function () {
                 Route::group(['middleware' => ['activated']], function () {
                 Route::get('dashboard', [DashboardController::class, 'index'])->name('dashboard');
@@ -60,7 +59,7 @@ Route::group(['prefix' => 'user', 'middleware' => ['auth_user']], function () {
         });
         Route::get('profile', [ProfileController::class, 'profilePage'])->name('profile');
         Route::post('profile', [ProfileController::class, 'postProfile'])->name('profile.post');
-    });
+
 
     Route::get('/email/verify', [VerificationController::class, 'verificationNotice'])->name('verification.notice');
     Route::get('/email/verify/{id}/{hash}', [VerificationController::class, 'hashEmailVerification'])->middleware(['signed'])->name('verification.verify');

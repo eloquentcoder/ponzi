@@ -127,7 +127,7 @@
                   </div>
                 </a>
                 <p class="card-description text-center">
-                    Thank you green life investment. More grace
+                    Thank you Greenrichwide investment. More grace
                 </p>
               </div>
             </div>

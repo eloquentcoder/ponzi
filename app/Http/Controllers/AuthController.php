@@ -55,7 +55,6 @@ class AuthController extends BaseController
             'role' => 'user'
         ]);
         Auth::login($user);
-        event(new Registered($user));
         return redirect()->route('dashboard');
     }
 

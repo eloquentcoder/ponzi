@@ -24,7 +24,7 @@
             @endif
             <form class="form mt-5 contact-form" method="POST" action="{{ route('register.post') }}">
                 @csrf
-                <p style="font-weight: 800">Referred By: {{ $referrer_name ?? 'Green Life Investment' }}</p>
+                <p style="font-weight: 800">Referred By: {{ $referrer_name ?? 'Greenrichwide Investment' }}</p>
                 <p style="color: #17a2b8">Your details must match the Account Holder name of your bank account in order to process a withdrawal.</p>
                 <div class="form-group ">
                     <div class="col-sm-12">
