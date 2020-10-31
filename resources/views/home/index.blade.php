@@ -78,7 +78,7 @@
               </div>
               <div class="description">
                 <h4 class="info-title">Total Investors</h4>
-                <p class="description">30</p>
+                <p class="description">{{30 + $investors }}</p>
                 {{-- <p class="description">To connect people that shares similar ideas and orientation in making the world financially stable.</p> --}}
               </div>
             </div>
@@ -101,7 +101,7 @@
               </div>
               <div class="description">
                 <h4 class="info-title">Total Transactions</h4>
-                <p>42</p>
+                <p>{{42 + $transactions}}</p>
               </div>
             </div>
           </div>

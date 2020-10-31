@@ -3,12 +3,15 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Http\Controllers\BaseController;
 
-class HomeController extends Controller
+class HomeController extends BaseController
 {
     public function indexPage()
     {
-        return view('home.index');
+        $this->investors = User::count();
+        $this->transactions = Transaction::count();
+        return view('home.index', $this->data);
     }
 
     public function contactPage()
