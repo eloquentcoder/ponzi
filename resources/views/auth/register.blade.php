@@ -8,7 +8,9 @@
     <div class="card m-b-30">
         <div class="card-body">
             <div class="card-title text-center">
-                <img src="{{ asset('home/logo.jpeg') }}" alt="" class="" style="height: 50px">
+                <a href="{{ route('home') }}">
+                    <img src="{{ asset('home/logo.jpeg') }}" alt="" class="" style="height: 50px">
+                </a>
             <h5 class="mt-3"><b>Welcome! Signup for a new Account</b></h5>
             </div>
             @if($errors->any())
@@ -58,7 +60,7 @@
                 </div>
                 <div class="form-group">
                     <div class="col-sm-12">
-                        <input class="form-control form-control-line" name="password" type="password" placeholder="Password" required>
+                        <input class="form-control form-control-line" name="password" type="password" placeholder="Password" required min="8">
                     </div>
                 </div>
                 <div class="form-group">
@@ -86,7 +88,7 @@
 
                 <div class="form-group">
                     <div class="col-sm-12 mt-4 text-center">
-                        <a href="{{ route('login') }}"> Already Have an Account? Sign In</a>
+                        <a href="{{ route('login') }}"> Already Have an Account? <span style="color: blue">Sign In</span></a>
                     </div>
                 </div>
 

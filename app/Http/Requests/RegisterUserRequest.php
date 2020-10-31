@@ -30,7 +30,7 @@ class RegisterUserRequest extends FormRequest
             'username' => ['required', 'unique:users,user_name'],
             'email' => ['required', 'unique:users'],
             'phone_number' => ['required', 'unique:users'],
-            'password' => ['required', 'confirmed']
+            'password' => ['required', 'min:8', 'confirmed']
         ];
     }
 }

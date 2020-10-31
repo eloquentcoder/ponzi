@@ -64,10 +64,23 @@
   </nav>
   <!-- End Navbar -->
 @yield('content')
-  <div class="row" style="background: ">
-        <div class="container">
-            <div class="col-md-8">
+  <div class="row" style="background: #f5f4f4">
+        <div class="container" style="padding: 25px;">
+            <div class="col-md-12">
+                <span class=""></span>
+            </div>
+            <div class="col-md-8" style="display: flex; justify-content: space-between;">
                 <img src="{{ asset('verve.jpg') }}" />
+                <img src="{{ asset('master_card.png') }}" />
+            </div>
+            <div class="col-md-4">
+
+            </div>
+        </div>
+        <div class="container" style="padding: 25px;">
+            <div class="col-md-8" style="display: flex; justify-content: space-between;">
+                <img src="{{ asset('interactive_brokers.png') }}" style="width: 225px" />
+                <img src="{{ asset('cmc.png') }}" />
             </div>
             <div class="col-md-4">
 
