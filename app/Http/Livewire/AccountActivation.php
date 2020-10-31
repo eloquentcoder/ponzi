@@ -22,7 +22,8 @@ class AccountActivation extends Component
     {
         $provide_help = auth()->user()->providehelp()->where([
             ['is_activation', 1],
-            ['merge_status', 1]
+            ['merge_status', 1],
+            ['confirmed', 0]
         ])->first();
 
         if ($provide_help) {

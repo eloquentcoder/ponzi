@@ -198,7 +198,7 @@
                 <div class="container-fluid">
                     <div class="page-head" style="display: flex; justify-content: space-between">
                         <h4 class="mt-2 mb-2">@yield('title')</h4>
-                        <a class="btn btn-success text-white" href="{{ route('admin.deposit') }}">Invest as Admin</a>
+                        <a class="btn btn-success text-white" href="{{ route('admin.deposit.make') }}">Invest as Admin</a>
                     </div>
 
                     @yield('content')

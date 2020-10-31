@@ -6,14 +6,19 @@
                     Active Investment
                 </div>
                 <div class="card-body">
-                    <h5 class="card-title">{{ $gethelp->amount }}</h5>
+                    <h5 class="card-title">₦{{ $gethelp->amount }}</h5>
                     <p class="card-text">
-                        <div class="progress-bar progress-bar-striped progress-bar-animated bg-warning"
-                            role="progressbar"
-                            aria-valuenow="{{ $percent }}"
-                            aria-valuemin="0"
-                            aria-valuemax="100"
-                            style="width: {{ $percent }}%">
+                        <div class="progress my-3" style="height: 14px">
+                            <div class="progress-bar progress-bar-striped progress-bar-animated bg-warning"
+                                role="progressbar"
+                                aria-valuenow="{{ $percent }}"
+                                aria-valuemin="0"
+                                aria-valuemax="100"
+                                style="width: {{ $percent }}%">
+                            </div>
+                        </div>
+                        <div>
+                            Number Of Days: {{ $diff }}
                         </div>
                     </p>
                 </div>

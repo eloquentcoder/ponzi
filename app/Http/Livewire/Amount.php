@@ -3,6 +3,7 @@
 namespace App\Http\Livewire;
 
 use Carbon\Carbon;
+use App\Models\GetHelp;
 use Livewire\Component;
 
 class Amount extends Component
@@ -10,21 +11,24 @@ class Amount extends Component
     public $is_mature = false;
     public $gethelp;
     public $percent;
+    public $diff;
 
     public function mount()
     {
         $now = Carbon::now();
-        $this->gethelp = auth()->user()->gethelp()->where(['merge_status', 0])->whereDate('maturity_period', '>=', $now)->first();
-        $this->calculatePercent($this->gethelp->maturity_period);
+        $this->gethelp = auth()->user()->gethelp()->where('merge_status', 0)->whereDate('maturity_period', '>=', $now)->first();
+        if ($this->gethelp) {
+             $this->calculatePercent($this->gethelp->maturity_period);
+        }
     }
 
     public function calculatePercent($maturity_period)
     {
         $date = Carbon::parse($maturity_period);
         $now = Carbon::now();
+        $this->diff = $date->diffInDays($now);
 
-        $diff = $date->diffInDays($now);
-        $this->percent = ceil(($diff / 5) * 100);
+        $this->percent = ceil(((5 - $this->diff) / 5) * 100);
     }
 
     public function requestPayment()
@@ -38,7 +42,7 @@ class Amount extends Component
     public function render()
     {
         return view('livewire.amount', [
-            'gethelp' => GetHelp::find($this->gethelp->id)
+            'gethelp' => GetHelp::findorFail($this->gethelp->id)
         ]);
     }
 }

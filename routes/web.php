@@ -13,6 +13,9 @@ use App\Http\Controllers\User\WithdrawalController;
 use App\Http\Controllers\Auth\VerificationController;
 use App\Http\Controllers\Admin\AuthController as AdminAuthController;
 use App\Http\Controllers\Admin\HomeController as AdminHomeController;
+use App\Http\Controllers\Admin\MergeController as AdminMergeController;
+use App\Http\Controllers\Admin\DepositController as AdminDepositController;
+use App\Http\Controllers\Admin\WithdrawalController as AdminWithdrawalController;
 
 /*
 |--------------------------------------------------------------------------
@@ -75,6 +78,13 @@ Route::group(['prefix' => 'secure/admin', 'as' => 'admin.'], function () {
 
     Route::group(['middleware' => ['auth_admin']], function () {
         Route::get('dashboard', [AdminHomeController::class, 'index'])->name('dashboard');
+        Route::get('deposits', [AdminDepositController::class, 'index'])->name('deposits');
+        Route::get('deposit/make', [AdminDepositController::class, 'make'])->name('deposit.make');
+        Route::get('merge-list', [AdminMergeController::class, 'list'])->name('merge-list');
+        Route::get('investment/{id}', [AdminDepositController::class, 'singleInvestment'])->name('invest.single');
+        Route::get('personal-investments', [AdminDepositController::class, 'personal'])->name('personal.deposits');
+        Route::get('withdrawals', [AdminWithdrawalController::class, 'index'])->name('withdrawals');
+        Route::get('personal-investments', [AdminWithdrawalController::class, 'personal'])->name('personal.withdrawals');
     });
 
 

@@ -26,25 +26,36 @@ class ProvideUsers extends Component
 
     public function confirmPay($helper)
     {
+        $provide_help = ProvideHelp::find($helper['id']);
 
-        $helper->update([
+        $provide_help->update([
             'confirmed' => 1
         ]);
-        $amount = $helper->amount + ($helper->amount * 0.5);
-        $amount_referral = $helper->amount * 0.02;
+        $amount = $provide_help->amount + ($provide_help->amount * 0.5);
+        $amount_referral = $provide_help->amount * 0.02;
 
         auth()->user()->gethelp()->update([
             'received' => 1
         ]);
 
-        GetHelp::create([
-            'amount' => $amount,
-            'user_id' => $helper->user->id
-        ]);
-        if ($helper->user->referrer) {
-            $user = User::find($helper->user->referrer->id);
-            $user->increment('referral_bonus', $amount_referral);
+        if ($provide_help->amount != 1000) {
+            GetHelp::create([
+                'amount' => $amount,
+                'user_id' => $provide_help->user->id
+            ]);
+
+            if ($provide_help->user->referrer) {
+                $user = User::find($provide_help->user->referrer->id);
+                $user->increment('referral_bonus', $amount_referral);
+            }
+
         }
+
+
+        $provide_help->user()->update([
+            'activated' => 1
+        ]);
+
 
         session()->flash('message', 'Payment Confirmed!');
     }
@@ -52,7 +63,7 @@ class ProvideUsers extends Component
     public function render()
     {
         return view('livewire.provide-users', [
-            'providehelpers' => ProvideHelp::whereIn('get_help_id', $this->get_ids ?? [])->get()
+            'providehelpers' => ProvideHelp::whereIn('get_help_id', $this->get_ids ?? [])->where('confirmed', 0)->get()
         ]);
     }
 }

@@ -7,6 +7,9 @@
     <livewire:stat-boxes />
     <livewire:merged-users />
     <livewire:provide-users />
+    @if ($gethelp)
+    <livewire:amount />
+    @endif
     <div class="row">
         <div class="col-lg-12 col-sm-12">
             <div class="card m-b-30">
