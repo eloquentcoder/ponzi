@@ -9,7 +9,7 @@
     <div class="container">
       <div class="motto text-center">
         <h1 style="font-weight: 800">Welcome: <br> Green Rich Wide Investment</h1>
-        <h3 style="font-weight: 700">offers you daily growth of your INVESTMENT <br><del>(cashable every 24 Hours).</del></h3>
+        <h3 style="font-weight: 700">Offers you daily growth of your INVESTMENT <br><del>(cashable every 24 Hours).</del></h3>
         <br />
         <a href="{{ route('register') }}" class="btn btn-outline-neutral btn-round"><i class="fa fa-play"></i>Get Started</a>
         <button type="button" class="btn btn-outline-neutral btn-round">Read More</button>

@@ -31,8 +31,8 @@
   <nav class="navbar navbar-expand-lg fixed-top navbar-transparent " color-on-scroll="300">
     <div class="container">
       <div class="navbar-translate">
-        <a class="navbar-brand" href="#">
-            <img src="{{ asset('home/logo.jpeg') }}" width="30" height="30" class="d-inline-block align-top" alt="">
+        <a class="navbar-brand" href="{{ route('home') }}">
+            <img src="{{ asset('home/logo.jpeg') }}" width="30" height="30" class="align-top" alt="">
             <span>Green Rich Wide Investment</span>
         </a>
         <button class="navbar-toggler navbar-toggler" type="button" data-toggle="collapse" data-target="#navigation" aria-controls="navigation-index" aria-expanded="false" aria-label="Toggle navigation">
@@ -64,6 +64,16 @@
   </nav>
   <!-- End Navbar -->
 @yield('content')
+  <div class="row" style="background: ">
+        <div class="container">
+            <div class="col-md-8">
+                <img src="{{ asset('verve.jpg') }}" />
+            </div>
+            <div class="col-md-4">
+
+            </div>
+        </div>
+  </div>
   <footer class="footer" style="background-color: black">
     <div class="container">
       <div class="row">

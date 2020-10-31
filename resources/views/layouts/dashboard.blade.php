@@ -50,7 +50,7 @@
 
                     <div class="user-box">
                         <div class="d-flex justify-content-center">
-                            <img src="{{ asset('default.jpg') }}" alt="" class="img-fluid rounded-circle">
+                            <img src="{{ asset('default.jpg') }}" alt="#" class="img-fluid rounded-circle">
                         </div>
                         <div class="text-center text-white mt-2">
                             <h6>{{ auth()->user()->full_name }}</h6>
@@ -100,7 +100,7 @@
                 <div class="header-section">
                     <!--logo and logo icon start-->
                     <div class="logo" style="background-color: black;">
-                        <a href="index.html">
+                        <a href="{{ route('dashboard') }}">
                             <span class="logo-img">
                                 <img src="{{ asset('home/logo.jpeg') }}" alt="" height="26">
                             </span>
