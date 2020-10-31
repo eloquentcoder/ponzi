@@ -1,7 +1,7 @@
 @extends('layouts.auth')
 
 
-@section('title', 'Login')
+@section('title', 'Admin Login')
 
 @section('content')
 <div class="account-box">
@@ -9,7 +9,7 @@
         <div class="card-body">
             <div class="card-title text-center">
                 <img src="{{ asset('home/logo.jpeg') }}" alt="" class="" style="height: 50px">
-                <h5 class="mt-3"><b>Welcome to Green Rich Wide Investment</b></h5>
+                <h5 class="mt-3"><b>Welcome to Admin Green Rich Wide Investment</b></h5>
             </div>
             @if (session('error'))
                 <div style="text-align: center;
@@ -19,7 +19,7 @@
                     {{ session('error') }}
                 </div>
             @endif
-            <form class="form mt-5 contact-form" action="{{ route('login.post') }}" method="POST">
+            <form class="form mt-5 contact-form" action="{{ route('admin.login.post') }}" method="POST">
                 @csrf
                 <div class="form-group ">
                     <div class="col-sm-12">
@@ -53,14 +53,6 @@
                         <button class="btn btn-success btn-block" type="submit">Log In</button>
                     </div>
                 </div>
-
-                <div class="form-group">
-                    <div class="col-sm-12 mt-4 text-center">
-                        <a href="{{ route('register') }}"> Don't Have an Account? Sign up</a>
-                    </div>
-                </div>
-
-
             </form>
         </div>
     </div>

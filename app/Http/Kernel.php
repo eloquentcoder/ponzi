@@ -65,6 +65,7 @@ class Kernel extends HttpKernel
         'activated' => \App\Http\Middleware\CheckActivation::class,
         'not_activated' => \App\Http\Middleware\CheckNotActivated::class,
         'auth_user' => \App\Http\Middleware\AuthenticateUser::class,
+        'auth_admin' => \App\Http\Middleware\AdminAuthenticate::class,
         'updated_profile' => \App\Http\Middleware\MustUpdateProfile::class,
     ];
 }

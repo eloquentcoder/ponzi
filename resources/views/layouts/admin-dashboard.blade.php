@@ -7,7 +7,7 @@
         <meta name="author" content="Mannat Themes">
         <meta name="keyword" content="">
 
-        <title>Green Rich Wide Investment | @yield('title')</title>
+        <title>Green Rich Wide Admin Investment | @yield('title')</title>
 
         <!-- Theme icon -->
         <link rel="shortcut icon" href="{{ asset('home/logo.jpeg') }}">
@@ -74,14 +74,9 @@
                             </a>
                         </li>
                         <li>
-                            <a href="{{ route('referrals') }}">
-                                <i class="mdi mdi-google-circles-extended"></i> <span>Referrals</span>
-                            </a>
-                        </li>
-                        <li>
                             <a href="{{ route('investments') }}">
                                 <i class="mdi mdi-table"></i>
-                                <span>Investment</span>
+                                <span>Investments</span>
                             </a>
                         </li>
                         <li>
@@ -203,7 +198,7 @@
                 <div class="container-fluid">
                     <div class="page-head" style="display: flex; justify-content: space-between">
                         <h4 class="mt-2 mb-2">@yield('title')</h4>
-                        <a class="btn btn-success text-white" href="{{ route('deposit') }}">Invest Now</a>
+                        <a class="btn btn-success text-white" href="{{ route('admin.deposit') }}">Invest as Admin</a>
                     </div>
 
                     @yield('content')

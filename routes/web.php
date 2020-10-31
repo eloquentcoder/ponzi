@@ -11,6 +11,8 @@ use App\Http\Controllers\User\DashboardController;
 use App\Http\Controllers\User\ActivationController;
 use App\Http\Controllers\User\WithdrawalController;
 use App\Http\Controllers\Auth\VerificationController;
+use App\Http\Controllers\Admin\AuthController as AdminAuthController;
+use App\Http\Controllers\Admin\HomeController as AdminHomeController;
 
 /*
 |--------------------------------------------------------------------------
@@ -57,16 +59,23 @@ Route::group(['prefix' => 'user', 'middleware' => ['auth_user']], function () {
             Route::post('logout', [AuthController::class, 'logout'])->name('logout');
             Route::get('activation', [ActivationController::class, 'activationPage'])->name('activation');
         });
-        Route::get('profile', [ProfileController::class, 'profilePage'])->name('profile');
-        Route::post('profile', [ProfileController::class, 'postProfile'])->name('profile.post');
-
-
+    Route::get('profile', [ProfileController::class, 'profilePage'])->name('profile');
+    Route::post('profile', [ProfileController::class, 'postProfile'])->name('profile.post');
     Route::get('/email/verify', [VerificationController::class, 'verificationNotice'])->name('verification.notice');
     Route::get('/email/verify/{id}/{hash}', [VerificationController::class, 'hashEmailVerification'])->middleware(['signed'])->name('verification.verify');
     Route::post('/email/verification-notification', [VerificationController::class, 'verificationNotification'])->middleware(['throttle:6,1'])->name('verification.send');
+});
 
+Route::group(['prefix' => 'secure/admin', 'as' => 'admin.'], function () {
 
+    Route::group(['middleware' => ['guest']], function () {
+        Route::get('login', [AdminAuthController::class, 'login'])->name('login');
+        Route::post('login', [AdminAuthController::class, 'postLogin'])->name('login.post');
+    });
+
+    Route::group(['middleware' => ['auth_admin']], function () {
+        Route::get('dashboard', [AdminHomeController::class, 'index'])->name('dashboard');
+    });
 
 
 });
-

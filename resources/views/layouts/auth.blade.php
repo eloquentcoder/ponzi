@@ -7,7 +7,7 @@
         <meta name="author" content="Mannat Themes">
         <meta name="keyword" content="">
 
-        <title> Greenrichwide Investment - @yield('title')</title>
+        <title> Green Rich Wide Investment - @yield('title')</title>
 
         <!-- Theme icon -->
         <link rel="shortcut icon" href="{{ asset('home/logo.jpeg') }}">

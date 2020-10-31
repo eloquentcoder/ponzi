@@ -24,7 +24,7 @@
                 <i class="fa fa-phone"></i><span class="text"> 0808-844-1999</span>
              </div>
              <div class="col-md-6">
-                <i class="fa fa-envelope"></i><span class="text">support@Greenrichwideinvestment.com</span><br>
+                <i class="fa fa-envelope"></i><span class="text">support@Green Rich Wideinvestment.com</span><br>
             </div>
           </div>
           <form class="contact-form">

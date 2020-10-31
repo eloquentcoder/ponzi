@@ -8,7 +8,7 @@
     <div class="filter"></div>
     <div class="container">
       <div class="motto text-center">
-        <h1 style="font-weight: 800">Welcome To Greenrichwide Investment</h1>
+        <h1 style="font-weight: 800">Welcome To Green Rich Wide Investment</h1>
         <h3 style="font-weight: 700">We offer you daily growth of your INVESTMENT <del>(cashable every 24 Hours).</del></h3>
         <br />
         <a href="{{ route('register') }}" class="btn btn-outline-neutral btn-round"><i class="fa fa-play"></i>Get Started</a>
@@ -22,7 +22,7 @@
         <div class="row">
           <div class="col-md-8 ml-auto mr-auto">
             <h2 class="title" style="font-weight: 800">Your Key To Financial Freedom</h2>
-            <h5 class="description" style="font-weight: 500">Greenrichwide Investment is a global community, welcoming people from every discipline and culture, we thrive to reach out to people across the globe with the aim of freeing the world from financial crisis.</h5>
+            <h5 class="description" style="font-weight: 500">Green Rich Wide Investment is a global community, welcoming people from every discipline and culture, we thrive to reach out to people across the globe with the aim of freeing the world from financial crisis.</h5>
             <br>
             <a href="#paper-kit" class="btn btn-success btn-round">See Details</a>
           </div>
@@ -49,7 +49,7 @@
               </div>
               <div class="description">
                 <h4 class="info-title">Mission Statement</h4>
-                <p>Greenrichwide Investment is a "stress free" financial platform that can be operated from anywhere.
+                <p>Green Rich Wide Investment is a "stress free" financial platform that can be operated from anywhere.
                     We passionately believe in the power of ideas, to change lives and connect people with similar interest.</p>
               </div>
             </div>
@@ -123,11 +123,11 @@
                 <a href="#paper-kit">
                   <div class="author">
                     <h4 class="card-title">Alexander Obayomi</h4>
-                    <h6 class="card-category">Greenrichwide Investor</h6>
+                    <h6 class="card-category">Green Rich Wide Investor</h6>
                   </div>
                 </a>
                 <p class="card-description text-center">
-                    Thank you Greenrichwide investment. More grace
+                    Thank you Green Rich Wide investment. More grace
                 </p>
               </div>
             </div>
@@ -143,11 +143,11 @@
                 <a href="#paper-kit">
                   <div class="author">
                     <h4 class="card-title">Ejimkonye Roxy</h4>
-                    <h6 class="card-category">Greenrichwide Investor</h6>
+                    <h6 class="card-category">Green Rich Wide Investor</h6>
                   </div>
                 </a>
                 <p class="card-description text-center">
-                    Indeed Greenrichwide is a wonderful platform I have now faith in them I just received #7500 today , 06-08-2020
+                    Indeed Green Rich Wide is a wonderful platform I have now faith in them I just received #7500 today , 06-08-2020
                 </p>
               </div>
             </div>
@@ -163,7 +163,7 @@
                 <a href="#paper-kit">
                   <div class="author">
                     <h4 class="card-title">Destiny David</h4>
-                    <h6 class="card-category">Greenrichwide Investor</h6>
+                    <h6 class="card-category">Green Rich Wide Investor</h6>
                   </div>
                 </a>
                 <p class="card-description text-center">

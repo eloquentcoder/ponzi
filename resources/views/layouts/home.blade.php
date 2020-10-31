@@ -8,7 +8,7 @@
   <link rel="icon" type="image/png" href="../assets/img//favicon.png">
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
   <title>
-    Greenrichwide Investment - @yield('title')
+    Green Rich Wide Investment - @yield('title')
   </title>
   <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0, shrink-to-fit=no' name='viewport' />
   <!--     Fonts and icons     -->
@@ -33,7 +33,7 @@
       <div class="navbar-translate">
         <a class="navbar-brand" href="#">
             <img src="{{ asset('home/logo.jpeg') }}" width="30" height="30" class="d-inline-block align-top" alt="">
-            <span>Greenrichwide Investment</span>
+            <span>Green Rich Wide Investment</span>
         </a>
         <button class="navbar-toggler navbar-toggler" type="button" data-toggle="collapse" data-target="#navigation" aria-controls="navigation-index" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-bar bar1"></span>
@@ -85,7 +85,7 @@
             ©
             <script>
               document.write(new Date().getFullYear())
-            </script>, made with <i class="fa fa-heart heart"></i> by Greenrichwide Team
+            </script>, made with <i class="fa fa-heart heart"></i> by Green Rich Wide Team
           </span>
         </div>
       </div>
