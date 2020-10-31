@@ -8,7 +8,9 @@
     <div class="card m-b-30">
         <div class="card-body">
             <div class="card-title text-center">
-                <img src="{{ asset('home/logo.jpeg') }}" alt="" class="" style="height: 50px">
+                <a href="{{ route('home') }}">
+                    <img src="{{ asset('home/logo.jpeg') }}" alt="" class="" style="height: 50px">
+                </a>
                 <h5 class="mt-3"><b>Change Your Password</b></h5>
             </div>
             @if (session('email'))
