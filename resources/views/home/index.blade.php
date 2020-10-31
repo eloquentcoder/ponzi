@@ -8,8 +8,8 @@
     <div class="filter"></div>
     <div class="container">
       <div class="motto text-center">
-        <h1 style="font-weight: 800">Welcome To Green Rich Wide Investment</h1>
-        <h3 style="font-weight: 700">We offer you daily growth of your INVESTMENT <del>(cashable every 24 Hours).</del></h3>
+        <h1 style="font-weight: 800">Welcome: <br> Green Rich Wide Investment</h1>
+        <h3 style="font-weight: 700">offers you daily growth of your INVESTMENT <br><del>(cashable every 24 Hours).</del></h3>
         <br />
         <a href="{{ route('register') }}" class="btn btn-outline-neutral btn-round"><i class="fa fa-play"></i>Get Started</a>
         <button type="button" class="btn btn-outline-neutral btn-round">Read More</button>
@@ -36,7 +36,7 @@
                 <i class="nc-icon nc-album-2"></i>
               </div>
               <div class="description">
-                <h4 class="info-title">Vision Statement</h4>
+                <h4 class="info-title" style="font-size: 25px; font-weight: 800;">Vision Statement</h4>
                 <p class="description">To increase financial opportunities and income through a viable system that provides essential services and linkage.</p>
                 <p class="description">To connect people that shares similar ideas and orientation in making the world financially stable.</p>
               </div>
@@ -48,7 +48,7 @@
                 <i class="nc-icon nc-bulb-63"></i>
               </div>
               <div class="description">
-                <h4 class="info-title">Mission Statement</h4>
+                <h4 class="info-title" style="font-size: 25px; font-weight: 800;">Mission Statement</h4>
                 <p>Green Rich Wide Investment is a "stress free" financial platform that can be operated from anywhere.
                     We passionately believe in the power of ideas, to change lives and connect people with similar interest.</p>
               </div>
@@ -61,9 +61,9 @@
         <div class="container">
           <div class="row">
             <div class="col-md-8 ml-auto mr-auto text-center">
-              <h2 class="title">Attention!!</h2>
+              <h2 class="title" style="font-size: 25px; font-weight: 800;">Attention!!</h2>
               <p class="description">In other to address the issue of merging too many little investors to pay one huge investor, which usually lead to over merging and slowing of withdrawal process, we have decided to create specific investment  packages. This, we hope to serve you better.
-                <br>Thanks you</p>
+                <br>Thank you.</p>
             </div>
           </div>
         </div>
@@ -147,7 +147,7 @@
                   </div>
                 </a>
                 <p class="card-description text-center">
-                    Indeed Green Rich Wide is a wonderful platform I have now faith in them I just received #7500 today , 06-08-2020
+                    Indeed Green Rich Wide is a wonderful platform I have now faith in them I just received #7500 today , 06-11-2020
                 </p>
               </div>
             </div>
@@ -199,7 +199,7 @@
                   <i class="nc-icon nc-bank"></i>
                 </div>
                 <div class="description">
-                  <h4 class="info-title">Become An Investor</h4>
+                  <h4 class="info-title" style="font-size: 25px; font-weight: 800;">Become An Investor</h4>
                   <p class="description">
                       <br>
                     Minimum investment: ₦5,000<br>
@@ -225,7 +225,7 @@
                   <i class="nc-icon nc-briefcase-24"></i>
                 </div>
                 <div class="description">
-                  <h4 class="info-title">Become A Broker</h4>
+                  <h4 class="info-title" style="font-size: 25px; font-weight: 800;">Become A Broker</h4>
                   <p class="description">
                     <br>
                     You can also make money without investment by becoming a broker.<br>
