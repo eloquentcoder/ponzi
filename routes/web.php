@@ -35,6 +35,7 @@ use App\Http\Controllers\Admin\WithdrawalController as AdminWithdrawalController
 Route::get('/', [HomeController::class, 'indexPage'])->name('home');
 // Route::get('/about', [HomeController::class, 'aboutPage'])->name('about');
 Route::get('/contact', [HomeController::class, 'contactPage'])->name('contact');
+Route::post('/contact', [HomeController::class, 'postContact'])->name('contact.post');
 
 Route::group(['middleware' => 'guest'], function () {
     Route::get('login', [AuthController::class, 'loginPage'])->name('login');

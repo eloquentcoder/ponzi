@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\User;
+use App\Models\Support;
 use App\Models\Transaction;
 use Illuminate\Http\Request;
 use App\Http\Controllers\BaseController;
@@ -21,4 +22,11 @@ class HomeController extends BaseController
     {
         return view('home.contact');
     }
+
+    public function postContact(Request $request)
+    {
+        $support = Support::create($request->all());
+        return redirect()->back()->with('message', 'Message Sent Successfully');
+    }
+
 }

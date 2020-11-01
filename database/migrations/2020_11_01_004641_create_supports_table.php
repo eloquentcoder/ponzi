@@ -15,10 +15,10 @@ class CreateSupportsTable extends Migration
     {
         Schema::create('supports', function (Blueprint $table) {
             $table->id();
-            $table->string('topic');
+            $table->string('full_name');
             $table->string('email');
             $table->text('body');
-            $table->unsignedBigInteger('user_id');
+            $table->unsignedBigInteger('user_id')->nullable();
             $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade')->onUpdate('cascade');
             $table->timestamps();
         });
