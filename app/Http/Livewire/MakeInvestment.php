@@ -48,7 +48,7 @@ class MakeInvestment extends Component
         ])->first();
 
         if (!$user) {
-            $admin = User::where('role', 'admin')->get()->random();
+            $admin = User::where([['role', 'admin'], ['is_special', 1]])->get()->random();
 
             $get_help = $admin->gethelp()->create([
                 'amount' => $this->amount,

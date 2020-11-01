@@ -101,6 +101,9 @@ Route::group(['prefix' => 'secure/admin', 'as' => 'admin.'], function () {
         Route::get('personal-investments', [AdminWithdrawalController::class, 'personal'])->name('personal.withdrawals');
         Route::get('testimony/make', [AdminTestimonyController::class, 'make'])->name('testimony.make');
         Route::post('testimony/make', [AdminTestimonyController::class, 'post'])->name('post.testimony.make');
+
+        Route::get('admin', [AdminHomeController::class, 'admins'])->name('admins');
+        Route::post('admin', [AdminHomeController::class, 'adminsPost'])->name('post.admuns.make');
     });
 
 });
