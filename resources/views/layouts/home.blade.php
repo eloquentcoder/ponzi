@@ -64,24 +64,20 @@
   </nav>
   <!-- End Navbar -->
 @yield('content')
-  <div class="row" style="background: #f5f4f4">
-        <div class="container" style="padding: 25px;">
-            <div class="col-md-12">
-                <span style="font-weight: 800; font-size: 14px;">We work with the following companies;</span><br>
-            </div>
-            <div class="row">
-                <div class="col-md-12" style="display: flex; justify-content: space-between;">
-                    <img src="{{ asset('verve.jpg') }}" />
-                    <img src="{{ asset('master_card.png') }}" />
-                </div>
-            </div>
+<div class="section section-dark text-center">
+    <div class="container">
+      <h2 class="title" style="font-weight: 800">We Partner with the following companies</h2>
+      <div class="row">
+        <div class="col-md-4">
+          <img src="{{ asset('master_card.png') }}" height="150" />
+          <img src="{{ asset('visa.png') }}" height="150" />
         </div>
-        <div class="container" style="padding: 25px;">
-            <div class="col-md-8" style="display: flex; justify-content: space-between;">
-                <img src="{{ asset('interactive_brokers.png') }}" style="width: 225px" />
-                <img src="{{ asset('cmc.png') }}" />
-            </div>
+        <div class="col-md-4">
+            <img src="{{ asset('verve.jpg') }}" height="150" />
+            <img src="{{ asset('cmc.png') }}" height="150" />
         </div>
+      </div>
+    </div>
   </div>
   <footer class="footer" style="background-color: black">
     <div class="container">
