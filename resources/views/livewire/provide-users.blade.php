@@ -37,7 +37,7 @@
                                 </div>
                             </div>
                             <div class="card-footer text-muted" style="text-align: center;">
-                                <span style="font-weight: 800">Time Expires At: <div data-countdown="{{ $helper->expiration_date ?? \Carbon\Carbon::now()->addDays(1) }}"></div></span>
+                                <span style="font-weight: 800">Time Expires At: <div style="color: red" data-countdown="{{ $helper->expiration_date ?? \Carbon\Carbon::now()->addDays(1) }}"></div></span>
                             </div>
                         </div>
                     </div>
@@ -68,7 +68,7 @@
                 <div class="col-lg-12 col-sm-12">
                     <div class="card bg-white m-b-30">
                         <div class="card-footer text-muted" style="text-align: center;">
-                        <a class="btn" wire:click="confirmPay({{$helper}})" style="background: yellow; color: black; font-weight: 900;">Confirm Payment</a>
+                        <a class="btn" wire:click="confirmPay({{$helper}})" style="background: yellow; color: red; font-weight: 900;">Confirm Payment!</a>
                         </div>
                     </div>
                 </div>

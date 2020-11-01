@@ -19,7 +19,7 @@
                     {{ session('error') }}
                 </div>
             @endif
-            <form class="form mt-5 contact-form" action="{{ route('profile.post') }}" method="POST">
+            <form class="form mt-5 contact-form" action="{{ route('account.post') }}" method="POST">
                 @csrf
                 <div class="form-group ">
                     <div class="col-sm-12">
