@@ -32,7 +32,6 @@ class ProvideUsers extends Component
             'confirmed' => 1
         ]);
         $amount = $provide_help->amount + ($provide_help->amount * 0.5);
-        $amount_referral = $provide_help->amount * 0.02;
 
         auth()->user()->gethelp()->update([
             'received' => 1
@@ -45,6 +44,8 @@ class ProvideUsers extends Component
             ]);
 
             if ($provide_help->user->referrer) {
+                // $amount_referral = $provide_help->amount * 0.02;
+                $amount_referral = $this->getReferralBonus($provide_help->user->referrer, $provide_help->amount);
                 $user = User::find($provide_help->user->referrer->id);
                 $user->increment('referral_bonus', $amount_referral);
             }
@@ -64,6 +65,22 @@ class ProvideUsers extends Component
 
 
         session()->flash('message', 'Payment Confirmed!');
+    }
+
+
+    private function getReferralBonus($referrer, $amount)
+    {
+        $user = User::find($referrer->id);
+        $referral_count = User::where(['referrer_id', $user->id], ['activated', 1])->count();
+
+        if ($referral_count >= 60) {
+            return $amount * 0.05;
+        } else if ($referral_count >= 15 && $referral_count < 60) {
+            return $amount * 0.03;
+        } else {
+            return $amount * 0.02;
+        }
+
     }
 
     public function render()

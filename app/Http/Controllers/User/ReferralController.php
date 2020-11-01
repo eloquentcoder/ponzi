@@ -13,4 +13,10 @@ class ReferralController extends BaseController
         $this->referrals = auth()->user()->referrals;
         return view('user.referral.index', $this->data);
     }
+
+    public function withdraw()
+    {
+        return view('user.referral.withdraw', $this->data);
+    }
+
 }

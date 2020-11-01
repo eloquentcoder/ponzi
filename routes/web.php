@@ -57,6 +57,8 @@ Route::group(['prefix' => 'user', 'middleware' => ['auth_user']], function () {
                 Route::group(['middleware' => ['activated']], function () {
                 Route::get('dashboard', [DashboardController::class, 'index'])->name('dashboard');
                 Route::get('profile', [ProfileController::class, 'index'])->name('profile');
+                Route::post('profile/post', [ProfileController::class, 'post'])->name('post.profile');
+                Route::post('profile/password', [ProfileController::class, 'password'])->name('password.profile');
                 Route::get('referrals', [ReferralController::class, 'index'])->name('referrals');
                 Route::get('merge-list', [MergeController::class, 'mergeList'])->name('merge');
                 Route::get('make-investment', [DepositController::class, 'makeDepositPage'])->name('deposit');
@@ -66,6 +68,7 @@ Route::group(['prefix' => 'user', 'middleware' => ['auth_user']], function () {
                 Route::get('testimony/make', [TestimonyController::class, 'make'])->name('testimony.make');
                 Route::get('broker', [BrokerController::class, 'index'])->name('broker');
                 Route::post('broker/apply', [BrokerController::class, 'apply'])->name('broker.apply');
+                Route::get('referrals/withdraw', [ReferralController::class, 'withdraw'])->name('referrals.withdraw');
                 Route::get('support', [SupportController::class, 'index'])->name('support');
             });
             Route::post('logout', [AuthController::class, 'logout'])->name('logout');
@@ -96,6 +99,5 @@ Route::group(['prefix' => 'secure/admin', 'as' => 'admin.'], function () {
         Route::get('personal-investments', [AdminWithdrawalController::class, 'personal'])->name('personal.withdrawals');
         Route::get('testimony/make', [AdminTestimonyController::class, 'make'])->name('testimony.make');
     });
-
 
 });

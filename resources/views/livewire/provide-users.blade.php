@@ -55,6 +55,7 @@
                                     </div>
                                 @endif
                                 @if ($helper)
+                                <span style="font-weight: 900">{{ $helper->receipt_no }}</span>
                                     @if ($helper->proof_of_payment)
                                             <img src="{{ asset('storage/photos/' . $helper->proof_of_payment) }}" style="margin: 20px; width: 25pc;">
                                     @endif

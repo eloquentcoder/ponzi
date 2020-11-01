@@ -41,7 +41,6 @@ class MakeInvestment extends Component
             return;
         }
 
-
         $user = User::where([
             ['activated', 1],
             ['role', 'user'],
@@ -71,8 +70,6 @@ class MakeInvestment extends Component
 
         $this->null();
         session()->flash('message', 'Investment Made Successfully! You will be merged to pay soon.');
-
-
     }
 
     public function render()

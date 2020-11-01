@@ -53,13 +53,20 @@
                                     <div class="col-lg-12">
 
                                         <div class="card-body">
-                                            <form class="form-horizontal form-material">
+                                            @if (session()->has('message'))
+                                                <div class="alert alert-success alert-dismissible">
+                                                    <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+                                                    <strong>Success!</strong> {{ session('message') }}
+                                                </div>
+                                            @endif
+                                            <form class="form-horizontal form-material" method="POST" action="{{ route('post.profile') }}">
+                                                @csrf
                                                 <div class="form-group row">
                                                     <div class="col-md-6">
-                                                        <input type="text" placeholder="First Name" class="form-control form-control-line" name="first_name" value="{{ auth()->user()->first_name }}">
+                                                        <input type="text" placeholder="First Name" class="form-control form-control-line" name="first_name" value="{{ auth()->user()->first_name }}" required>
                                                     </div>
                                                     <div class="col-md-6">
-                                                        <input type="text" placeholder="Last Name" class="form-control form-control-line" name="last_name" value="{{ auth()->user()->last_name }}">
+                                                        <input type="text" placeholder="Last Name" class="form-control form-control-line" name="last_name" value="{{ auth()->user()->last_name }}" required>
                                                     </div>
                                                 </div>
                                                 <div class="form-group row">
@@ -67,7 +74,7 @@
                                                         <input type="email" placeholder="Email" class="form-control form-control-line" name="email" value="{{ auth()->user()->email }}" disabled>
                                                     </div>
                                                     <div class="col-md-4">
-                                                        <input type="tel" placeholder="Phone No" name="phone_number" value="{{ auth()->user()->phone_number }}" class="form-control form-control-line">
+                                                        <input type="tel" placeholder="Phone No" name="phone_number" value="{{ auth()->user()->phone_number }}" class="form-control form-control-line" required>
                                                     </div>
                                                     <div class="col-md-4">
                                                         <input type="text" placeholder="Username" name="user_name" value="{{ auth()->user()->user_name }}" class="form-control form-control-line" disabled>
@@ -75,18 +82,17 @@
                                                 </div>
                                                 <div class="form-group row">
                                                     <div class="col-md-4">
-                                                        <input type="text" placeholder="Account Name" class="form-control form-control-line" name="account_name" value="{{ auth()->user()->account_name }}">
+                                                        <input type="text" placeholder="Account Name" class="form-control form-control-line" name="account_name" value="{{ auth()->user()->account_name }}" disabled>
                                                     </div>
                                                     <div class="col-md-4">
-                                                        <input type="text" placeholder="Bank Name" name="bank_name" value="{{ auth()->user()->bank_name }}" class="form-control form-control-line">
+                                                        <input type="text" placeholder="Bank Name" name="bank_name" value="{{ auth()->user()->bank_name }}" class="form-control form-control-line" disabled>
                                                     </div>
                                                     <div class="col-md-4">
-                                                        <input type="text" placeholder="Account Number" name="account_details" value="{{ auth()->user()->account_details }}" class="form-control form-control-line">
+                                                        <input type="text" placeholder="Account Number" name="account_details" value="{{ auth()->user()->account_details }}" class="form-control form-control-line" disabled>
                                                     </div>
                                                 </div>
                                                 <div class="form-group">
-                                                    <textarea rows="5" placeholder="Message" class="form-control form-control-line"></textarea>
-                                                    <button class="btn btn-info">Update Profile</button>
+                                                    <button class="btn btn-info" type="submit">Update Profile</button>
                                                 </div>
                                             </form>
                                         </div>
@@ -98,13 +104,29 @@
                                     <div class="col-lg-12">
 
                                         <div class="card-body">
-                                            <form class="form-horizontal form-material">
-                                                <div class="form-group row">
-                                                    <div class="col-md-6">
-                                                        <input type="password" placeholder="New Password" class="form-control form-control-line" name="password">
+                                            <form class="form-horizontal form-material" method="POST" action="{{ route('password.profile') }}">
+                                                @if (session()->has('message_password'))
+                                                    <div class="alert alert-success alert-dismissible">
+                                                        <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+                                                        <strong>Success!</strong> {{ session('message_password') }}
                                                     </div>
-                                                    <div class="col-md-6">
-                                                        <input type="password" placeholder="Confirm Password" class="form-control form-control-line" name="password_confirmation">
+                                                @endif
+                                                @if (session()->has('error'))
+                                                    <div class="alert alert-success alert-dismissible">
+                                                        <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+                                                        <strong>Success!</strong> {{ session('error') }}
+                                                    </div>
+                                                @endif
+                                                @csrf
+                                                <div class="form-group row">
+                                                    <div class="col-md-4">
+                                                        <input type="password" placeholder="Old Password" class="form-control form-control-line" required name="old_password">
+                                                    </div>
+                                                    <div class="col-md-4">
+                                                        <input type="password" placeholder="New Password" class="form-control form-control-line" required name="password">
+                                                    </div>
+                                                    <div class="col-md-4">
+                                                        <input type="password" placeholder="Confirm Password" class="form-control form-control-line" required name="password_confirmation">
                                                     </div>
                                                 </div>
                                                 <div class="form-group">
