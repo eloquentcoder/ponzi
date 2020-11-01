@@ -5,9 +5,12 @@ use App\Http\Controllers\AuthController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\User\MergeController;
+use App\Http\Controllers\User\BrokerController;
 use App\Http\Controllers\User\DepositController;
+use App\Http\Controllers\User\SupportController;
 use App\Http\Controllers\User\ReferralController;
 use App\Http\Controllers\User\DashboardController;
+use App\Http\Controllers\User\TestimonyController;
 use App\Http\Controllers\User\ActivationController;
 use App\Http\Controllers\User\WithdrawalController;
 use App\Http\Controllers\Auth\VerificationController;
@@ -15,6 +18,7 @@ use App\Http\Controllers\Admin\AuthController as AdminAuthController;
 use App\Http\Controllers\Admin\HomeController as AdminHomeController;
 use App\Http\Controllers\Admin\MergeController as AdminMergeController;
 use App\Http\Controllers\Admin\DepositController as AdminDepositController;
+use App\Http\Controllers\Admin\TestimonyController as AdminTestimonyController;
 use App\Http\Controllers\Admin\WithdrawalController as AdminWithdrawalController;
 
 /*
@@ -58,6 +62,9 @@ Route::group(['prefix' => 'user', 'middleware' => ['auth_user']], function () {
                 Route::get('investment/{id}', [DepositController::class, 'singleInvestment'])->name('invest.single');
                 Route::get('investments', [DepositController::class, 'index'])->name('investments');
                 Route::get('withdrawals', [WithdrawalController::class, 'index'])->name('withdrawals');
+                Route::get('testimony/make', [TestimonyController::class, 'make'])->name('testimony.make');
+                Route::get('broker', [BrokerController::class, 'index'])->name('broker');
+                Route::get('support', [SupportController::class, 'index'])->name('support');
             });
             Route::post('logout', [AuthController::class, 'logout'])->name('logout');
             Route::get('activation', [ActivationController::class, 'activationPage'])->name('activation');
@@ -85,6 +92,7 @@ Route::group(['prefix' => 'secure/admin', 'as' => 'admin.'], function () {
         Route::get('personal-investments', [AdminDepositController::class, 'personal'])->name('personal.deposits');
         Route::get('withdrawals', [AdminWithdrawalController::class, 'index'])->name('withdrawals');
         Route::get('personal-investments', [AdminWithdrawalController::class, 'personal'])->name('personal.withdrawals');
+        Route::get('testimony/make', [AdminTestimonyController::class, 'make'])->name('testimony.make');
     });
 
 

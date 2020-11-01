@@ -1,6 +1,6 @@
 @extends('layouts.dashboard')
 
-@section('title', 'Make Investment')
+@section('title', 'Investment')
 
 @section('content')
     <livewire:single-investment :id="$id" />

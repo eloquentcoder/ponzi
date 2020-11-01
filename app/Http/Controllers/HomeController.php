@@ -12,6 +12,7 @@ class HomeController extends BaseController
     public function indexPage()
     {
         $this->investors = User::count();
+        $this->brokers = User::where('is_broker', 1)->count();
         $this->transactions = Transaction::count();
         return view('home.index', $this->data);
     }

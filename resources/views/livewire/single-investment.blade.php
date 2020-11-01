@@ -1,4 +1,5 @@
 <div>
+    @if ($single_invest->received == 0)
         <div class="row">
             <div class="col-lg-6 col-sm-12">
                 <div class="card bg-white m-b-30">
@@ -32,7 +33,7 @@
                         </div>
                     </div>
                     <div class="card-footer text-muted" style="text-align: center;">
-                    <span style="font-weight: 800">Time Expires At: {{ $provider->expiry_date ?? 'At: 12 hours from now' }}</span>
+                    <span style="font-weight: 800">Time Expires At: <div data-countdown="{{ $provider->expiration_date ?? \Carbon\Carbon::now()->addDays(1) }}"></div></span>
                     </div>
                 </div>
             </div>
@@ -66,4 +67,5 @@
                 </div>
             </div>
         </div>
+    @endif
 </div>

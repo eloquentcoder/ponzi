@@ -90,7 +90,7 @@
               </div>
               <div class="description">
                 <h4 class="info-title">Total Brokers</h4>
-                <p>10</p>
+                <p>{{10 + $brokers}}</p>
               </div>
             </div>
           </div>

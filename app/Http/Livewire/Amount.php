@@ -28,7 +28,7 @@ class Amount extends Component
         $now = Carbon::now();
         $this->diff = $date->diffInDays($now);
 
-        $this->percent = ceil(((5 - $this->diff) / 5) * 100);
+        $this->percent = ceil(((5-1  - $this->diff) / 5) * 100);
     }
 
     public function requestPayment()

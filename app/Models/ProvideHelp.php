@@ -24,7 +24,7 @@ class ProvideHelp extends Model
         return $this->belongsTo(User::class);
     }
 
-    public function getExpiryDateAttribute()
+    public function getExpiryTimeAttribute()
     {
        return $this->created_at->addHours(24)->diffForHumans();
     }

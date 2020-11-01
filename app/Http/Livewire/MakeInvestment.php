@@ -3,6 +3,7 @@
 namespace App\Http\Livewire;
 
 use App\Models\User;
+use App\Models\GetHelp;
 use Livewire\Component;
 use App\Models\ProvideHelp;
 use Illuminate\Support\Facades\Hash;
@@ -24,6 +25,22 @@ class MakeInvestment extends Component
         if (!Hash::check($this->password, auth()->user()->password)) {
             return $this->addError('password', 'Password Is Incorrect, Check And Try Again');
         }
+
+        $provided = ProvideHelp::where([
+            ['user_id', auth()->user()->id],
+            ['confirmed', 0],
+        ])->exists();
+
+        $get_process = GetHelp::where([
+            ['user_id', auth()->user()->id],
+            ['received', 0],
+        ])->exists();
+
+        if ($provided || $get_process) {
+            session()->flash('error', 'You have a pending investment. Please complete that to continue');
+            return;
+        }
+
 
         $user = User::where([
             ['activated', 1],

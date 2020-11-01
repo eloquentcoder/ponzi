@@ -49,6 +49,12 @@ class ProvideUsers extends Component
                 $user->increment('referral_bonus', $amount_referral);
             }
 
+            session()->flash('message', 'Payment Confirmed Successfully!');
+            if (auth()->user()->role == 'admin') {
+                return redirect()->route('admin.dashboard');
+            }
+            return redirect()->route('dashboard');
+
         }
 
 

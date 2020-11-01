@@ -519,16 +519,19 @@
         <script src="{{ asset('dashboard/plugins/morris-chart/raphael-min.js')}}"></script>
         <script src="{{ asset('dashboard/plugins/morris-chart/morris.js')}}"></script>
         <script src="{{ asset('dashboard/pages/dashboard-init.js')}}"></script>
+        <script src="{{ asset('dashboard/js/jquery.countdown.min.js')}}"></script>
         @livewireScripts
 
 
         <!--app js-->
         <script src="{{ asset('dashboard/js/jquery.app.js')}}"></script>
         <script>
-            jQuery(document).ready(function($) {
-                $('.counter').counterUp({
-                delay: 100,
-                time: 1200
+            $(document).ready(function($) {
+                $('[data-countdown]').each(function() {
+                    var $this = $(this), finalDate = $(this).data('countdown');
+                    $this.countdown(finalDate, function(event) {
+                        $this.html(event.strftime('%D days %H:%M:%S'));
+                    });
                 });
             });
         </script>

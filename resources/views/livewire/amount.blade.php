@@ -6,7 +6,7 @@
                     Active Investment
                 </div>
                 <div class="card-body">
-                    <h5 class="card-title">₦{{ $gethelp->amount }}</h5>
+                    <h5 class="card-title"><span style="font-weight: 900">Current Investment: </span>₦{{ ceil($gethelp->amount * 0.66666666) + ceil($gethelp->amount * 0.33333333333 * ($percent/100))  }}</h5>
                     <p class="card-text">
                         <div class="progress my-3" style="height: 14px">
                             <div class="progress-bar progress-bar-striped progress-bar-animated bg-warning"
@@ -18,7 +18,7 @@
                             </div>
                         </div>
                         <div>
-                            Number Of Days: {{ $diff }}
+                            Number Of Days: {{ $diff + 1 }}
                         </div>
                     </p>
                 </div>

@@ -6,9 +6,15 @@
                     <h5 class="header-title pb-3">Make Investment</h5>
                     <div class="general-label">
                         @if (session()->has('message'))
-                        <div class="alert alert-success alert-dismissible">
+                            <div class="alert alert-success alert-dismissible">
+                                <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+                                <strong>Success!</strong> {{ session('message') }}
+                            </div>
+                        @endif
+                        @if (session()->has('error'))
+                        <div class="alert alert-info alert-dismissible">
                             <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
-                            <strong>Success!</strong> {{ session('message') }}
+                            <strong>Note!</strong> {{ session('error') }}
                         </div>
                     @endif
                         <form role="form" wire:submit.prevent="submitInvestment">

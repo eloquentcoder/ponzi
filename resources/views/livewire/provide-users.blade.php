@@ -37,7 +37,7 @@
                                 </div>
                             </div>
                             <div class="card-footer text-muted" style="text-align: center;">
-                                <span style="font-weight: 800">Time Expires At: {{ $helper->expiry_date ?? 'At: 12 hours from now' }}</span>
+                                <span style="font-weight: 800">Time Expires At: <div data-countdown="{{ $helper->expiration_date ?? \Carbon\Carbon::now()->addDays(1) }}"></div></span>
                             </div>
                         </div>
                     </div>

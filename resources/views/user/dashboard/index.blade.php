@@ -3,6 +3,12 @@
 @section('title', 'Dashboard')
 
 @section('content')
+                        @if (session()->has('message'))
+                            <div class="alert alert-success alert-dismissible">
+                                <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+                                <strong>Success!</strong> {{ session('message') }}
+                            </div>
+                        @endif
 
     <livewire:stat-boxes />
     <livewire:merged-users />
