@@ -65,6 +65,7 @@ Route::group(['prefix' => 'user', 'middleware' => ['auth_user']], function () {
                 Route::get('withdrawals', [WithdrawalController::class, 'index'])->name('withdrawals');
                 Route::get('testimony/make', [TestimonyController::class, 'make'])->name('testimony.make');
                 Route::get('broker', [BrokerController::class, 'index'])->name('broker');
+                Route::post('broker/apply', [BrokerController::class, 'apply'])->name('broker.apply');
                 Route::get('support', [SupportController::class, 'index'])->name('support');
             });
             Route::post('logout', [AuthController::class, 'logout'])->name('logout');

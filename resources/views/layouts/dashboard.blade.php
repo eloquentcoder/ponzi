@@ -74,6 +74,12 @@
                             </a>
                         </li>
                         <li>
+                            <a href="{{ route('broker') }}">
+                                <i class="mdi mdi-table"></i>
+                                <span>Broker</span>
+                            </a>
+                        </li>
+                        <li>
                             <a href="{{ route('referrals') }}">
                                 <i class="mdi mdi-google-circles-extended"></i> <span>Referrals</span>
                             </a>
@@ -190,7 +196,6 @@
                                         <a class="dropdown-item" href="#" onclick="event.preventDefault(); document.getElementById('logout-frm').submit();"><i class="mdi mdi-logout m-r-5 text-muted"></i> Logout</a>
                                         <form id="logout-frm" action="{{ route('logout') }}" method="POST" style="display: none;">
                                             {{ csrf_field() }}
-
                                         </form>
                                     </div>
                                 </li>
