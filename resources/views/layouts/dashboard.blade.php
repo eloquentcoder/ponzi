@@ -63,7 +63,7 @@
                         <li>
                             <h3 class="navigation-title">Navigation</h3>
                         </li>
-                        <li class="active">
+                        <li>
                             <a href="{{ route('dashboard') }}">
                                 <i class="mdi mdi-gauge"></i> <span>Dashboard</span>
                             </a>
@@ -186,7 +186,7 @@
                                         <img src="{{ asset('default.jpg') }}" alt="">
                                     </a>
                                     <div class="dropdown-menu dropdown-menu-right profile-menu">
-                                        <a class="dropdown-item" href="#"><i class="mdi mdi-account-circle m-r-5 text-muted"></i> Profile</a>
+                                        <a class="dropdown-item" href="{{ route('profile') }}"><i class="mdi mdi-account-circle m-r-5 text-muted"></i> Profile</a>
                                         <a class="dropdown-item" href="#" onclick="event.preventDefault(); document.getElementById('logout-frm').submit();"><i class="mdi mdi-logout m-r-5 text-muted"></i> Logout</a>
                                         <form id="logout-frm" action="{{ route('logout') }}" method="POST" style="display: none;">
                                             {{ csrf_field() }}
@@ -310,51 +310,6 @@
                                             </li>
                                         </ul>
 
-                                        <div class="side-title-alt mb-3">
-                                            <h2>Friends</h2>
-                                        </div>
-                                        <ul class="list-unstyled friends">
-                                            <li>
-                                                <a href="#">
-                                                    <img class="rounded-circle" src="assets/images/users/avatar-7.jpg" alt="">
-                                                </a>
-                                            </li>
-                                            <li>
-                                                <a href="#">
-                                                    <img class="rounded-circle" src="assets/images/users/avatar-8.jpg" alt="">
-                                                </a>
-                                            </li>
-                                            <li>
-                                                <a href="#">
-                                                    <img class="rounded-circle" src="assets/images/users/avatar-9.jpg" alt="">
-                                                </a>
-                                            </li>
-                                            <li>
-                                                <a href="#">
-                                                    <img class="rounded-circle" src="assets/images/users/avatar-10.jpg" alt="">
-                                                </a>
-                                            </li>
-                                            <li>
-                                                <a href="#">
-                                                    <img class="rounded-circle" src="assets/images/users/avatar-2.jpg" alt="">
-                                                </a>
-                                            </li>
-                                             <li>
-                                                <a href="#">
-                                                    <img class="rounded-circle" src="assets/images/users/avatar-1.jpg" alt="">
-                                                </a>
-                                            </li>
-                                             <li>
-                                                <a href="#">
-                                                    <img class="rounded-circle" src="assets/images/users/avatar-3.jpg" alt="">
-                                                </a>
-                                            </li>
-                                             <li>
-                                                <a href="#">
-                                                    <img class="rounded-circle" src="assets/images/users/avatar-4.jpg" alt="">
-                                                </a>
-                                            </li>
-                                        </ul>
                                     </div>
                                 </div>
                             </div>

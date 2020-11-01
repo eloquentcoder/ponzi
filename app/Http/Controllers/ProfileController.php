@@ -9,6 +9,12 @@ use App\Http\Controllers\BaseController;
 
 class ProfileController extends BaseController
 {
+
+    public function index()
+    {
+        return view('user.profile.index');
+    }
+
     public function profilePage()
     {
         $this->banks = Bank::all();

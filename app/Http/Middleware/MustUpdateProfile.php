@@ -18,7 +18,7 @@ class MustUpdateProfile
     public function handle(Request $request, Closure $next)
     {
         if (!Auth::user()->account_details) {
-            return redirect()->route('profile');
+            return redirect()->route('account');
         }
 
         return $next($request);

@@ -56,6 +56,7 @@ Route::group(['prefix' => 'user', 'middleware' => ['auth_user']], function () {
         Route::group(['middleware' => ['updated_profile']], function () {
                 Route::group(['middleware' => ['activated']], function () {
                 Route::get('dashboard', [DashboardController::class, 'index'])->name('dashboard');
+                Route::get('profile', [ProfileController::class, 'index'])->name('profile');
                 Route::get('referrals', [ReferralController::class, 'index'])->name('referrals');
                 Route::get('merge-list', [MergeController::class, 'mergeList'])->name('merge');
                 Route::get('make-investment', [DepositController::class, 'makeDepositPage'])->name('deposit');
@@ -69,8 +70,8 @@ Route::group(['prefix' => 'user', 'middleware' => ['auth_user']], function () {
             Route::post('logout', [AuthController::class, 'logout'])->name('logout');
             Route::get('activation', [ActivationController::class, 'activationPage'])->name('activation');
         });
-    Route::get('profile', [ProfileController::class, 'profilePage'])->name('profile');
-    Route::post('profile', [ProfileController::class, 'postProfile'])->name('profile.post');
+    Route::get('account', [ProfileController::class, 'profilePage'])->name('account');
+    Route::post('account', [ProfileController::class, 'postProfile'])->name('account.post');
     Route::get('/email/verify', [VerificationController::class, 'verificationNotice'])->name('verification.notice');
     Route::get('/email/verify/{id}/{hash}', [VerificationController::class, 'hashEmailVerification'])->middleware(['signed'])->name('verification.verify');
     Route::post('/email/verification-notification', [VerificationController::class, 'verificationNotification'])->middleware(['throttle:6,1'])->name('verification.send');
