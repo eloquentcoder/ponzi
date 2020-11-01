@@ -42,7 +42,7 @@ class MergeServices {
 
     public static function mergeAdmin($amount, $gethelp_id)
     {
-        $user = User::where('role', 'admin')->first();
+        $user = User::where([['role', 'admin'], ['is_special', 1]])->first();
         $provide = $user->providehelp()->create([
             'amount' => $amount,
             'merge_status' => 1,
