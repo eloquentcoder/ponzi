@@ -84,6 +84,12 @@
                                     <button class="btn btn-success" wire:click="fileUpload" type="button">Upload</button>
                                 </span>
                             </div>
+                            <div class="input-group mt-2">
+                                <input type="text" class="form-control" placeholder="Enter Receipt Number" wire:model="receipt_no">
+                                <span class="input-group-append">
+                                    <button class="btn btn-success" wire:click="receiptUpload" type="button">Save</button>
+                                </span>
+                            </div>
                         </div>
                         @if ($provide_help)
                             @if ($provide_help->proof_of_payment)

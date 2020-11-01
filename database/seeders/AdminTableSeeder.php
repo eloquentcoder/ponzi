@@ -146,7 +146,53 @@ class AdminTableSeeder extends Seeder
             'email_verified_at' => now(),
             'account_details' => '1228413230',
             'bank_name' => 'Access Bank',
-            'account_name' => 'Morrison Godwin'
+            'account_name' => 'Abel Obafemi'
+        ]);
+
+
+        User::create([
+            'first_name' => 'Ekpewerechi',
+            'last_name' => 'Onyinyechi',
+            'user_name' => 'kanupearl',
+            'email' => 'kanupearl@yahoo.com',
+            'phone_number' => '08085395767',
+            'role' => 'admin',
+            'activated' => 1,
+            'password' => bcrypt('08085395767'),
+            'email_verified_at' => now(),
+            'account_details' => '1228413230',
+            'bank_name' => 'gtb',
+            'account_name' => 'Ekpewerechi Onyinyechi'
+        ]);
+
+        User::create([
+            'first_name' => 'Nwabueze',
+            'last_name' => 'Chidiebere',
+            'user_name' => 'nwabueze_chidiebere',
+            'email' => 'nwabueze_chidiebere@gmail.com',
+            'phone_number' => '08037264147',
+            'role' => 'admin',
+            'activated' => 1,
+            'password' => bcrypt('08037264147'),
+            'email_verified_at' => now(),
+            'account_details' => '0024092896',
+            'bank_name' => 'Diamond Bank',
+            'account_name' => 'Nwabueze Chidiebere'
+        ]);
+
+        User::create([
+            'first_name' => 'Efange',
+            'last_name' => 'kate',
+            'user_name' => 'efange_kate',
+            'email' => 'efange_kate@gmail.com',
+            'phone_number' => '07035120366',
+            'role' => 'admin',
+            'activated' => 1,
+            'password' => bcrypt('07035120366'),
+            'email_verified_at' => now(),
+            'account_details' => '0004847608',
+            'bank_name' => 'GTb Bank',
+            'account_name' => 'Efange kate'
         ]);
 
     }

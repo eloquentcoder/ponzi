@@ -5,6 +5,7 @@ namespace App\Http\Livewire;
 use App\Models\GetHelp;
 use Livewire\Component;
 use App\Models\ProvideHelp;
+use App\Models\Transaction;
 
 class ProvideUsers extends Component
 {
@@ -50,6 +51,18 @@ class ProvideUsers extends Component
                 $user->increment('referral_bonus', $amount_referral);
             }
 
+            Transaction::create([
+                'amount' => $provide_help->amount,
+                'type' => 'provide_help',
+                'user_id' => $provide_help->user->id
+            ]);
+
+            Transaction::create([
+                'amount' => $provide_help->amount,
+                'type' => 'get_help',
+                'user_id' => auth()->user()->id
+            ]);
+
             session()->flash('message', 'Payment Confirmed Successfully!');
             if (auth()->user()->role == 'admin') {
                 return redirect()->route('admin.dashboard');
@@ -58,11 +71,21 @@ class ProvideUsers extends Component
 
         }
 
-
         $provide_help->user()->update([
             'activated' => 1
         ]);
 
+        Transaction::create([
+            'amount' => $provide_help->amount,
+            'type' => 'activation',
+            'user_id' => $provide_help->user->id
+        ]);
+
+        Transaction::create([
+            'amount' => $provide_help->amount,
+            'type' => 'get_help',
+            'user_id' => auth()->user()->id
+        ]);
 
         session()->flash('message', 'Payment Confirmed!');
     }

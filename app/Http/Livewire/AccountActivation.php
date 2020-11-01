@@ -14,6 +14,7 @@ class AccountActivation extends Component
     public $continue_clicked = false;
     public $merged;
     public $file_upload;
+    public $receipt_no;
     public $user_id;
     public $help_id;
 
@@ -27,6 +28,7 @@ class AccountActivation extends Component
         ])->first();
 
         if ($provide_help) {
+            $this->receipt_no = $provide_help->receipt_no;
             $this->help_id = $provide_help->id;
             $this->user_id = $provide_help->gethelp->user->id;
             $this->merged = true;
@@ -53,6 +55,21 @@ class AccountActivation extends Component
         $this->merged = !$this->merged;
 
         $this->continue_clicked = !$this->continue_clicked;
+    }
+
+    public function receiptUpload()
+    {
+        $this->validate([
+            'receipt_no' => 'required', // 1MB Max
+        ]);
+
+        $provide_help = ProvideHelp::find($this->help_id);
+        $provide_help->update([
+            'receipt_no' => $this->receipt_no
+        ]);
+
+        session()->flash('message', 'Receipt Saved Successfully!');
+
     }
 
     public function fileUpload()
