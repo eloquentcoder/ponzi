@@ -22,7 +22,7 @@
         <div class="row">
           <div class="col-md-8 ml-auto mr-auto">
             <h2 class="title" style="font-weight: 800">Your Key To Financial Freedom</h2>
-            <h5 class="description" style="font-weight: 500">Green Rich Wide Investment is a global community, welcoming people from every discipline and culture, we thrive to reach out to people across the globe with the aim of freeing the world from financial crisis.</h5>
+            <h5 class="description" style="font-weight: 700">Green Rich Wide Investment is a global community, welcoming people from every discipline and culture, we thrive to reach out to people across the globe with the aim of freeing the world from financial crisis.</h5>
             <br>
             <a href="#" class="btn btn-success btn-round">See Details</a>
           </div>
@@ -37,8 +37,8 @@
               </div>
               <div class="description">
                 <h4 class="info-title" style="font-size: 25px; font-weight: 800;">Vision Statement</h4>
-                <p class="description">To increase financial opportunities and income through a viable system that provides essential services and linkage.</p>
-                <p class="description">To connect people that shares similar ideas and orientation in making the world financially stable.</p>
+                <p class="description" style="color: black; font-weight: 600">To increase financial opportunities and income through a viable system that provides essential services and linkage.</p>
+                <p class="description" style="color: black; font-weight: 600">To connect people that shares similar ideas and orientation in making the world financially stable.</p>
               </div>
             </div>
           </div>
@@ -49,7 +49,7 @@
               </div>
               <div class="description">
                 <h4 class="info-title" style="font-size: 25px; font-weight: 800;">Mission Statement</h4>
-                <p>Green Rich Wide Investment is a "stress free" financial platform that can be operated from anywhere.
+                <p class="description" style="color: black; font-weight: 600">Green Rich Wide Investment is a "stress free" financial platform that can be operated from anywhere.
                     We passionately believe in the power of ideas, to change lives and connect people with similar interest.</p>
               </div>
             </div>
@@ -180,7 +180,7 @@
           <div class="row">
             <div class="col-md-8 ml-auto mr-auto">
               <h2 class="title" style="font-weight: 800">How it works</h2>
-              <h5 class="description">
+              <h5 class="description" style="color: black; font-weight: 600">
                 You can make money in two ways:<br>
                 <li>Be an investor</li>
                 <li>Be a broker</li>
@@ -200,20 +200,20 @@
                 </div>
                 <div class="description">
                   <h4 class="info-title" style="font-size: 25px; font-weight: 800;">Become An Investor</h4>
-                  <p class="description">
+                  <p class="description" style="color: black; font-weight: 600">
                       <br>
                     Minimum investment: ₦5,000<br>
                     Maximum investment: ₦500,000<br><br>
                     Once you've invested, your money starts growing from 24 hours:<br><br>
-                    <li>Day 1 = 2%</li>
-                    <li>Day 2 = 6%</li>
-                    <li>Day 3 = 15%</li>
-                    <li>Day 4 = 30%</li>
-                    <li>Day 5 = 50%</li> <br><br>
-                    After Day 5, your investment stops growing at 50%<br>
+                    <li style="color: black; font-weight: 600">Day 1 = 2%</li>
+                    <li style="color: black; font-weight: 600">Day 2 = 6%</li>
+                    <li style="color: black; font-weight: 600">Day 3 = 15%</li>
+                    <li style="color: black; font-weight: 600">Day 4 = 30%</li>
+                    <li style="color: black; font-weight: 600">Day 5 = 50%</li> <br><br>
+                    <p class="description" style="color: black; font-weight: 600">After Day 5, your investment stops growing at 50%<br>
                     Make payment only to bank account details that appears on your Merged List
                     24 hours to make payment after been merged <span style="color: red">(if not your account will be suspended!)</span>
-                    Make withdrawal anytime after 24 hours of your investment
+                    Make withdrawal anytime after 24 hours of your investment</p>
                  </p>
                   {{-- <p class="description">To connect people that shares similar ideas and orientation in making the world financially stable.</p> --}}
                 </div>
@@ -226,13 +226,13 @@
                 </div>
                 <div class="description">
                   <h4 class="info-title" style="font-size: 25px; font-weight: 800;">Become A Broker</h4>
-                  <p class="description">
+                  <p class="description" style="color: black; font-weight: 600">
                     <br>
-                    You can also make money without investment by becoming a broker.<br>
-                    A Broker earn commissions based on the following calculations:<br>
-                    <li>Basic   This requires a maximum of 15 referrals. Broker get 2% of each investment made by their Basic Level referrals (withdrawable at maximum referrals).</li>
-                    <li>Premium   This requires a maximum of 65 referrals. Broker get 3% of each investment made by their Premium Level referrals. (withdrawable at maximum referrals).</li>
-                    <li>VIP   This requires a minimum of 66 referrals and above. Broker get 5% of each investment made by their VIP Level referrals.</li>
+                    <div class="description" style="color: black; font-weight: 600">You can also make money without investment by becoming a broker.<br>
+                    A Broker earn commissions based on the following calculations:<br></div>
+                    <li style="color: black; font-weight: 600">Basic   This requires a maximum of 15 referrals. Broker get 2% of each investment made by their Basic Level referrals (withdrawable at maximum referrals).</li>
+                    <li style="color: black; font-weight: 600">Premium   This requires a maximum of 65 referrals. Broker get 3% of each investment made by their Premium Level referrals. (withdrawable at maximum referrals).</li>
+                    <li style="color: black; font-weight: 600"> VIP   This requires a minimum of 66 referrals and above. Broker get 5% of each investment made by their VIP Level referrals.</li>
 
                </p>
                 </div>
