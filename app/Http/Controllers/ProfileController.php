@@ -6,6 +6,7 @@ use App\Models\Bank;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
+use App\Http\Requests\AccountRequest;
 use App\Http\Controllers\BaseController;
 use Illuminate\Support\Facades\Validator;
 
@@ -52,7 +53,7 @@ class ProfileController extends BaseController
         return view('user.profile.auth', $this->data);
     }
 
-    public function postProfile(Request $request)
+    public function postProfile(AccountRequest $request)
     {
         $user = User::find(auth()->user()->id);
         $user->update([

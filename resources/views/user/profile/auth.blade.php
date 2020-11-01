@@ -11,14 +11,17 @@
                 <img src="{{ asset('home/logo.jpeg') }}" alt="" class="" style="height: 50px">
                 <h5 class="mt-3"><b>Update Bank Details</b></h5>
             </div>
-            @if (session('error'))
-                <div style="text-align: center;
-                font-size: 17px;
-                font-weight: 700;
-                color: red;">
-                    {{ session('error') }}
-                </div>
-            @endif
+            @if($errors->any())
+            <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                <button aria-label="Close" class="close" data-dismiss="alert" type="button"><span aria-hidden="true"> ×</span></button>
+                {{-- <strong>Snap! </strong>You should check in on some of those fields below. --}}
+                    @foreach ($errors->all() as $error)
+                            <li>
+                                <ul>{{ $error }}</ul>
+                            </li>
+                    @endforeach
+            </div>
+    @endif
             <form class="form mt-5 contact-form" action="{{ route('account.post') }}" method="POST">
                 @csrf
                 <div class="form-group ">

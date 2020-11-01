@@ -67,6 +67,7 @@ Route::group(['prefix' => 'user', 'middleware' => ['auth_user']], function () {
                 Route::get('investments', [DepositController::class, 'index'])->name('investments');
                 Route::get('withdrawals', [WithdrawalController::class, 'index'])->name('withdrawals');
                 Route::get('testimony/make', [TestimonyController::class, 'make'])->name('testimony.make');
+                Route::post('testimony/make', [TestimonyController::class, 'post'])->name('post.testimony.make');
                 Route::get('broker', [BrokerController::class, 'index'])->name('broker');
                 Route::post('broker/apply', [BrokerController::class, 'apply'])->name('broker.apply');
                 Route::get('referrals/withdraw', [ReferralController::class, 'withdraw'])->name('referrals.withdraw');
@@ -99,6 +100,7 @@ Route::group(['prefix' => 'secure/admin', 'as' => 'admin.'], function () {
         Route::get('withdrawals', [AdminWithdrawalController::class, 'index'])->name('withdrawals');
         Route::get('personal-investments', [AdminWithdrawalController::class, 'personal'])->name('personal.withdrawals');
         Route::get('testimony/make', [AdminTestimonyController::class, 'make'])->name('testimony.make');
+        Route::post('testimony/make', [AdminTestimonyController::class, 'post'])->name('post.testimony.make');
     });
 
 });

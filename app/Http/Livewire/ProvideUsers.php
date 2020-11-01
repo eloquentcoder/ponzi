@@ -65,9 +65,9 @@ class ProvideUsers extends Component
 
             session()->flash('message', 'Payment Confirmed Successfully!');
             if (auth()->user()->role == 'admin') {
-                return redirect()->route('admin.dashboard');
+                return redirect()->route('admin.testimony.make');
             }
-            return redirect()->route('dashboard');
+            return redirect()->route('testimony.make');
 
         }
 
@@ -87,7 +87,11 @@ class ProvideUsers extends Component
             'user_id' => auth()->user()->id
         ]);
 
-        session()->flash('message', 'Payment Confirmed!');
+            session()->flash('message', 'Payment Confirmed Successfully!');
+            if (auth()->user()->role == 'admin') {
+                return redirect()->route('admin.testimony.make');
+            }
+            return redirect()->route('testimony.make');
     }
 
 
