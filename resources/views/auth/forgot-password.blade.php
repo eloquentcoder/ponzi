@@ -29,11 +29,22 @@
                     {{ session('status') }}
                 </div>
             @endif
+            @if($errors->any())
+                    <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                        <button aria-label="Close" class="close" data-dismiss="alert" type="button"><span aria-hidden="true"> ×</span></button>
+                        {{-- <strong>Snap! </strong>You should check in on some of those fields below. --}}
+                            @foreach ($errors->all() as $error)
+                                    <li>
+                                        <ul>{{ $error }}</ul>
+                                    </li>
+                            @endforeach
+                    </div>
+            @endif
             <form class="form mt-5 contact-form" method="POST" action="{{ route('forgot.post') }}">
                 @csrf
                 <div class="form-group ">
                     <div class="col-sm-12">
-                        <input class="form-control form-control-line" type="email" placeholder="Enter Email Address" required="required">
+                        <input class="form-control form-control-line" type="email" name="email" placeholder="Enter Email Address" required="required">
                     </div>
                 </div>
                 <div class="form-group">

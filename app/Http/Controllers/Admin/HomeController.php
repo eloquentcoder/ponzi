@@ -47,5 +47,10 @@ class HomeController extends BaseController
         return redirect()->route('admin.login');
     }
 
+    public function users()
+    {
+        $this->users = User::where('role', 'admin')->paginate(15);
+        return view('admin.users.index');
+    }
 
 }

@@ -78,7 +78,8 @@ class AuthController extends BaseController
 
     public function resetPassword()
     {
-        return view('auth.reset-password');
+        $this->token = request()->segment(2);
+        return view('auth.reset-password', $this->data);
     }
 
     public function postResetPassword(Request $request)

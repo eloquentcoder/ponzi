@@ -49,7 +49,7 @@ Route::group(['middleware' => 'guest'], function () {
     Route::get('forgot-password', [AuthController::class, 'forgotPasswordPage'])->name('forgot-password');
     Route::post('forgot-password', [AuthController::class, 'postForgotPassword'])->name('forgot.post');
 
-    Route::get('/reset-password/{token}', [AuthController::class, 'resetPassword'])->name('reset-password');
+    Route::get('/reset-password/{token}', [AuthController::class, 'resetPassword'])->name('password.reset');
     Route::post('/reset-password', [AuthController::class, 'postResetPassword'])->name('reset-password.post');
 
 });
@@ -111,6 +111,8 @@ Route::group(['prefix' => 'secure/admin', 'as' => 'admin.'], function () {
         Route::get('profile', [AdminProfileController::class, 'index'])->name('profile');
         Route::post('profile/post', [AdminProfileController::class, 'post'])->name('post.profile');
         Route::post('profile/password', [ProfileController::class, 'password'])->name('password.profile');
+        Route::get('users', [AdminHomeController::class, 'users'])->name('users');
+
 
         Route::post('logout', [AdminHomeController::class, 'logout'])->name('logout');
         Route::get('admin', [AdminHomeController::class, 'admins'])->name('admins');

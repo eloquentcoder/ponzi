@@ -22,7 +22,6 @@ class AdminTableSeeder extends Seeder
             'phone_number' => '08064339248',
             'role' => 'admin',
             'activated' => 1,
-            'is_special' => 1,
             'password' => bcrypt('password'),
             'email_verified_at' => now(),
             'account_details' => '0070006606',
@@ -31,29 +30,29 @@ class AdminTableSeeder extends Seeder
         ]);
 
         User::create([
-            'first_name' => 'Friday',
-            'last_name' => 'Ogbonna',
-            'user_name' => 'friday_ogbonna',
-            'email' => 'friday_ogbonna@gmail.com',
-            'phone_number' => '08067066499',
+            'first_name' => 'David',
+            'last_name' => 'Chukwu',
+            'user_name' => 'david_chukwu',
+            'email' => 'david_chukwu@gmail.com',
+            'phone_number' => '08135876214',
             'role' => 'admin',
             'activated' => 1,
-            'password' => bcrypt('08067066499'),
+            'password' => bcrypt('8135876214'),
             'email_verified_at' => now(),
-            'account_details' => '3071359334',
-            'bank_name' => 'First Bank',
-            'account_name' => 'Olinya Friday Ogbonna'
+            'account_details' => '0086069538',
+            'bank_name' => 'Diamond Access',
+            'account_name' => 'David Chukwu'
         ]);
 
         User::create([
-            'first_name' => 'chizoba',
+            'first_name' => 'Chizoba',
             'last_name' => 'Ogili',
             'user_name' => 'chizoba_ogili',
             'email' => 'chizoba_ogili@gmail.com',
             'phone_number' => '09072319456',
             'role' => 'admin',
             'activated' => 1,
-            'password' => bcrypt('09072319456'),
+            'password' => bcrypt('9072319456'),
             'email_verified_at' => now(),
             'account_details' => '0774174943',
             'bank_name' => 'Access Bank',
@@ -61,35 +60,33 @@ class AdminTableSeeder extends Seeder
         ]);
 
         User::create([
-            'first_name' => 'michael',
+            'first_name' => 'Michael',
             'last_name' => 'Adigu',
             'user_name' => 'michael_adigun',
             'email' => 'michael_adigun@gmail.com',
             'phone_number' => '09017450446',
             'role' => 'admin',
             'activated' => 1,
-            'is_special' => 1,
-            'password' => bcrypt('09017450446'),
+            'password' => bcrypt('9017450446'),
             'email_verified_at' => now(),
             'account_details' => '0211124381',
-            'bank_name' => 'GtBank',
+            'bank_name' => 'ZenithBank',
             'account_name' => 'Adigu Michael'
         ]);
 
         User::create([
             'first_name' => 'SAMUEL',
-            'last_name' => 'Omaiye',
-            'user_name' => 'samuel_omaiye',
-            'email' => 'samuel_omaiye@gmail.com',
-            'phone_number' => '0704050008',
+            'last_name' => 'Sunday',
+            'user_name' => 'samuel_sunday',
+            'email' => 'samuel_sunday@gmail.com',
+            'phone_number' => '08136264061',
             'role' => 'admin',
-            'is_special' => 1,
             'activated' => 1,
-            'password' => bcrypt('0704050008'),
+            'password' => bcrypt('704050008'),
             'email_verified_at' => now(),
             'account_details' => '0015816985',
             'bank_name' => 'Stanbic IBTC',
-            'account_name' => 'SAMUEL Omaiye'
+            'account_name' => 'SAMUEL Sunday'
         ]);
 
         User::create([
@@ -97,10 +94,10 @@ class AdminTableSeeder extends Seeder
             'last_name' => 'Ocholongwa',
             'user_name' => 'annabel_ocholongwa',
             'email' => 'annabel_ocholongwa@gmail.com',
-            'phone_number' => '0811916918',
+            'phone_number' => '08067449938',
             'role' => 'admin',
             'activated' => 1,
-            'password' => bcrypt('0811916918'),
+            'password' => bcrypt('8067449938'),
             'email_verified_at' => now(),
             'account_details' => '0811916918',
             'bank_name' => 'Access bank',
@@ -163,8 +160,8 @@ class AdminTableSeeder extends Seeder
             'activated' => 1,
             'password' => bcrypt('08085395767'),
             'email_verified_at' => now(),
-            'account_details' => '1228413230',
-            'bank_name' => 'gtb',
+            'account_details' => '0006657005',
+            'bank_name' => 'GtBank',
             'account_name' => 'Ekpewerechi Onyinyechi'
         ]);
 
@@ -185,7 +182,7 @@ class AdminTableSeeder extends Seeder
 
         User::create([
             'first_name' => 'Efange',
-            'last_name' => 'kate',
+            'last_name' => 'Kate',
             'user_name' => 'efange_kate',
             'email' => 'efange_kate@gmail.com',
             'phone_number' => '07035120366',
@@ -194,9 +191,8 @@ class AdminTableSeeder extends Seeder
             'password' => bcrypt('07035120366'),
             'email_verified_at' => now(),
             'account_details' => '0004847608',
-            'bank_name' => 'GTb Bank',
-            'account_name' => 'Efange kate'
+            'bank_name' => 'GtBank',
+            'account_name' => 'Efange Kate'
         ]);
-
     }
 }
