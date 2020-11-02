@@ -26,7 +26,7 @@
                                         </tr>
                                         <tr>
                                             <th scope="row">Name</th>
-                                            <td>{{ $helper->user }}</td>
+                                            <td>{{ $helper->user->full_name }}</td>
                                         </tr>
                                         <tr>
                                             <th scope="row"> Phone Number</th>
