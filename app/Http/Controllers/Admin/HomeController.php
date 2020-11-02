@@ -27,11 +27,14 @@ class HomeController extends BaseController
 
     public function adminsPost(Request $request, $id)
     {
+        $now = Carbon::now();
         $amount = [50000, 100000, 200000, 500000];
         $i = rand(0, 3);
         GetHelp::create([
             'amount' => $amount[$i] + ($amount[$i]*0.5) ,
-            'user_id' => $id
+            'user_id' => $id,
+            'awaiting_to_receive' => 1,
+            'maturity_period' => $now
         ]);
 
         return redirect()->back()->with('message', 'Withdrawal Request Made Successfully');
