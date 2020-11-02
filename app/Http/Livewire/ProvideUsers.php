@@ -13,6 +13,7 @@ class ProvideUsers extends Component
 
     public function mount()
     {
+        dd(ProvideHelp::all());
         $this->mergeStatus();
     }
 
