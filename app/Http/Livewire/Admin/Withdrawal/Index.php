@@ -18,7 +18,7 @@ class Index extends Component
     public function render()
     {
         return view('livewire.admin.withdrawal.index', [
-            'withdrawals' => GetHelp::paginate(15)
+            'withdrawals' => GetHelp::with('user')->paginate(15)
         ]);
     }
 }
