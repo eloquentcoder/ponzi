@@ -16,7 +16,6 @@ class WithdrawalController extends BaseController
     public function personal()
     {
         $this->withdrawals = auth()->user()->gethelp()->paginate(10);
-        dd($this->withdrawals);
         return view('admin.withdrawals.personal', $this->data);
     }
 

@@ -10,6 +10,11 @@ class Index extends Component
 {
     use WithPagination;
 
+    public function mount()
+    {
+       dd(GetHelp::get());
+    }
+
     public function render()
     {
         return view('livewire.admin.withdrawal.index', [
