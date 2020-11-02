@@ -55,7 +55,7 @@
                 </div>
                 <div class="form-group ">
                     <div class="col-sm-12">
-                        <input class="form-control form-control-line" name="phone_number" type="tel" value="{{ old('phone_number') }}" placeholder="Phone Number" min="11" max="11" required>
+                        <input class="form-control form-control-line" name="phone_number" type="tel" value="{{ old('phone_number') }}" placeholder="Phone Number" required>
                     </div>
                 </div>
                 <div class="form-group">

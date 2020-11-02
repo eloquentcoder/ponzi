@@ -7,6 +7,7 @@ class MergeServices {
     public static function mergeGetters($gethelp)
     {
         $amount = $gethelp->amount;
+
         $provider_one = ProvideHelp::where(
             ['merge_status', 0],
             ['amount', $amount]

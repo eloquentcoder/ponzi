@@ -3,6 +3,7 @@
 namespace App\Http\Livewire;
 
 use App\Models\User;
+use App\Jobs\ProcessGH;
 use App\Models\GetHelp;
 use Livewire\Component;
 use App\Models\ProvideHelp;
@@ -41,32 +42,13 @@ class MakeInvestment extends Component
             return;
         }
 
-        $user = User::where([
-            ['activated', 1],
-            ['role', 'user'],
-            ['id', '!=', auth()->user()->id]
-        ])->first();
+        $provide_help = ProvideHelp::create([
+            'user_id' => auth()->user()->id,
+            'amount' => $this->amount,
+        ]);
 
-        if (!$user) {
-            $admin = User::where([['role', 'admin'], ['is_special', 1]])->get()->random();
+        ProcessGH::dispatch($provide_help, auth()->user()->id)->delay(now()->addMinutes(10));
 
-            $get_help = $admin->gethelp()->create([
-                'amount' => $this->amount,
-                'merge_status' => true,
-            ]);
-
-            $provide_help = ProvideHelp::create([
-                'user_id' => auth()->user()->id,
-                'merge_status' => 1,
-                'amount' => $this->amount,
-                'get_help_id' => $get_help->id
-            ]);
-        } else {
-            $provide_help = ProvideHelp::create([
-                'user_id' => auth()->user()->id,
-                'amount' => $this->amount,
-            ]);
-        }
 
         $this->null();
         session()->flash('message', 'Investment Made Successfully! You will be merged to pay soon.');
