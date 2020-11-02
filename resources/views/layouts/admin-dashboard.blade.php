@@ -118,7 +118,7 @@
                 <div class="header-section">
                     <!--logo and logo icon start-->
                     <div class="logo" style="background-color: black;">
-                        <a href="index.html">
+                        <a href="{{ route('admin.dashboard') }}">
                             <span class="logo-img">
                                 <img src="{{ asset('home/logo.jpeg') }}" alt="" height="26">
                             </span>

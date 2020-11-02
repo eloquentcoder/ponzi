@@ -210,10 +210,13 @@
                     <li style="color: black; font-weight: 600">Day 3 = 15%</li>
                     <li style="color: black; font-weight: 600">Day 4 = 30%</li>
                     <li style="color: black; font-weight: 600">Day 5 = 50%</li> <br><br>
-                    <p class="description" style="color: black; font-weight: 600">After Day 5, your investment stops growing at 50%<br>
+                    {{-- <p class="description" style="color: black; font-weight: 600">After Day 5, your investment stops growing at 50%<br>
                     Make payment only to bank account details that appears on your Merged List
                     24 hours to make payment after been merged <span style="color: red">(if not your account will be suspended!)</span>
-                    Make withdrawal anytime after 24 hours of your investment</p>
+                    Make withdrawal anytime after 24 hours of your investment</p> --}}
+                    <p class="description" style="color: black; font-weight: 600">* After Day 5, your investment stops growing at 50%.
+                        * Make payment only to the bank account details that appears on your Merged List.
+                        * You have 24 hours to make payment after been merged <span style="color: red">(if not your account will be suspended!)</span>. Note: You can only make withdraw after when your investment is fully mature.</p>
                  </p>
                   {{-- <p class="description">To connect people that shares similar ideas and orientation in making the world financially stable.</p> --}}
                 </div>

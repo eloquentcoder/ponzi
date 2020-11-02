@@ -55,7 +55,7 @@
                 </div>
                 <div class="form-group ">
                     <div class="col-sm-12">
-                        <input class="form-control form-control-line" name="phone_number" type="tel" value="{{ old('phone_number') }}" placeholder="Phone Number" required>
+                        <input class="form-control form-control-line" name="phone_number" type="tel" value="{{ old('phone_number') }}" placeholder="Phone Number" min="11" max="11" required>
                     </div>
                 </div>
                 <div class="form-group">
@@ -72,7 +72,7 @@
                 <div class="form-group">
                     <div class="col-12">
                         <label class="cr-styled">
-                            <input type="checkbox">
+                            <input type="checkbox" required>
                             <i class="fa"></i>
                             I agree to the terms and conditions
                         </label>
