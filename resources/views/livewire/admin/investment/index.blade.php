@@ -10,7 +10,7 @@
                                 <table class="table table-hover m-b-0">
                                     <thead>
                                         <tr>
-                                            <th>Name</th>
+                                            <th>user With ID</th>
                                             <th>Amount</th>
                                             <th>Merge Status</th>
                                             <th>Confirmation Status</th>
@@ -20,7 +20,7 @@
                                     <tbody>
                                         @forelse ($investments as $item)
                                         <tr>
-                                            <td>{{ $item->user->full_name }}</td>
+                                            <td>{{ $item->user_id }}</td>
                                             <td>{{ $item->amount }}</td>
                                             <td>{{ $item->merge_status == 0 ? 'Not Merged' : 'Merged' }}</td>
                                             <td>{{ $item->confirmed == 0 ? 'Not Confirmed' : 'Confirmed' }}</td>

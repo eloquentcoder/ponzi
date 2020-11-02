@@ -14,7 +14,7 @@
                                             <th>Amount</th>
                                             <th>Merge Status</th>
                                             <th>Received Status</th>
-                                            <th>Merged User</th>
+                                            <th>Merged User ID</th>
                                         </tr>
                                     </thead>
                                     <tbody>
@@ -26,7 +26,7 @@
                                             <td>{{ $item->received == 0 ? 'Not Confirmed' : 'Confirmed' }}</td>
                                             <td>
                                                 @forelse ($item->providehelp as $item_help)
-                                                <li>{{ $item_help->user->full_name}}</li>
+                                                <li>{{ $item_help->user_id}}</li>
                                             @empty
                                                 No Merged Users
                                             @endforelse</td>
