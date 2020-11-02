@@ -26,11 +26,11 @@
                                         </tr>
                                         <tr>
                                             <th scope="row">Name</th>
-                                            <td>{{ $helper->user['full_name'] }}</td>
+                                            <td>{{ $helper->user }}</td>
                                         </tr>
                                         <tr>
                                             <th scope="row"> Phone Number</th>
-                                            <td>{{ $helper->user['phone_number'] }}</td>
+                                            <td>{{ $helper->user }}</td>
                                         </tr>
                                     </tbody>
                                     </table>
