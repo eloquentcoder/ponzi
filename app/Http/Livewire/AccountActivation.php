@@ -5,6 +5,7 @@ namespace App\Http\Livewire;
 use App\Models\User;
 use Livewire\Component;
 use App\Models\ProvideHelp;
+use App\Jobs\DeleteDefaulter;
 use Livewire\WithFileUploads;
 
 class AccountActivation extends Component
@@ -52,7 +53,11 @@ class AccountActivation extends Component
             'user_id' => auth()->user()->id
         ]);
 
+        DeleteDefaulter::dispatch($provide_help, auth()->user()->id)->delay(now()->addHour(24));
+
         $this->merged = !$this->merged;
+
+
 
         $this->continue_clicked = !$this->continue_clicked;
     }
