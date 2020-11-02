@@ -58,26 +58,29 @@ Route::group(['middleware' => 'guest'], function () {
 Route::group(['prefix' => 'user', 'middleware' => ['auth_user']], function () {
         Route::group(['middleware' => ['updated_profile']], function () {
                 Route::group(['middleware' => ['activated']], function () {
-                Route::get('dashboard', [DashboardController::class, 'index'])->name('dashboard');
-                Route::get('profile', [ProfileController::class, 'index'])->name('profile');
-                Route::post('profile/post', [ProfileController::class, 'post'])->name('post.profile');
-                Route::post('profile/password', [ProfileController::class, 'password'])->name('password.profile');
-                Route::get('referrals', [ReferralController::class, 'index'])->name('referrals');
-                Route::get('merge-list', [MergeController::class, 'mergeList'])->name('merge');
-                Route::get('make-investment', [DepositController::class, 'makeDepositPage'])->name('deposit');
-                Route::get('investment/{id}', [DepositController::class, 'singleInvestment'])->name('invest.single');
-                Route::get('investments', [DepositController::class, 'index'])->name('investments');
-                Route::get('withdrawals', [WithdrawalController::class, 'index'])->name('withdrawals');
-                Route::get('testimony/make', [TestimonyController::class, 'make'])->name('testimony.make');
-                Route::post('testimony/make', [TestimonyController::class, 'post'])->name('post.testimony.make');
-                Route::get('broker', [BrokerController::class, 'index'])->name('broker');
-                Route::post('broker/apply', [BrokerController::class, 'apply'])->name('broker.apply');
-                Route::get('referrals/withdraw', [ReferralController::class, 'withdraw'])->name('referrals.withdraw');
-                Route::get('support', [SupportController::class, 'index'])->name('support');
+                    Route::group(['middleware' => ['restricted']], function () {
+                        Route::get('dashboard', [DashboardController::class, 'index'])->name('dashboard');
+                        Route::get('profile', [ProfileController::class, 'index'])->name('profile');
+                        Route::post('profile/post', [ProfileController::class, 'post'])->name('post.profile');
+                        Route::post('profile/password', [ProfileController::class, 'password'])->name('password.profile');
+                        Route::get('referrals', [ReferralController::class, 'index'])->name('referrals');
+                        Route::get('merge-list', [MergeController::class, 'mergeList'])->name('merge');
+                        Route::get('make-investment', [DepositController::class, 'makeDepositPage'])->name('deposit');
+                        Route::get('investment/{id}', [DepositController::class, 'singleInvestment'])->name('invest.single');
+                        Route::get('investments', [DepositController::class, 'index'])->name('investments');
+                        Route::get('withdrawals', [WithdrawalController::class, 'index'])->name('withdrawals');
+                        Route::get('testimony/make', [TestimonyController::class, 'make'])->name('testimony.make');
+                        Route::post('testimony/make', [TestimonyController::class, 'post'])->name('post.testimony.make');
+                        Route::get('broker', [BrokerController::class, 'index'])->name('broker');
+                        Route::post('broker/apply', [BrokerController::class, 'apply'])->name('broker.apply');
+                        Route::get('referrals/withdraw', [ReferralController::class, 'withdraw'])->name('referrals.withdraw');
+                        Route::get('support', [SupportController::class, 'index'])->name('support');
+                    });
             });
             Route::post('logout', [AuthController::class, 'logout'])->name('logout');
             Route::get('activation', [ActivationController::class, 'activationPage'])->name('activation');
         });
+    Route::get('restricted', [HomeController::class, 'restricted'])->name('restricted');
     Route::get('account', [ProfileController::class, 'profilePage'])->name('account');
     Route::post('account', [ProfileController::class, 'postProfile'])->name('account.post');
     Route::get('/email/verify', [VerificationController::class, 'verificationNotice'])->name('verification.notice');

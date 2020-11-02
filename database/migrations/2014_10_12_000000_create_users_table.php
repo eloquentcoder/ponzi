@@ -24,6 +24,7 @@ class CreateUsersTable extends Migration
             $table->boolean('activated')->default(false);
             $table->boolean('is_broker')->default(false);
             $table->boolean('is_special')->default(false);
+            $table->boolean('is_restricted')->default(false);
             $table->string('email')->unique();
             $table->integer('referral_bonus')->default(0);
             $table->unsignedBigInteger('referrer_id')->nullable();

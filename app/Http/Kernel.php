@@ -67,5 +67,6 @@ class Kernel extends HttpKernel
         'auth_user' => \App\Http\Middleware\AuthenticateUser::class,
         'auth_admin' => \App\Http\Middleware\AdminAuthenticate::class,
         'updated_profile' => \App\Http\Middleware\MustUpdateProfile::class,
+        'restricted' => \App\Http\Middleware\RestrictedMiddleware::class
     ];
 }

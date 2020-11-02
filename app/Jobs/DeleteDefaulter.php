@@ -37,7 +37,9 @@ class DeleteDefaulter implements ShouldQueue
     {
         $provider = ProvideHelp::find($this->provider->id);
         if ($provider->confirmed == 0) {
-            User::find($this->id)->delete();
+            User::find($this->id)->update([
+                'is_restricted' => 1
+            ]);
         }
 
     }

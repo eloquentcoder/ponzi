@@ -29,4 +29,9 @@ class HomeController extends BaseController
         return redirect()->back()->with('message', 'Message Sent Successfully');
     }
 
+    public function restricted()
+    {
+        return view('user.restricted.index');
+    }
+
 }
