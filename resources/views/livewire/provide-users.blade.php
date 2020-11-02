@@ -26,11 +26,11 @@
                                         </tr>
                                         <tr>
                                             <th scope="row">Name</th>
-                                            <td>{{ $helper->user->full_name }}</td>
+                                            <td>{{ $helper->user['full_name'] }}</td>
                                         </tr>
                                         <tr>
                                             <th scope="row"> Phone Number</th>
-                                            <td>{{ $helper->user->phone_number }}</td>
+                                            <td>{{ $helper->user['phone_number'] }}</td>
                                         </tr>
                                     </tbody>
                                     </table>
@@ -55,7 +55,7 @@
                                     </div>
                                 @endif
                                 @if ($helper)
-                                <span style="font-weight: 900">{{ $helper->receipt_no }}</span>f
+                                <span style="font-weight: 900">{{ $helper->receipt_no }}</span>
                                     @if ($helper->proof_of_payment)
                                             <img src="{{ asset('storage/photos/' . $helper->proof_of_payment) }}" style="margin: 20px; width: 25pc;">
                                     @endif
