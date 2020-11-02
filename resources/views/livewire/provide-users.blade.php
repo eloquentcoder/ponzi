@@ -30,7 +30,7 @@
                                         </tr>
                                         <tr>
                                             <th scope="row"> Phone Number</th>
-                                            <td>{{ $helper->user }}</td>
+                                            <td>{{ $helper->user->phone_number }}</td>
                                         </tr>
                                     </tbody>
                                     </table>

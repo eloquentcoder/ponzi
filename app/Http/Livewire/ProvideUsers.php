@@ -113,7 +113,7 @@ class ProvideUsers extends Component
     public function render()
     {
         return view('livewire.provide-users', [
-            'providehelpers' => ProvideHelp::whereIn('get_help_id', $this->get_ids ?? [])->where('confirmed', 0)->get()
+            'providehelpers' => ProvideHelp::with('user')->whereIn('get_help_id', $this->get_ids ?? [])->where('confirmed', 0)->get()
         ]);
     }
 }
