@@ -12,14 +12,16 @@ class Amount extends Component
     public $gethelp;
     public $percent;
     public $diff;
+    public $awaiting;
 
     public function mount()
     {
         $now = Carbon::now();
-        $this->gethelp = auth()->user()->gethelp()->where('merge_status', 0)->whereDate('maturity_period', '>=', $now)->first();
+        $this->gethelp = auth()->user()->gethelp()->where([['merge_status', 0], ['received', 0]])->whereDate('maturity_period', '>=', $now)->first();
         if ($this->gethelp) {
              $this->calculatePercent($this->gethelp->maturity_period);
         }
+        $this->awaiting = $this->gethelp->awaiting_to_receive;
     }
 
     public function calculatePercent($maturity_period)
@@ -28,7 +30,8 @@ class Amount extends Component
         $now = Carbon::now();
         $this->diff = $date->diffInDays($now);
 
-        $this->percent = ceil(((5-1  - $this->diff) / 5) * 100);
+
+        $this->percent = ceil(((5  - $this->diff) / 5) * 100);
     }
 
     public function requestPayment()
@@ -36,7 +39,8 @@ class Amount extends Component
         $this->gethelp->update([
             'awaiting_to_receive' => 1
         ]);
-        $this->is_mature = true;
+        $this->awaiting = $this->gethelp->awaiting_to_receive;
+
     }
 
     public function render()

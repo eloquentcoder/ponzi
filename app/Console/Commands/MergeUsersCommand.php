@@ -39,8 +39,7 @@ class MergeUsersCommand extends Command
     public function handle()
     {
         $now = Carbon::now();
-        $getters = GetHelp::where(
-            ['merge_status', 0], ['awaiting_to_receive', 1])->whereDate('maturity_period', '>=', $now)->cursor();
+        $getters = GetHelp::where([['merge_status', 0], ['awaiting_to_receive', 1]])->whereDate('maturity_period', '>=', $now)->cursor();
         foreach ($getters as $value) {
             MergeServices::mergeGetters($value);
         }

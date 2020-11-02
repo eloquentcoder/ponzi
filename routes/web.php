@@ -18,6 +18,8 @@ use App\Http\Controllers\Admin\AuthController as AdminAuthController;
 use App\Http\Controllers\Admin\HomeController as AdminHomeController;
 use App\Http\Controllers\Admin\MergeController as AdminMergeController;
 use App\Http\Controllers\Admin\DepositController as AdminDepositController;
+use App\Http\Controllers\Admin\ProfileController as AdminProfileController;
+use App\Http\Controllers\Admin\SupportController as AdminSupportController;
 use App\Http\Controllers\Admin\TestimonyController as AdminTestimonyController;
 use App\Http\Controllers\Admin\WithdrawalController as AdminWithdrawalController;
 
@@ -96,14 +98,20 @@ Route::group(['prefix' => 'secure/admin', 'as' => 'admin.'], function () {
         Route::get('deposit/make', [AdminDepositController::class, 'make'])->name('deposit.make');
         Route::get('merge-list', [AdminMergeController::class, 'list'])->name('merge-list');
         Route::get('investment/{id}', [AdminDepositController::class, 'singleInvestment'])->name('invest.single');
-        Route::get('personal-investments', [AdminDepositController::class, 'personal'])->name('personal.deposits');
+        Route::get('my-investments', [AdminDepositController::class, 'personal'])->name('personal.deposits');
         Route::get('withdrawals', [AdminWithdrawalController::class, 'index'])->name('withdrawals');
-        Route::get('personal-investments', [AdminWithdrawalController::class, 'personal'])->name('personal.withdrawals');
+        Route::get('my-withdrawals', [AdminWithdrawalController::class, 'personal'])->name('personal.withdrawals');
         Route::get('testimony/make', [AdminTestimonyController::class, 'make'])->name('testimony.make');
         Route::post('testimony/make', [AdminTestimonyController::class, 'post'])->name('post.testimony.make');
+        Route::get('testimonies', [AdminTestimonyController::class, 'index'])->name('testimonies');
+        Route::get('support', [AdminSupportController::class, 'index'])->name('support');
+        Route::get('profile', [AdminProfileController::class, 'index'])->name('profile');
+        Route::post('profile/post', [AdminProfileController::class, 'post'])->name('post.profile');
+        Route::post('profile/password', [ProfileController::class, 'password'])->name('password.profile');
 
+        Route::post('logout', [AdminHomeController::class, 'logout'])->name('logout');
         Route::get('admin', [AdminHomeController::class, 'admins'])->name('admins');
-        Route::post('admin', [AdminHomeController::class, 'adminsPost'])->name('post.admuns.make');
+        Route::post('admin/gh/{id}', [AdminHomeController::class, 'adminsPost'])->name('admins.gh');
     });
 
 });

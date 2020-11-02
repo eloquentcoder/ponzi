@@ -10,6 +10,12 @@ use App\Http\Controllers\BaseController;
 
 class TestimonyController extends BaseController
 {
+    public function index()
+    {
+        $this->testimonies = Testimonies::paginate(10);
+        return view('admin.testimony.index', $this->data);
+    }
+
     public function make()
     {
         return view('admin.testimony.make');

@@ -63,28 +63,51 @@
                         <li>
                             <h3 class="navigation-title">Navigation</h3>
                         </li>
-                        <li class="active">
-                            <a href="{{ route('dashboard') }}">
+                        <li class="">
+                            <a href="{{ route('admin.dashboard') }}">
                                 <i class="mdi mdi-gauge"></i> <span>Dashboard</span>
                             </a>
                         </li>
                         <li>
-                            <a href="{{ route('merge') }}">
+                            <a href="{{ route('admin.merge-list') }}">
                                 <i class="mdi mdi-buffer"></i> <span>Merge List</span>
                             </a>
                         </li>
                         <li>
-                            <a href="{{ route('investments') }}">
+                            <a href="{{ route('admin.personal.deposits') }}">
+                                <i class="mdi mdi-buffer"></i> <span>My Investments</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="{{ route('admin.personal.withdrawals') }}">
+                                <i class="mdi mdi-buffer"></i> <span>My Withdrawals</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="{{ route('admin.testimonies') }}">
+                                <i class="mdi mdi-buffer"></i> <span>Testimonies</span>
+                            </a>
+                        </li>
+                        @if (auth()->user()->is_special == 1)
+                        <li>
+                            <a href="{{ route('admin.deposits') }}">
                                 <i class="mdi mdi-table"></i>
                                 <span>Investments</span>
                             </a>
                         </li>
                         <li>
-                            <a href="{{ route('withdrawals') }}">
+                            <a href="{{ route('admin.withdrawals') }}">
                                 <i class="mdi mdi-table"></i>
                                 <span>Withdrawals</span>
                             </a>
                         </li>
+                        <li>
+                            <a href="{{ route('admin.support') }}">
+                                <i class="mdi mdi-table"></i>
+                                <span>Support</span>
+                            </a>
+                        </li>
+                        @endif
                     </ul><!--sidebar nav end-->
                 </div>
             </div><!-- sidebar left end-->
@@ -125,65 +148,18 @@
                                         <i class="mdi mdi-bell-outline"></i>
                                         <span class="badge badge-success"></span>
                                     </a>
-                                    {{-- <ul class="dropdown-menu mailbox dropdown-menu-right">
-                                        <li>
-                                          <div class="drop-title">Notifications</div>
-                                        </li>
-                                        <li class="notification-scroll">
-                                            <div class="message-center">
-                                                <a href="#">
-                                                    <div class="user-img">
-                                                        <i class="ti ti-star"></i>
-                                                    </div>
-                                                    <div class="mail-contnet">
-                                                        <h6>Jane A. Seward</h6>
-                                                        <span class="mail-desc">Iwon meddle and...</span>
-                                                    </div>
-                                                </a>
-                                                <a href="#">
-                                                    <div class="user-img">
-                                                        <i class="ti ti-heart"></i>
-                                                    </div>
-                                                    <div class="mail-contnet">
-                                                        <h6>Michael W. Salazar</h6>
-                                                        <span class="mail-desc">Lovely gide learn for you...</span>
-                                                    </div>
-                                                </a>
-                                                <a href="#">
-                                                    <div class="user-img">
-                                                        <i class="ti ti-image"></i>
-                                                    </div>
-                                                    <div class="mail-contnet">
-                                                        <h6>David D. Chen</h6>
-                                                        <span class="mail-desc">Send his new photo...</span>
-                                                    </div>
-                                                </a>
-                                                <a href="#">
-                                                    <div class="user-img">
-                                                        <i class="ti ti-bell"></i>
-                                                    </div>
-                                                    <div class="mail-contnet">
-                                                        <h6>Irma J. Hendren</h6>
-                                                        <span class="mail-desc">6:00 pm our meeting so...</span>
-                                                    </div>
-                                                </a>
-                                            </div>
-                                        </li>
-                                        <li>
-                                            <a class="text-center bg-light" href="javascript:void(0);">
-                                                <strong>See all notifications</strong>
-                                            </a>
-                                        </li>
-                                    </ul> --}}
                                 </li>
                                 <li>
                                     <a href="javascript:;" data-toggle="dropdown">
                                         <img src="{{ asset('default.jpg') }}" alt="">
                                     </a>
                                     <div class="dropdown-menu dropdown-menu-right profile-menu">
-                                        <a class="dropdown-item" href="#"><i class="mdi mdi-account-circle m-r-5 text-muted"></i> Profile</a>
+                                        <a class="dropdown-item" href="{{ route('admin.profile') }}"><i class="mdi mdi-account-circle m-r-5 text-muted"></i> Profile</a>
+                                        @if (auth()->user()->user_name == 'samuel_omaiye' || auth()->user()->user_name == 'patdgeerico')
+                                        <a class="dropdown-item" href="{{ route('admin.admins') }}"><i class="mdi mdi-account-circle m-r-5 text-muted"></i> Admins</a>
+                                        @endif
                                         <a class="dropdown-item" href="#" onclick="event.preventDefault(); document.getElementById('logout-frm').submit();"><i class="mdi mdi-logout m-r-5 text-muted"></i> Logout</a>
-                                        <form id="logout-frm" action="{{ route('logout') }}" method="POST" style="display: none;">
+                                        <form id="logout-frm" action="{{ route('admin.logout') }}" method="POST" style="display: none;">
                                             {{ csrf_field() }}
 
                                         </form>
