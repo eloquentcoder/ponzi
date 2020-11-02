@@ -19,11 +19,9 @@ class AuthenticateUser
     {
         if (!Auth::check()) {
             return redirect()->route('login');
-        } else {
-            if (!Auth::user()->role == 'user') {
-                return redirect()->route('login');
-            }
-            return $next($request);
+        }
+        if (Auth::user()->role == 'admin') {
+            return redirect()->route('home');
         }
         return $next($request);
     }

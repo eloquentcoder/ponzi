@@ -19,12 +19,11 @@ class AdminAuthenticate
     {
         if (!Auth::check()) {
             return redirect()->route('admin.login');
-        } else {
-            if (!Auth::user()->role == 'admin') {
-                return redirect()->route('admin.login');
-            }
-            return $next($request);
         }
+        if (Auth::user()->role == 'user') {
+            return redirect()->route('home');
+        }
+
         return $next($request);
     }
 }
