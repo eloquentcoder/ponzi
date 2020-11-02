@@ -14,7 +14,6 @@ class ProvideUsers extends Component
 
     public function mount()
     {
-        dd(User::all());
         $this->mergeStatus();
     }
 
