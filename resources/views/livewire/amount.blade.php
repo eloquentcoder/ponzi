@@ -11,7 +11,7 @@
                         {{-- <span style="font-weight: 900">Current Investment: </span>₦{{ ceil($gethelp->amount * 0.66666666) }}</h5> --}}
                     <p class="card-text">
                         <div class="progress my-3" style="height: 14px">
-                            <div class="progress-bar progress-bar-striped progress-bar-animated bg-warning"
+                            <div class="progress-bar progress-bar-striped progress-bar-animated bg-success"
                                 role="progressbar"
                                 aria-valuenow="{{ $percent }}"
                                 aria-valuemin="0"
