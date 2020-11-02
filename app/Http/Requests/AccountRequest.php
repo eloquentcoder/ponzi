@@ -24,7 +24,7 @@ class AccountRequest extends FormRequest
     public function rules()
     {
         return [
-            'account_details' => ['required', 'unique:users'],
+            'account_details' => ['required', 'unique:users', 'numeric'],
             'bank_name' => ['required'],
             'account_name' => ['required'],
         ];

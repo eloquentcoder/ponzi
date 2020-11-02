@@ -85,13 +85,13 @@
         <nav class="footer-nav">
           <ul>
             <li>
-              <a href="#">About Us</a>
+              <a href="{{ route('home') }}/#about">About Us</a>
             </li>
             <li>
-              <a href="#">Contact Us</a>
+              <a href="{{ route('home') }}">Contact Us</a>
             </li>
             <li>
-              <a href="#">Get Started</a>
+              <a href="{{ route('register') }}">Get Started</a>
             </li>
           </ul>
         </nav>

@@ -26,7 +26,7 @@
                 @csrf
                 <div class="form-group ">
                     <div class="col-sm-12">
-                        <input class="form-control form-control-line" value="{{ old('account_details') }}" name="account_details" type="text" placeholder="Enter Account Number" required>
+                        <input type="number" class="form-control form-control-line" value="{{ old('account_details') }}" name="account_details" type="text" placeholder="Enter Account Number" required>
                     </div>
                 </div>
                 <div class="form-group ">

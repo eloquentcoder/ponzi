@@ -29,7 +29,7 @@ class RegisterUserRequest extends FormRequest
             'middle_name' => ['nullable'],
             'username' => ['required', 'unique:users,user_name'],
             'email' => ['required', 'unique:users'],
-            'phone_number' => ['required', 'unique:users'],
+            'phone_number' => ['required', 'unique:users', 'numeric'],
             'password' => ['required', 'min:8', 'confirmed']
         ];
     }
