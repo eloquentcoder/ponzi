@@ -34,7 +34,7 @@ class ProvideUsers extends Component
         ]);
         $amount = $provide_help->amount + ($provide_help->amount * 0.5);
 
-        auth()->user()->gethelp()->update([
+        $provide_help->gethelp()->update([
             'received' => 1
         ]);
 

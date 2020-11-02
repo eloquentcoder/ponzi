@@ -7,6 +7,7 @@ use App\Models\User;
 use App\Models\GetHelp;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\Auth;
 use App\Http\Controllers\BaseController;
 
 class HomeController extends BaseController

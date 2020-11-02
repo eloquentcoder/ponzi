@@ -17,7 +17,7 @@ class Amount extends Component
     public function mount()
     {
         $now = Carbon::now();
-        $this->gethelp = auth()->user()->gethelp()->where([['merge_status', 0], ['received', 0]])->whereDate('maturity_period', '>=', $now)->first();
+        $this->gethelp = auth()->user()->gethelp()->where([['merge_status', 0]])->whereDate('maturity_period', '>=', $now)->first();
         if ($this->gethelp) {
              $this->calculatePercent($this->gethelp->maturity_period);
         }
