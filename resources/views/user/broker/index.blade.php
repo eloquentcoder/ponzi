@@ -12,8 +12,12 @@
                     Become A Broker
                 </div>
                     <div class="card-body">
-                            <h5 class="card-title">You can also earn money with or without investing through Broker bonuses. You become a Broker by applying to become a broker your user dashboard, then you can share your refferal link.
-                                In Greenrichwide you earn 2% of your refferal's Investments as a bonus. You can withdraw your referral bonuses at N5,000 minimum only when you have no less than 15 referrals.</h5>
+                            <h5 class="card-title">You can also make money without investment by becoming a broker.
+                                A Broker earn commissions based on the following calculations:<br>
+                                BASIC: This requires a maximum of 15 referrals. Broker get 2% of each investment made by their Basic Level referrals (withdrawable at maximum referrals).<br>
+                                PREMIUM: This requires a maximum of 65 referrals. Broker get 3% of each investment made by their Premium Level referrals. (withdrawable at maximum referrals).<br>
+                                VIP: This requires a minimum of 66 referrals and above. Broker get 5% of each investment made by their VIP Level referrals.
+                                Kindly click the button below to apply.</h5>
                             <a href="{{ route('dashboard') }}" onclick="event.preventDefault(); document.getElementById('broker-frm').submit();" class="btn btn-success btn-lg">Apply</a>
                             <form id="broker-frm" action="{{ route('broker.apply') }}" method="POST" style="display: none;">
                                 {{ csrf_field() }}

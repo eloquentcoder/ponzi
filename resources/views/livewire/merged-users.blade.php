@@ -33,4 +33,24 @@
             @endforeach
         </div>
     @endif
+
+    @if ($gethelpers->count() == 0 && $provider)
+    <div class="row">
+        <div class="col-lg-12 col-sm-12">
+            <div class="card text-center bg-white m-b-30">
+                <div class="card-header">
+                    Notice
+                </div>
+                <div class="card-body">
+                    <h5 class="card-title">SORRY, THERE IS NO AVAILABLE PARTICIPANT TO RECEIVE FUND AT THE MOMENT.
+                        YOU WILL BE MERGED TO PAY OUT SOON.</h5>
+                    {{-- <p class="card-text">With supporting text below as a natural lead-in to additional content.</p> --}}
+                </div>
+            </div>
+        </div>
+    </div>
+    @endif
+
 </div>
+
+

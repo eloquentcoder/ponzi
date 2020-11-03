@@ -44,8 +44,8 @@ class ProcessGH implements ShouldQueue
         $admin = User::where([['role', 'admin'], ['is_special', 1]])->get()->random();
         $get_help = $admin->gethelp()->create([
             'amount' => $this->provide_help->amount,
-            'merge_status' => 0,
-            'awaiting_to_receive' => 1,
+            'merge_status' => 1,
+            'awaiting_to_receive' => 0,
             'maturity_period' => $now,
         ]);
 

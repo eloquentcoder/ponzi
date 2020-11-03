@@ -10,10 +10,12 @@ class MergedUsers extends Component
 {
     public $get_ids;
     public $ids;
+    public $provider = false;
 
     public function mount()
     {
         $this->ids = auth()->user()->providehelp()->where('confirmed', 0)->pluck('get_help_id')->toArray();
+        $this->provider = auth()->user()->providehelp()->where('confirmed', 0)->exists();
     }
 
 
