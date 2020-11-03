@@ -37,6 +37,18 @@ class MakeInvestment extends Component
             ['received', 0],
         ])->exists();
 
+        $comp_amount = auth()->user()->providehelp()->latest('created_at')->value('amount');
+
+        if (!$this->amount >= $comp_amount) {
+            session()->flash('error', 'Amount must not be lower than last investment');
+            return;
+        }
+
+        if ($provided || $get_process) {
+            session()->flash('error', 'You have a pending investment. Please complete that to continue');
+            return;
+        }
+
         if ($provided || $get_process) {
             session()->flash('error', 'You have a pending investment. Please complete that to continue');
             return;
