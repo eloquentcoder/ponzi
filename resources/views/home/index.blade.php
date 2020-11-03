@@ -77,8 +77,8 @@
                 <i class="nc-icon nc-badge"></i>
               </div>
               <div class="description">
-                <h4 class="info-title">Total Investors</h4>
-                <p class="description">{{30 + $investors }}</p>
+                <h4 class="info-title" style="font-size: 25px; font-weight: 800;">Total Investors</h4>
+                <p class="description" style="font-size: 18px; font-weight: 800;">{{30 + $investors }}</p>
                 {{-- <p class="description">To connect people that shares similar ideas and orientation in making the world financially stable.</p> --}}
               </div>
             </div>
@@ -89,8 +89,8 @@
                 <i class="nc-icon nc-circle-10"></i>
               </div>
               <div class="description">
-                <h4 class="info-title">Total Brokers</h4>
-                <p>{{10 + $brokers}}</p>
+                <h4 class="info-title" style="font-size: 25px; font-weight: 800;">Total Brokers</h4>
+                <p style="font-size: 18px; font-weight: 800;">{{10 + $brokers}}</p>
               </div>
             </div>
           </div>
@@ -100,8 +100,8 @@
                 <i class="nc-icon nc-bulb-63"></i>
               </div>
               <div class="description">
-                <h4 class="info-title">Total Transactions</h4>
-                <p>{{42 + $transactions}}</p>
+                <h4 class="info-title" style="font-size: 25px; font-weight: 800;">Total Transactions</h4>
+                <p style="font-size: 18px; font-weight: 800;">{{42 + $transactions}}</p>
               </div>
             </div>
           </div>

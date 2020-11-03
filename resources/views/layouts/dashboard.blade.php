@@ -14,6 +14,7 @@
 
         <link href="assets/plugins/morris-chart/morris.css" rel="stylesheet">
         <!-- Theme Css -->
+        <script src="{{ asset('dashboard/plugin/sweetalert2/dist/sweetalert2.css')}}"></script>
         <link href="{{ asset('dashboard/css/bootstrap.min.css')}}" rel="stylesheet">
         <link href="{{ asset('dashboard/css/slidebars.min.css')}}" rel="stylesheet">
         <link href="{{ asset('dashboard/css/icons.css')}}" rel="stylesheet">
@@ -463,28 +464,23 @@
 
         <!-- jQuery -->
         <script src="{{ asset('dashboard/js/jquery-3.2.1.min.js')}}"></script>
+        <script src="{{ asset('dashboard/plugin/sweetalert2/dist/sweetalert2.min.js')}}"></script>
         <script src="{{ asset('dashboard/js/popper.min.js')}}"></script>
         <script src="{{ asset('dashboard/js/bootstrap.min.js')}}"></script>
         <script src="{{ asset('dashboard/js/jquery-migrate.js')}}"></script>
         <script src="{{ asset('dashboard/js/modernizr.min.js')}}"></script>
         <script src="{{ asset('dashboard/js/jquery.slimscroll.min.js')}}"></script>
         <script src="{{ asset('dashboard/js/slidebars.min.js')}}"></script>
-
-        <!--plugins js-->
         <script src="{{ asset('dashboard/plugins/counter/jquery.counterup.min.js')}}"></script>
         <script src="{{ asset('dashboard/plugins/waypoints/jquery.waypoints.min.js')}}"></script>
         <script src="{{ asset('dashboard/plugins/sparkline-chart/jquery.sparkline.min.js')}}"></script>
         <script src="{{ asset('dashboard/pages/jquery.sparkline.init.js')}}"></script>
-
         <script src="{{ asset('dashboard/plugins/chart-js/Chart.bundle.js')}}"></script>
         <script src="{{ asset('dashboard/plugins/morris-chart/raphael-min.js')}}"></script>
         <script src="{{ asset('dashboard/plugins/morris-chart/morris.js')}}"></script>
         <script src="{{ asset('dashboard/pages/dashboard-init.js')}}"></script>
         <script src="{{ asset('dashboard/js/jquery.countdown.min.js')}}"></script>
         @livewireScripts
-
-
-        <!--app js-->
         <script src="{{ asset('dashboard/js/jquery.app.js')}}"></script>
         <script>
             $(document).ready(function($) {
@@ -494,6 +490,32 @@
                         $this.html(event.strftime('%D days %H:%M:%S'));
                     });
                 });
+
+                @if(Session::has('status'))
+                    Swal.fire(
+                        'Success!',
+                        '{{Session::get('status')}}',
+                        'success'
+                    )
+                @endif
+
+                @if(Session::has('message'))
+                    Swal.fire(
+                        'Success!',
+                        '{{Session::get('message')}}',
+                        'success'
+                    )
+                @endif
+
+                @if(Session::has('error'))
+                    Swal.fire(
+                        'Error!',
+                        '{{Session::get('error')}}',
+                        'warning'
+                    )
+                @endif
+
+
             });
         </script>
     </body>
