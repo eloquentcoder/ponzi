@@ -20,7 +20,7 @@
                             </div>
                         </div>
                         <div>
-                            Number Of Days: {{ $diff  }}
+                            Number Of Days Till Full Maturity: {{ $diff  }}
                         </div>
                     </p>
                 </div>
