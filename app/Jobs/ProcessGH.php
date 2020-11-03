@@ -38,8 +38,10 @@ class ProcessGH implements ShouldQueue
         $now = Carbon::now();
         $user = User::where([
             ['activated', 1],
-            ['id', '!=', $this->id]
+            ['id', '!=', $this->id],
+            ['role', 'user']
         ])->first();
+
 
         if (!$user) {
             $admin = User::where([['role', 'admin'], ['is_special', 1]])->get()->random();
