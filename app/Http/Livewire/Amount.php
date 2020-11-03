@@ -11,8 +11,10 @@ class Amount extends Component
     public $is_mature = false;
     public $gethelp;
     public $percent;
+    public $amount_percent;
     public $diff;
     public $awaiting;
+
 
     public function mount()
     {
@@ -29,9 +31,27 @@ class Amount extends Component
         $date = Carbon::parse($maturity_period);
         $now = Carbon::now();
         $this->diff = $date->diffInDays($now);
-
-
         $this->percent = ceil(((5  - $this->diff) / 5) * 100);
+        switch ($this->diff) {
+            case 0:
+               $this->amount_percent = 0.5;
+                break;
+            case 1:
+                $this->amount_percent = 0.3;
+                break;
+            case 2:
+                    $this->amount_percent = 0.15;
+                    break;
+            case 3:
+                    $this->amount_percent = 0.06;
+                    break;
+            case 4:
+                    $this->amount_percent = 0.02;
+                    break;
+            default:
+            $this->amount_percent = 0;
+                break;
+        }
     }
 
     public function requestPayment()

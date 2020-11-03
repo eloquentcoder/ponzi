@@ -7,16 +7,16 @@
                 </div>
                 <div class="card-body">
                     <h5 class="card-title">
-                        <span style="font-weight: 900">Current Investment: </span>₦{{ round($gethelp->amount * 0.66666666, (-2)) + round($gethelp->amount * 0.33333333333 * ($percent/100), (-2))  }}</h5>
+                        <span style="font-weight: 900">Current Investment: </span>₦{{ round($gethelp->amount * 0.66666666, (-2)) + round($gethelp->amount  * 0.66666666 *  $amount_percent, (-2))  }}</h5>
                         {{-- <span style="font-weight: 900">Current Investment: </span>₦{{ ceil($gethelp->amount * 0.66666666) }}</h5> --}}
                     <p class="card-text">
                         <div class="progress my-3" style="height: 14px">
                             <div class="progress-bar progress-bar-striped progress-bar-animated bg-success"
                                 role="progressbar"
-                                aria-valuenow="{{ $percent }}"
+                                aria-valuenow="{{ $amount_percent * 2 * 100 }}"
                                 aria-valuemin="0"
                                 aria-valuemax="100"
-                                style="width: {{ $percent }}%">
+                                style="width: {{ $amount_percent * 2 * 100 }}%">
                             </div>
                         </div>
                         <div>
