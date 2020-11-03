@@ -38,20 +38,22 @@ class ProcessGH implements ShouldQueue
         $now = Carbon::now();
         $user = User::where([
             ['activated', 1],
-            ['id', $this->id]
-        ]);
+            ['id', '!=', $this->id]
+        ])->first();
 
-        $admin = User::where([['role', 'admin'], ['is_special', 1]])->get()->random();
-        $get_help = $admin->gethelp()->create([
-            'amount' => $this->provide_help->amount,
-            'merge_status' => 1,
-            'awaiting_to_receive' => 0,
-            'maturity_period' => $now,
-        ]);
+        if (!$user) {
+            $admin = User::where([['role', 'admin'], ['is_special', 1]])->get()->random();
+            $get_help = $admin->gethelp()->create([
+                'amount' => $this->provide_help->amount,
+                'merge_status' => 1,
+                'awaiting_to_receive' => 0,
+                'maturity_period' => $now,
+            ]);
 
-        $this->provide_help->update([
-            'get_help_id' => $get_help->id
-        ]);
+            $this->provide_help->update([
+                'get_help_id' => $get_help->id
+            ]);
+        }
 
     }
 }
