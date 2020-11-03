@@ -27,6 +27,17 @@
         </div>
     @else
     <div class="col-lg-12 col-sm-12">
+        <div class="card text-center bg-white m-b-30">
+            <div class="card-header">
+                Broker's Referral Link
+            </div>
+            <div class="card-body">
+                <h5 class="card-title">{{ auth()->user()->referral_link }}</h5>
+                {{-- <p class="card-text">With supporting text below as a natural lead-in to additional content.</p> --}}
+            </div>
+        </div>
+    </div>
+    <div class="col-lg-12 col-sm-12">
         <div class="card m-b-30">
             <div class="card-body">
                 <h5 class="header-title pb-3" style="display: flex; justify-content: space-between;">
