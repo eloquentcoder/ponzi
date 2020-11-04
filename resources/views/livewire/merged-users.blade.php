@@ -42,7 +42,7 @@
                     Notice
                 </div>
                 <div class="card-body">
-                    <h5 class="card-title">SORRY, THERE IS NO AVAILABLE PARTICIPANT TO RECEIVE FUND AT THE MOMENT.
+                    <h5 class="card-title" style="font-weight: 800; color: green;">SORRY, THERE IS NO AVAILABLE PARTICIPANT TO RECEIVE FUND AT THE MOMENT.
                         YOU WILL BE MERGED TO PAY OUT SOON.</h5>
                     {{-- <p class="card-text">With supporting text below as a natural lead-in to additional content.</p> --}}
                 </div>
