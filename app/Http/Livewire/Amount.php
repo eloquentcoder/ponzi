@@ -34,7 +34,7 @@ class Amount extends Component
             $this->diff = 0;
             $this->percent = 100;
         } else {
-            $this->diff = $date->diffInDays($now);
+            $this->diff = $date->diffInMinutes($now);
             $this->percent = ceil(((5  - $this->diff) / 5) * 100);
         }
 
