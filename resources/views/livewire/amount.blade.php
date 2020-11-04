@@ -29,7 +29,7 @@
                         <button class="btn btn-yellow" wire:click="requestPayment">Request Withdrawal</button>
                     @endif
                     @if ($awaiting == 1)
-                        Request Confirmed. You will be merged to receive pay soon
+                    <span style="color: blue; font-weight:800">Withdrawal has been created successfully. You'll be merged to receive payment soon.</span>
                     @endif
             </div>
         </div>
