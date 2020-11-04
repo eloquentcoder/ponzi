@@ -211,7 +211,7 @@
                 <div class="container-fluid">
                     <div class="page-head" style="display: flex; justify-content: space-between">
                         <h4 class="mt-2 mb-2">@yield('title')</h4>
-                        <a class="btn btn-success text-white" href="{{ route('deposit') }}">Invest Now</a>
+                        <a class="btn btn-success text-white" href="{{ route('deposit') }}/#invest">Invest Now</a>
                         {{-- <a class="btn btn-info text-white" href="{{ route('referrals.withdraw') }}">Withdraw Referral Bonus</a> --}}
                     </div>
 
