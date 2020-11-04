@@ -41,25 +41,27 @@ class AccountActivation extends Component
         $user = User::where('role', 'admin')->get()->random();
         $this->user_id = $user->id;
 
-        $get_help = $user->gethelp()->create([
-            'amount' => 1000,
-            'merge_status' => true,
-        ]);
-
-        $provide_help = $get_help->providehelp()->create([
-            'amount' => 1000,
-            'merge_status' => true,
-            'is_activation' => 1,
-            'user_id' => auth()->user()->id
-        ]);
-
-        DeleteDefaulter::dispatch($provide_help, auth()->user()->id)->delay(now()->addHour(24));
-
-        $this->merged = !$this->merged;
+        $is_help = auth()->user()->providehelp()->where('is_activation', 1)->exists();
 
 
+        if (!$is_help) {
+            $get_help = $user->gethelp()->create([
+                'amount' => 1000,
+                'merge_status' => true,
+            ]);
 
-        $this->continue_clicked = !$this->continue_clicked;
+            $provide_help = $get_help->providehelp()->create([
+                'amount' => 1000,
+                'merge_status' => true,
+                'is_activation' => 1,
+                'user_id' => auth()->user()->id
+            ]);
+
+            DeleteDefaulter::dispatch($provide_help, auth()->user()->id)->delay(now()->addHour(24));
+            $this->merged = !$this->merged;
+            $this->continue_clicked = !$this->continue_clicked;
+        }
+
     }
 
     public function receiptUpload()
