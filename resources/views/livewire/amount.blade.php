@@ -8,7 +8,7 @@
                 <div class="card-body">
                     <h5 class="card-title">
                         <span style="font-weight: 900">Current Investment: </span>₦{{ round($gethelp->amount * 0.66666666, (-2)) + round($gethelp->amount  * 0.66666666 *  $amount_percent, (-2))  }}</h5>
-                        {{-- <span style="font-weight: 900">Current Investment: </span>₦{{ ceil($gethelp->amount * 0.66666666) }}</h5> --}}
+                        <span style="display: flex"> ₦{{ ceil($gethelp->amount * 0.66666666) }}</span></h5>
                     <p class="card-text">
                         <div class="progress my-3" style="height: 14px">
                             <div class="progress-bar progress-bar-striped progress-bar-animated bg-success"
@@ -22,6 +22,7 @@
                         <div>
                             <span style="font-weight: 800">Number Of Days Till Full Maturity: {{ $diff  }}</span>
                         </div>
+                        <span style="display: flex; justify-content: flex-end"> ₦{{ ceil($gethelp->amount * 0.66666666) }}</span>
                     </p>
                 </div>
                 <div class="card-footer text-muted" style="text-align: center;">
