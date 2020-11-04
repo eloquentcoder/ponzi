@@ -14,7 +14,7 @@ class GetHelpObserver
      */
     public function created(GetHelp $getHelp)
     {
-        $date = $getHelp->created_at->addMinutes(5);
+        $date = $getHelp->created_at->addDays(6);
         // $date = $provideHelp->created_at->addMinutes(1);
         $getHelp->update([
             'maturity_period' => $date

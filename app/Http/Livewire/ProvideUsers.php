@@ -37,13 +37,14 @@ class ProvideUsers extends Component
         $amount = $provide_help->amount + ($provide_help->amount * 0.5);
 
         $provide_help->gethelp()->update([
-            'received' => 1
+            'received' => 1,
         ]);
 
         if ($provide_help->amount != 1000) {
             GetHelp::create([
                 'amount' => $amount,
-                'user_id' => $provide_help->user->id
+                'user_id' => $provide_help->user->id,
+                'maturity_period' => now()->addDays(6)
             ]);
 
             if ($provide_help->user->referrer) {
