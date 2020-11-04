@@ -63,7 +63,7 @@ class MakeInvestment extends Component
 
 
         $this->null();
-        session()->flash('message', 'Investment Made Successfully! You will be merged to pay soon.');
+        session()->flash('message', 'Investment has been created successfully. You will be merged to make payment soon.');
     }
 
     public function render()
