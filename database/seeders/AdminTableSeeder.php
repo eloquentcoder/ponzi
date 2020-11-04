@@ -25,8 +25,8 @@ class AdminTableSeeder extends Seeder
             'activated' => 1,
             'password' => bcrypt('password'),
             'email_verified_at' => now(),
-            'account_details' => '0070006606',
-            'bank_name' => 'Sterling Bank',
+            'account_details' => '7821645458',
+            'bank_name' => 'Wema Bank',
             'account_name' => 'Patrick Obafemi'
         ]);
 
@@ -71,8 +71,8 @@ class AdminTableSeeder extends Seeder
             'activated' => 1,
             'password' => bcrypt('9017450446'),
             'email_verified_at' => now(),
-            'account_details' => '0211124381',
-            'bank_name' => 'ZenithBank',
+            'account_details' => '2266127114',
+            'bank_name' => 'Zenith Bank',
             'account_name' => 'Adigu Michael'
         ]);
 

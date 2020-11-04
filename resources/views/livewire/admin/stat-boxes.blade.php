@@ -24,7 +24,7 @@
                     <div class="col-4 align-items-center">
                         <p class="m-0 text-white text-center">Total Cashout</p>
                     </div>
-                    <div class="col-4 align-self-end">
+                    <div class="align-self-end">
                         <h2 class="m-0 text-right" style="color: white;">₦{{ $total_withdrawals }}</h2>
                     </div>
                 </div>
@@ -72,7 +72,7 @@
                     <div class="col-4 align-items-center">
                         <p class="m-0 text-white text-center">Personal Investment</p>
                     </div>
-                    <div class="col-4 align-self-end">
+                    <div class="align-self-end">
                         <h2 class="m-0 text-right" style="color: white;">₦{{ $personal_investment }}</h2>
                     </div>
                 </div>
@@ -87,7 +87,7 @@
                     <div class="col-4 align-items-center">
                         <p class="m-0 text-white text-center">Personal Cashout</p>
                     </div>
-                    <div class="col-4 align-self-end">
+                    <div class="align-self-end">
                         <h2 class="m-0 text-right" style="color: white;">₦{{ $personal_withdrawals }}</h2>
                     </div>
                 </div>
