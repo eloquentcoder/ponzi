@@ -19,6 +19,8 @@ class BrokerController extends BaseController
                                 });
                             })->get();
 
+
+
         return view('user.broker.index', $this->data);
     }
 

@@ -38,6 +38,9 @@
         </div>
     </div>
     <div class="col-lg-12 col-sm-12">
+        <livewire:broker-stat-boxes />
+    </div>
+    <div class="col-lg-12 col-sm-12">
         <div class="card m-b-30">
             <div class="card-body">
                 <h5 class="header-title pb-3" style="display: flex; justify-content: space-between;">
@@ -65,7 +68,16 @@
                                         <td>{{ $item->user->phone_number }}</td>
                                         <td>{{ $item->user->email }}</td>
                                         <td>{{ $item->amount }}</td>
-                                        <td>{{ $item->amount }}</td>
+                                        @if (count(auth()->user()->referrals) >= 60)
+                                            <td>{{ $item->amount * 0.05 }}</td>
+                                        @endif
+                                        @if (count(auth()->user()->referrals) >= 15 && count(auth()->user()->referrals)  <= 60)
+                                            <td>{{ $item->amount * 0.03 }}</td>
+                                        @endif
+                                        @if (count(auth()->user()->referrals) <= 15)
+                                            <td>{{ $item->amount * 0.02 }}</td>
+                                        @endif
+
                                         <td>{{ 'Processed' }}</td>
                                     </tr>
                                 @empty

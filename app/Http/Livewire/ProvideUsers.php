@@ -108,7 +108,7 @@ class ProvideUsers extends Component
     private function getReferralBonus($referrer, $amount)
     {
         $user = User::find($referrer->id);
-        $referral_count = User::where(['referrer_id', $user->id], ['activated', 1])->count();
+        $referral_count = User::where([['referrer_id', $user->id], ['activated', 1]])->count();
 
         if ($referral_count >= 60) {
             return $amount * 0.05;
