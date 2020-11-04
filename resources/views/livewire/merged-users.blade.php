@@ -26,7 +26,7 @@
                             </div>
                         </div>
                         <div class="card-footer text-muted" style="text-align: center;">
-                           <a href="{{ route('invest.single', $helper->id) }}" class="btn" style="background: yellow; color: black; font-weight: 900;">Pay Now</a>
+                           <a href="{{ route('invest.single', $helper->id) }}" class="btn" style="background: yellow; color: black; font-weight: 900;">View Payment</a>
                         </div>
                     </div>
                 </div>
