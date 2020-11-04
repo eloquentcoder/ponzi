@@ -2,7 +2,7 @@
     @if ($providehelpers->count() > 0)
         <div class="row">
             <div class="col-md-12">
-                <h5 class="header-title pb-3">Merged Users</h5>
+                <h5 class="header-title pb-3">Withdrawal Merged List</h5>
             </div>
         </div>
         @foreach ($providehelpers as $helper)

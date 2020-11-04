@@ -11,7 +11,7 @@ class BrokerController extends BaseController
 {
     public function index()
     {
-        $this->help = ProvideHelp::where('confirmed', 1)
+        $this->help = ProvideHelp::where([['confirmed', 1], ['is_activation', 0]])
                             ->where(function($query)
                             {
                                 $query->with('User')->whereHas('User', function($q){

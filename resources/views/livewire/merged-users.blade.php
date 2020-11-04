@@ -2,7 +2,7 @@
     @if ($gethelpers->count() > 0)
         <div class="row">
             <div class="col-md-12">
-                <h5 class="header-title pb-3">Merged Investors</h5>
+                <h5 class="header-title pb-3">Investment Merged List</h5>
             </div>
         </div>
         <div class="row">
@@ -18,8 +18,10 @@
                                         <td>₦{{ $helper->amount }}</td>
                                     </tr>
                                     <tr>
-                                        <th scope="row"> Phone Number</th>
-                                        <td>{{ $helper->user->phone_number }}</td>
+                                        <th scope="row">Expiring Date</th>
+                                        <td>
+                                            {{ $helper->providehelp[0]->expiration_date }}
+                                        </td>
                                     </tr>
                                 </tbody>
                                 </table>

@@ -30,6 +30,15 @@
                                 </tr>
                             </tbody>
                             </table>
+                            <tfoot>
+                                <p style="color: red">
+                                    NOTE: Make Payment Only To The Accounts Details Displayed On Your Dashboard.
+
+                                    Do not Disclose Your Secret Key Or Login Details To Anybody.
+
+                                    Green Rich will Never Ask For Your Secret Key Or Login Details.
+                                </p><br>
+                            </tfoot>
                         </div>
                     </div>
                     <div class="card-footer text-muted" style="text-align: center;">
