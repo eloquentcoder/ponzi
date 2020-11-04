@@ -30,8 +30,14 @@ class Amount extends Component
     {
         $date = Carbon::parse($maturity_period);
         $now = Carbon::now();
-        $this->diff = $date->diffInMinutes($now);
-        $this->percent = ceil(((5  - $this->diff) / 5) * 100);
+        if ($date > $now) {
+            $this->diff = 0;
+            $this->percent = 100;
+        } else {
+            $this->diff = $date->diffInDays($now);
+            $this->percent = ceil(((5  - $this->diff) / 5) * 100);
+        }
+
         switch ($this->diff) {
             case 0:
                $this->amount_percent = 0.5;
