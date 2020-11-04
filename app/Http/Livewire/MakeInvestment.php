@@ -39,7 +39,7 @@ class MakeInvestment extends Component
 
         $comp_amount = auth()->user()->providehelp()->latest('created_at')->value('amount');
 
-        if (!$this->amount >= $comp_amount) {
+        if ($this->amount < $comp_amount) {
             session()->flash('error', 'Amount must not be lower than last investment');
             return;
         }
