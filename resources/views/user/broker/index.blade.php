@@ -54,6 +54,7 @@
                                         <th>Phone Number</th>
                                         <th>Email</th>
                                         <th>Amount</th>
+                                        <th>Bonus</th>
                                         <th>Status</th>
                                     </tr>
                                 </thead>
@@ -63,6 +64,7 @@
                                         <td>{{ $item->user->full_name }}</td>
                                         <td>{{ $item->user->phone_number }}</td>
                                         <td>{{ $item->user->email }}</td>
+                                        <td>{{ $item->amount }}</td>
                                         <td>{{ $item->amount }}</td>
                                         <td>{{ 'Processed' }}</td>
                                     </tr>

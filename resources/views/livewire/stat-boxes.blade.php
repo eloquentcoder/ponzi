@@ -9,7 +9,7 @@
                     <div class="col-4 align-items-center">
                         <p class="m-0 text-white text-center">Total Investment</p>
                     </div>
-                    <div class="col-4 align-self-end">
+                    <div class="col-4 col-4 align-self-end">
                         <h2 class="m-0 text-right" style="color: white;">₦{{ $total_investment }}</h2>
                     </div>
                 </div>
@@ -24,7 +24,7 @@
                     <div class="col-4 align-items-center">
                         <p class="m-0 text-white text-center">Total Cashout</p>
                     </div>
-                    <div class=" align-self-end">
+                    <div class=" col-4 align-self-end">
                         <h2 class="m-0 text-right" style="color: white;">₦{{ $total_withdrawals }}</h2>
                     </div>
                 </div>
@@ -39,7 +39,7 @@
                     <div class="col-4 align-items-center">
                        <p class="m-0 text-white text-center">Referral Bonus</p>
                     </div>
-                    <div class="align-self-end">
+                    <div class="col-4 align-self-end">
                         <h2 class="m-0 text-right" style="color: white;">₦{{ $referral_bonus }}</h2>
                     </div>
                 </div>
@@ -54,7 +54,7 @@
                     <div class="col-4 align-items-center">
                         <p class="m-0 text-white text-center">Referral Count</p>
                     </div>
-                    <div class=" align-self-end">
+                    <div class="col-4 align-self-end">
                         <h2 class="m-0 text-right" style="color: white;">0</h2>
                     </div>
                 </div>
