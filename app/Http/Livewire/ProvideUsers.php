@@ -7,6 +7,7 @@ use App\Models\GetHelp;
 use Livewire\Component;
 use App\Models\ProvideHelp;
 use App\Models\Transaction;
+use Illuminate\Support\Facades\Storage;
 
 class ProvideUsers extends Component
 {
@@ -64,6 +65,10 @@ class ProvideUsers extends Component
                 'user_id' => auth()->user()->id
             ]);
 
+            if ($provide_help->proof_of_payment) {
+                Storage::delete(['photos/'.$provide_help->proof_of_payment]);
+            }
+
             session()->flash('message', 'Payment Confirmed Successfully!');
             if (auth()->user()->role == 'admin') {
                 return redirect()->route('admin.testimony.make');
@@ -87,6 +92,10 @@ class ProvideUsers extends Component
             'type' => 'get_help',
             'user_id' => auth()->user()->id
         ]);
+
+        if ($provide_help->proof_of_payment) {
+            Storage::delete(['photos/'.$provide_help->proof_of_payment]);
+        }
 
             session()->flash('message', 'Payment Confirmed Successfully!');
             if (auth()->user()->role == 'admin') {
