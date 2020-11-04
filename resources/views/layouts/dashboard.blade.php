@@ -55,7 +55,9 @@
                         </div>
                         <div class="text-center text-white mt-2">
                             <h6>{{ auth()->user()->full_name }}</h6>
-                            <p class="m-0" style="color: white; font-size: 12px">{{ auth()->user()->referral_link }}</p>
+                            @if (auth()->user()->is_broker == 1)
+                                <p class="m-0" style="color: white; font-size: 12px">{{ auth()->user()->referral_link }}</p>
+                            @endif
                         </div>
                     </div>
 
