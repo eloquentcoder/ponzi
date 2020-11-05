@@ -44,7 +44,7 @@ class ProcessWithdrawRequest implements ShouldQueue
 
         $this->gethelp->update([
             'merge_status' => 1
-        ])
+        ]);
 
     }
 }
