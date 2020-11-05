@@ -30,7 +30,7 @@ class Amount extends Component
     public function calculatePercent($maturity_period)
     {
         $date = Carbon::parse($maturity_period);
-        $now = Carbon::now();
+        $now = Carbon::now()->addDays(5);
 
         if ($date < $now) {
             $this->diff = 0;
