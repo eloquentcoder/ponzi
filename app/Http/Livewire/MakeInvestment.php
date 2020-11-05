@@ -59,7 +59,7 @@ class MakeInvestment extends Component
             'amount' => $this->amount,
         ]);
 
-        ProcessGH::dispatch($provide_help, auth()->user()->id)->delay(now()->addMinutes(1));
+        ProcessGH::dispatch($provide_help, auth()->user()->id)->delay(now()->addMinutes(3));
 
 
         $this->null();
