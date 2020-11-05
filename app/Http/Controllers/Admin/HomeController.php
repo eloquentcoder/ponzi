@@ -49,8 +49,21 @@ class HomeController extends BaseController
 
     public function users()
     {
-        $this->users = User::where('role', 'admin')->paginate(15);
-        return view('admin.users.index');
+        $this->users = User::where('role', 'user')->paginate(15);
+        return view('admin.users.index', $this->data);
     }
+
+    public function toggleSuspension($id)
+    {
+        $user = User::find($id);
+        if ($user->is_restricted == 0) {
+            $user->update(['is_restricted' => 1]);
+        } else {
+            $user->update(['is_restricted' => 0]);
+        }
+
+        return redirect()->back()->with('message', 'User Suspension Status Updated');
+    }
+
 
 }

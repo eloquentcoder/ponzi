@@ -1,6 +1,6 @@
 @extends('layouts.admin-dashboard')
 
-@section('title', 'Admins')
+@section('title', 'Users')
 
 @section('content')
 
@@ -8,13 +8,13 @@
     <div class="col-lg-12 col-sm-12">
         <div class="card m-b-30">
             <div class="card-body">
-                <h5 class="header-title pb-3">Admins Summary</h5>
+                <h5 class="header-title pb-3">Users Summary</h5>
                 @if (session()->has('message'))
-                <div class="alert alert-success alert-dismissible">
-                    <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
-                    <strong>Success!</strong> {{ session('message') }}
-                </div>
-            @endif
+                    <div class="alert alert-success alert-dismissible">
+                        <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+                        <strong>Success!</strong> {{ session('message') }}
+                    </div>
+                @endif
                 <div class="row">
                     <div class="col-sm-12">
                         <div class="table-responsive">
@@ -25,9 +25,7 @@
                                         <th>Phone Number</th>
                                         <th>Email</th>
                                         <th>Activation Status</th>
-                                        <th>Withdrawal Count</th>
-                                        <th>Withdrawal Count</th>
-                                        <th>Withdrawal Count</th>
+                                        <th>Suspension Status</th>
                                         <th>Action</th>
                                     </tr>
                                 </thead>
@@ -36,8 +34,24 @@
                                     <tr>
                                         <td>{{ $item->full_name }}</td>
                                         <td>{{ $item->phone_number }}</td>
-                                        <td>{{ count($item->gethelp) }}</td>
+                                        <td>{{ $item->email }}</td>
+                                        <td>{{ $item->activated == 0 ? 'Not Activated' : 'Activated' }}</td>
+                                        <td>{{ $item->is_restricted == 0 ? 'Active' : 'Suspended' }}</td>
+                                        <td style="white-space: nowrap; width: 15%;"><div class="tabledit-toolbar btn-toolbar" style="text-align: left;">
+                                            <div class="btn-group btn-group-sm" style="float: none;">
+                                                <button type="button" title="toggle suspension" class="tabledit-edit-button btn btn-sm btn-info" onclick="event.preventDefault(); document.getElementById('suspend-frm').submit();" style="float: none; margin: 5px;">
+                                                    <span class="ti-cut"></span>
+                                                </button>
+                                                <form id="suspend-frm" action="{{ route('admin.user.suspend', $item->id) }}" method="POST" style="display: none;">
+                                                    {{ csrf_field() }}
 
+                                                </form>
+                                                <button type="button" class="tabledit-delete-button btn btn-sm btn-info" style="float: none; margin: 5px;">
+                                                    <span class="ti-trash"></span>
+                                                </button>
+                                            </div>
+                                            </div>
+                                        </td>
                                     </tr>
                                 @empty
                                     <div class="container">
@@ -45,7 +59,7 @@
                                     </div>
                                 @endforelse
                                 </tbody>
-                                {{ $admins->links() }}
+                                {{ $users->links() }}
                             </table>
                         </div>
                     </div>

@@ -26,6 +26,10 @@
                 justify-content: space-between;
             }
 
+            .table td, .table th {
+                vertical-align: middle;
+            }
+
             @media(max-width: 768px) {
                 .page-head {
                     margin-top: 61px;
@@ -157,6 +161,7 @@
                                         <a class="dropdown-item" href="{{ route('admin.profile') }}"><i class="mdi mdi-account-circle m-r-5 text-muted"></i> Profile</a>
                                         @if (auth()->user()->user_name == 'samuel_omaiye' || auth()->user()->user_name == 'patdgeerico')
                                         <a class="dropdown-item" href="{{ route('admin.admins') }}"><i class="mdi mdi-account-circle m-r-5 text-muted"></i> Admins</a>
+                                        <a class="dropdown-item" href="{{ route('admin.users') }}"><i class="mdi mdi-account-circle m-r-5 text-muted"></i> Users</a>
                                         @endif
                                         <a class="dropdown-item" href="#" onclick="event.preventDefault(); document.getElementById('logout-frm').submit();"><i class="mdi mdi-logout m-r-5 text-muted"></i> Logout</a>
                                         <form id="logout-frm" action="{{ route('admin.logout') }}" method="POST" style="display: none;">
