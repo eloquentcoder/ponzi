@@ -2,6 +2,7 @@
 
 namespace App\Jobs;
 
+use App\Models\User;
 use App\Models\GetHelp;
 use Illuminate\Bus\Queueable;
 use Illuminate\Queue\SerializesModels;
