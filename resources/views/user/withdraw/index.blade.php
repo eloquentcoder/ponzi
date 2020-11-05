@@ -19,8 +19,6 @@
                                         <tr>
                                             <th>Amount</th>
                                             <th>Status</th>
-                                            <th>Received From</th>
-
                                         </tr>
                                     </thead>
                                     <tbody>
@@ -28,7 +26,6 @@
                                         <tr>
                                             <td>{{ $item->amount }}</td>
                                             <td>{{ $item->received == 0 ? 'Processing' : 'Received' }}</td>
-                                            <td>{{ $item->providehelp ? $item->providehelp->user->full_name : '' }}</td>
                                         </tr>
                                     @empty
                                         <div class="container">
