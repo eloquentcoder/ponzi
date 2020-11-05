@@ -5,6 +5,7 @@ namespace App\Http\Livewire;
 use Carbon\Carbon;
 use App\Models\GetHelp;
 use Livewire\Component;
+use App\Jobs\ProcessWithdrawRequest;
 
 class Amount extends Component
 {
@@ -66,6 +67,8 @@ class Amount extends Component
         $this->gethelp->update([
             'awaiting_to_receive' => 1
         ]);
+
+        // ProcessWithdrawRequest::dispatch($this->gethelp, auth()->user()->id);
         $this->awaiting = $this->gethelp->awaiting_to_receive;
 
     }
