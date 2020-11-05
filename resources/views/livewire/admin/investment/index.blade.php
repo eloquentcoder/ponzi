@@ -10,7 +10,7 @@
                                 <table class="table table-hover m-b-0">
                                     <thead>
                                         <tr>
-                                            <th>user With ID</th>
+                                            <th>Investor</th>
                                             <th>Amount</th>
                                             <th>Merge Status</th>
                                             <th>Confirmation Status</th>
