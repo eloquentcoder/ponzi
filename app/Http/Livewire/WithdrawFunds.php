@@ -13,6 +13,15 @@ class WithdrawFunds extends Component
 
     public $amount;
     public $password;
+    public $referral_bonus;
+    public $hasbrokers;
+
+    public function mount()
+    {
+       $this->referral_bonus = User::find(auth()->user()->id)->referral_bonus;
+       $this->hasbrokers = User::where([['activated', 1], ['referrer_id', auth()->user()->id]])->count();
+    }
+
 
     protected function null()
     {
@@ -26,29 +35,7 @@ class WithdrawFunds extends Component
             return $this->addError('password', 'Password Is Incorrect, Check And Try Again');
         }
 
-        $provided = ProvideHelp::where([
-            ['user_id', auth()->user()->id],
-            ['confirmed', 0],
-        ])->exists();
-
-        $get_process = GetHelp::where([
-            ['user_id', auth()->user()->id],
-            ['received', 0],
-        ])->exists();
-
-        $hasbrokers = User::where([['activated', 1], ['referrer_id', auth()->user()->id]])->count();
-
-        if ($provided || $get_process) {
-            session()->flash('error', 'You have a pending investment. Please complete that to continue');
-            return;
-        }
-
-        if (auth()->user()->referral_bonus < 5000) {
-            session()->flash('error', 'Your referral bonus should not be less than 5,000 naira');
-            return;
-        }
-
-        if ($hasbrokers < 15) {
+        if ($this->hasbrokers < 15) {
             session()->flash('error', 'Your Brokers should be no less than 15');
             return;
         }

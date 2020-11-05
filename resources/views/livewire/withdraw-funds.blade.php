@@ -17,6 +17,11 @@
                             <strong>Note!</strong> {{ session('error') }}
                         </div>
                     @endif
+                    @if ($hasbrokers < 15 || $referral_bonus < 5000)
+                        <span>
+                            <p style="font-weight: 900; text-align: center;">You need to have a mininum of ₦5,000 and at least 15 referrals to withdraw any funds</p>
+                        </span>
+                    @else
                         <form role="form" wire:submit.prevent="withrawBonus">
                             <div class="form-group">
                                 <label>Amount</label>
@@ -34,6 +39,7 @@
                             @endif
                             <button type="submit" class="btn btn-success">Submit</button>
                         </form>
+                    @endif
                     </div>
                 </div>
             </div>
