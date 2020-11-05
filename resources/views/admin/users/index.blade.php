@@ -55,7 +55,7 @@
                                     </tr>
                                 @empty
                                     <div class="container">
-                                        <p style="text-align: center">No Admins Yet</p>
+                                        <p style="text-align: center">No Users Yet</p>
                                     </div>
                                 @endforelse
                                 </tbody>
