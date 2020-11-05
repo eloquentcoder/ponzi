@@ -43,6 +43,10 @@
                 font-weight: 700;
             }
 
+            svg {
+                width: 15px;
+            }
+
         </style>
     </head>
 
