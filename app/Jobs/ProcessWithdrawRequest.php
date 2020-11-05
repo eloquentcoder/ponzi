@@ -34,9 +34,10 @@ class ProcessWithdrawRequest implements ShouldQueue
      */
     public function handle()
     {
-        // $ph = Provide
-        // if (condition) {
-        //     # code...
-        // }
+
+        $ph = ProvideHelp::where(['merge_status', 0])->pluck('amount')->toArray();
+        if ($ph) {
+            # code...
+        }
     }
 }
