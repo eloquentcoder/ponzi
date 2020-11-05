@@ -20,7 +20,7 @@
                                     <tbody>
                                         @forelse ($investments as $item)
                                         <tr>
-                                            <td>{{ $item->user_id }}</td>
+                                            <td>{{ $item->user->full_name }}</td>
                                             <td>{{ $item->amount }}</td>
                                             <td>{{ $item->merge_status == 0 ? 'Not Merged' : 'Merged' }}</td>
                                             <td>{{ $item->confirmed == 0 ? 'Not Confirmed' : 'Confirmed' }}</td>
