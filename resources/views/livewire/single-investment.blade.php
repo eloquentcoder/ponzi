@@ -82,5 +82,21 @@
                 </div>
             </div>
         </div>
+
+    @else
+    <div class="row">
+        <div class="col-lg-12 col-sm-12">
+            <div class="card text-center bg-white m-b-30">
+                <div class="card-header">
+                   Note
+                </div>
+                <div class="card-body">
+                    <h5 class="card-title">Your Investment has been confirmed. Go back to dashboard</h5>
+                    {{-- <p class="card-text">With supporting text below as a natural lead-in to additional content.</p> --}}
+                    <a href="{{ route('dashboard') }}" class="btn btn-success btn-lg">Go To Dashboard</a>
+                </div>
+            </div>
+        </div>
+    </div>
     @endif
 </div>
