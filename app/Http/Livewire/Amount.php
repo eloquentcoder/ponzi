@@ -14,6 +14,8 @@ class Amount extends Component
     public $percent;
     public $amount_percent;
     public $diff;
+    public $date;
+    public $diffCounter;
     public $awaiting;
 
 
@@ -29,14 +31,15 @@ class Amount extends Component
 
     public function calculatePercent($maturity_period)
     {
-        $date = Carbon::parse($maturity_period);
-        $now = Carbon::now()->addDays(5);
+        $this->date = Carbon::parse($maturity_period);
+        $now = Carbon::now()->addDays(6);
 
-        if ($date < $now) {
+        if ($this->date < $now) {
             $this->diff = 0;
             $this->percent = 100;
         } else {
-            $this->diff = $date->diffInDays($now);
+            $this->diff = $this->date->diffInDays($now);
+            $this->diffCounter = $this->date->diff($now)->format('%D:%H:%I:%S');
             $this->percent = ceil(((5  - $this->diff) / 5) * 100);
         }
 
@@ -67,7 +70,7 @@ class Amount extends Component
         $this->gethelp->update([
             'awaiting_to_receive' => 1
         ]);
-        ProcessWithdrawRequest::dispatch($this->gethelp, auth()->user()->id)->delay(now()->addMinutes(3));
+        ProcessWithdrawRequest::dispatch($this->gethelp, auth()->user()->id)->delay(now()->addMinutes(1));
         $this->awaiting = $this->gethelp->awaiting_to_receive;
 
     }

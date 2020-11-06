@@ -490,9 +490,20 @@
                     var $this = $(this), finalDate = $(this).data('countdown');
                     $this.countdown(finalDate, function(event) {
                         $this.html(event.strftime(''
-    + '<span>%H</span> hr '
-    + '<span>%M</span> min '
-    + '<span>%S</span> sec'));
+                        + '<span>%H</span> hr '
+                        + '<span>%M</span> min '
+                        + '<span>%S</span> sec'));
+                    });
+                });
+
+                $('[data-wth-countdown]').each(function() {
+                    var $this = $(this), finalDate = $(this).data('wth-countdown');
+                    $this.countdown(finalDate, function(event) {
+                        $this.html(event.strftime(''
+                        + '<span>%D</span> days '
+                        + '<span>%H</span> hr '
+                        + '<span>%M</span> min '
+                        + '<span>%S</span> sec'));
                     });
                 });
 

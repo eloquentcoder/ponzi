@@ -8,4 +8,6 @@
 
     <livewire:provide-users />
 
+    <livewire:amount />
+
 @endsection

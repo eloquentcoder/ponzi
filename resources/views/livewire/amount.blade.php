@@ -21,7 +21,7 @@
                         </div>
                         <span style="display: flex; justify-content: flex-end; font-weight:800"> ₦{{ ceil($gethelp->amount) }}</span>
                         <div>
-                            <span style="font-weight: 800">Number Of Days Till Full Maturity: {{ $diff  }}</span>
+                            <span style="font-weight: 800"><div style="color: red" data-wth-countdown="{{ $date }}"></div></span>
                         </div>
                     </p>
                 </div>
