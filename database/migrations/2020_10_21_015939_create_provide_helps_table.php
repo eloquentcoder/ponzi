@@ -22,6 +22,7 @@ class CreateProvideHelpsTable extends Migration
             $table->string('receipt_no')->nullable();
             $table->unsignedBigInteger('get_help_id')->nullable();
             $table->dateTime('expiration_date')->nullable();
+            $table->boolean('is_admin')->default(0);
             $table->boolean('is_activation')->default(0);
             $table->foreign('get_help_id')->references('id')->on('get_helps')->onDelete('cascade')->onUpdate('cascade');
             $table->unsignedBigInteger('user_id');

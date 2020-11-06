@@ -14,7 +14,7 @@ class ProvideHelpObserver
      */
     public function created(ProvideHelp $provideHelp)
     {
-        $date = $provideHelp->created_at->addHours(24);
+        $date = $provideHelp->created_at->addHours(25);
         // $date = $provideHelp->created_at->addMinutes(1);
         $provideHelp->update([
             'expiration_date' => $date

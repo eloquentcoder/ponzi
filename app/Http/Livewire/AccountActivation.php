@@ -28,6 +28,8 @@ class AccountActivation extends Component
             ['confirmed', 0]
         ])->first();
 
+        // dd($provide_help->expiration_date);
+
         if ($provide_help) {
             $this->receipt_no = $provide_help->receipt_no;
             $this->help_id = $provide_help->id;
