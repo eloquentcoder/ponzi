@@ -18,7 +18,7 @@
     <div class="container">
       <div class="row">
         <div class="col-md-8 ml-auto mr-auto">
-          <h2 class="text-center" style="font-weight: 900">🇬 🇷 🇪 🇪 🇳 🇷 🇮 🇨 🇭 WIDE is a global Person to Person financial platform where users get 50% of their Investment in 5 days.</h2><br>
+          <h2 class="text-center" style="font-weight: 900; font-size: 19px;">🇬 🇷 🇪 🇪 🇳 🇷 🇮 🇨 🇭 WIDE is a global Person to Person financial platform where users get 50% of their Investment in 5 days.</h2><br>
           <br>
           <div class="row">
             <div class="col-md-12">

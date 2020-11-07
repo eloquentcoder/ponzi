@@ -33,9 +33,9 @@ class MakeInvestment extends Component
             return $this->addError('password', 'Password Is Incorrect, Check And Try Again');
         }
 
-        $provided = auth()->user()->phtransactions()->where('confirmed', 0)->exists();
+        $provided = auth()->user()->providehelp()->where('confirmed', 0)->exists();
 
-        $get_process = auth()->user()->ghtransactions()->where('received', 0)->exists();
+        $get_process = auth()->user()->gethelp()->where('received', 0)->exists();
 
         $comp_amount = auth()->user()->providehelp()->latest('created_at')->value('amount');
 

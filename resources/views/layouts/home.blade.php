@@ -96,11 +96,11 @@
           </ul>
         </nav>
         <div class="credits ml-auto">
-          <span class="copyright" style="font-size: 17px; font-weight: 800">
+          <span class="copyright" style="font-size: 13px; font-weight: 800">
             ©
             <script>
               document.write(new Date().getFullYear())
-            </script> Green Rich Wide Team
+            </script> <span style="font-size: 13px">Green Rich Wide Team | All Rights Reserved</span>
           </span>
         </div>
       </div>
