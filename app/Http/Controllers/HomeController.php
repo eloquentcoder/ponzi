@@ -31,7 +31,7 @@ class HomeController extends BaseController
 
     public function aboutPage()
     {
-        
+        return view('home.about');
     }
 
 

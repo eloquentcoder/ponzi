@@ -7,8 +7,7 @@ use App\Models\GetHelp;
 use Livewire\Component;
 use App\Models\ProvideHelp;
 use App\Models\Transaction;
-use App\Models\GHTransaction;
-use App\Models\PHTransaction;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Storage;
 
 class ProvideUsers extends Component
@@ -27,76 +26,76 @@ class ProvideUsers extends Component
 
     public function confirmPay($helper)
     {
-        $provide_help = PHTransaction::find($helper['id']);
+        $provide_help = ProvideHelp::find($helper['id']);
         $provide_help->update([
             'confirmed' => 1
         ]);
-        $amount = $provide_help->providehelp->amount + ($provide_help->providehelp->amount * 0.5);
+        $amount = $provide_help->amount + ($provide_help->amount * 0.5);
 
-        $gethelp = $provide_help->providehelp->gethelp;
-        $gh = GHTransaction::where([
-            ['get_help_id', $gethelp->id],
-            ['amount', $provide_help->amount]
-        ])->first();
-        $gh->update([
-            'received' => 1,
-        ]);
+        // $gethelp = $provide_help->gethelp;
+        // $gh = GHTransaction::where([
+        //     ['get_help_id', $gethelp->id],
+        //     ['amount', $provide_help->amount]
+        // ])->first();
+        // $gh->update([
+        //     'received' => 1,
+        // ]);
 
-        $provide_exists = PHTransaction::where([['provide_help_id', $provide_help->providehelp->id], ['confirmed', 0]])->exists();
+        // $provide_exists = PHTransaction::where([['provide_help_id', $provide_help->providehelp->id], ['confirmed', 0]])->exists();
 
-        if ($provide_help->providehelp->amount != 1000 && !$provide_exists) {
-            GetHelp::create([
-                'amount' => $amount,
-                'user_id' => $provide_help->providehelp->user->id,
-                'maturity_period' => now()->addDays(6)
-            ]);
+        // if ($provide_help->providehelp->amount != 1000 && !$provide_exists) {
+        //     GetHelp::create([
+        //         'amount' => $amount,
+        //         'user_id' => $provide_help->providehelp->user->id,
+        //         'maturity_period' => now()->addDays(6)
+        //     ]);
 
-            if ($provide_help->$providehelp->user->referrer) {
-                // $amount_referral = $provide_help->amount * 0.02;
-                $amount_referral = $this->getReferralBonus($provide_help->providehelp->user->referrer, $provide_help->providehelp->amount);
-                $user = User::find($provide_help->providehelp->user->referrer->id);
-                $user->increment('referral_bonus', $amount_referral);
-            }
+        //     if ($provide_help->$providehelp->user->referrer) {
+        //         // $amount_referral = $provide_help->amount * 0.02;
+        //         $amount_referral = $this->getReferralBonus($provide_help->providehelp->user->referrer, $provide_help->providehelp->amount);
+        //         $user = User::find($provide_help->providehelp->user->referrer->id);
+        //         $user->increment('referral_bonus', $amount_referral);
+        //     }
 
-            Transaction::create([
-                'amount' => $provide_help->amount,
-                'type' => 'provide_help',
-                'user_id' => $provide_help->providehelp->user->id
-            ]);
+        //     Transaction::create([
+        //         'amount' => $provide_help->amount,
+        //         'type' => 'provide_help',
+        //         'user_id' => $provide_help->providehelp->user->id
+        //     ]);
 
-            Transaction::create([
-                'amount' => $provide_help->providehelp->amount,
-                'type' => 'get_help',
-                'user_id' => auth()->user()->id
-            ]);
+        //     Transaction::create([
+        //         'amount' => $provide_help->providehelp->amount,
+        //         'type' => 'get_help',
+        //         'user_id' => auth()->user()->id
+        //     ]);
 
-            if ($provide_help->proof_of_payment) {
-                Storage::delete(['photos/'.$provide_help->proof_of_payment]);
-            }
+        //     if ($provide_help->proof_of_payment) {
+        //         Storage::delete(['photos/'.$provide_help->proof_of_payment]);
+        //     }
 
-            session()->flash('message', 'Payment Confirmed Successfully!');
-            if (auth()->user()->role == 'admin') {
-                return redirect()->route('admin.testimony.make');
-            }
-            return redirect()->route('testimony.make');
+        //     session()->flash('message', 'Payment Confirmed Successfully!');
+        //     if (auth()->user()->role == 'admin') {
+        //         return redirect()->route('admin.testimony.make');
+        //     }
+        //     return redirect()->route('testimony.make');
 
-        }
+        // }
 
-        $provide_help->providehelp->user()->update([
-            'activated' => 1
-        ]);
+        // $provide_help->providehelp->user()->update([
+        //     'activated' => 1
+        // ]);
 
-        Transaction::create([
-            'amount' => $provide_help->amount,
-            'type' => 'activation',
-            'user_id' => $provide_help->providehelp->user->id
-        ]);
+        // Transaction::create([
+        //     'amount' => $provide_help->amount,
+        //     'type' => 'activation',
+        //     'user_id' => $provide_help->providehelp->user->id
+        // ]);
 
-        Transaction::create([
-            'amount' => $provide_help->amount,
-            'type' => 'get_help',
-            'user_id' => auth()->user()->id
-        ]);
+        // Transaction::create([
+        //     'amount' => $provide_help->amount,
+        //     'type' => 'get_help',
+        //     'user_id' => auth()->user()->id
+        // ]);
 
         if ($provide_help->proof_of_payment) {
             Storage::delete(['photos/'.$provide_help->proof_of_payment]);
@@ -128,9 +127,9 @@ class ProvideUsers extends Component
 
     public function render()
     {
-        $prov_ids = ProvideHelp::with('transactions')->whereIn('get_help_id', $this->get_ids ?? [])->pluck('id')->toArray();
+        $prov_ids = DB::table('get_provide')->whereIn('get_help_id', $this->get_ids ?? [])->pluck('provide_help_id')->toArray();
         return view('livewire.provide-users', [
-            'providehelpers' => PHTransaction::where('confirmed', 0)->whereIn('provide_help_id', $prov_ids ?? [])->get()
+            'providehelpers' => ProvideHelp::where('confirmed', 0)->whereIn('provide_help_id', $prov_ids ?? [])->get()
         ]);
     }
 }

@@ -12,7 +12,7 @@
         <h3 style="font-weight: 700">Offers you daily growth of your INVESTMENT <br>(cashable every 5 days).</h3>
         <br />
         <a href="{{ route('register') }}" class="btn btn-outline-neutral btn-round"><i class="fa fa-play"></i>Get Started</a>
-        <a type="button" href="{{ route('home') }}/#about" class="btn btn-outline-neutral btn-round">Read More</a>
+        <a type="button" href="{{ route('about') }}" class="btn btn-outline-neutral btn-round">Read More</a>
       </div>
     </div>
   </div>
@@ -24,7 +24,7 @@
             <h2 class="title" style="font-weight: 800">Your Key To Financial Freedom</h2>
             <h5 class="description" style="font-weight: 700">Green Rich Wide Investment is a global community, welcoming people from every discipline and culture, we thrive to reach out to people across the globe with the aim of freeing the world from financial crisis.</h5>
             <br>
-            <a href="#" class="btn btn-success btn-round">See Details</a>
+            <a href="{{ route('about') }}" class="btn btn-success btn-round">See Details</a>
           </div>
         </div>
         <br/>

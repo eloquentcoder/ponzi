@@ -22,6 +22,11 @@
         <link href="{{ asset('dashboard/css/style.css')}}" rel="stylesheet">
         @livewireStyles
         <style>
+
+            html, body {
+                font-weight: 800;
+            }
+
             .page-head {
                 display: flex;
                 justify-content: space-between;
@@ -51,7 +56,7 @@
 
                     <div class="user-box">
                         <div class="d-flex justify-content-center">
-                            <img src="{{ asset('default.jpg') }}" alt="#" class="img-fluid rounded-circle">
+                            <img src="{{ asset('flag.jpg') }}" alt="#" class="img-fluid rounded-circle">
                         </div>
                         <div class="text-center text-white mt-2">
                             <h6>{{ auth()->user()->full_name }}</h6>
@@ -79,12 +84,7 @@
                         <li>
                             <a href="{{ route('broker') }}">
                                 <i class="mdi mdi-table"></i>
-                                <span>Broker</span>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="{{ route('referrals') }}">
-                                <i class="mdi mdi-google-circles-extended"></i> <span>Referrals</span>
+                                <span>Become A Broker</span>
                             </a>
                         </li>
                         <li>
@@ -221,7 +221,7 @@
 
                 <!--footer section start-->
                 <footer class="footer">
-                    2020 &copy; Green Rich Wide Investment.
+                    2020 &copy; Green Rich Wide Investment | All Rights Reserved.
                 </footer>
                 <!--footer section end-->
 

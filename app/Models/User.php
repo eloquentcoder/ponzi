@@ -101,15 +101,6 @@ class User extends Authenticatable implements MustVerifyEmail
         return $this->hasMany(ProvideHelp::class);
     }
 
-    public function ghtransactions()
-    {
-        return $this->hasManyThrough(GHTransaction::class, GetHelp::class);
-    }
-
-    public function phtransactions()
-    {
-        return $this->hasManyThrough(PHTransaction::class, ProvideHelp::class);
-    }
 
 
 }

@@ -17,11 +17,6 @@ class CreateGetProvideTable extends Migration
             $table->id();
             $table->unsignedBigInteger('get_help_id');
             $table->unsignedBigInteger('provide_help_id');
-            $table->integer('amount');
-            $table->boolean('received')->default(false);
-            $table->boolean('confirmed')->default(false);
-            $table->string('proof_of_payment')->nullable();
-            $table->string('receipt_no')->nullable();
             $table->timestamps();
         });
     }

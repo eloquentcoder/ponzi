@@ -32,7 +32,7 @@
                                         </tr>
                                     @empty
                                         <div class="container">
-                                            <p style="text-align: center">No Referrals Yet</p>
+                                            <p style="text-align: center">No Investments Yet</p>
                                         </div>
                                     @endforelse
                                     </tbody>

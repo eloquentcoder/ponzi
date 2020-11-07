@@ -16,7 +16,7 @@ class ProvideHelp extends Model
 
     public function gethelp()
     {
-        return $this->belongsTo(GetHelp::class, 'get_help_id', 'id');
+        return $this->belongsToMany(GetHelp::class, 'get_help_id', 'id');
     }
 
     public function user()
@@ -24,20 +24,20 @@ class ProvideHelp extends Model
         return $this->belongsTo(User::class, 'user_id', 'id');
     }
 
-    public function transactions()
-    {
-        return $this->hasMany(PHTransaction::class);
-    }
+    // public function transactions()
+    // {
+    //     return $this->hasMany(PHTransaction::class);
+    // }
 
     public function getExpirydateAttribute()
     {
        return $this->created_at->addHours(24)->diffForHumans();
     }
 
-    public function geexpiryTimeAttribute(Type $var = null)
-    {
-        # code...
-    }
+    // public function geexpiryTimeAttribute(Type $var = null)
+    // {
+    //     # code...
+    // }
 
 
 }

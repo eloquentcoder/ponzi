@@ -13,7 +13,7 @@ class GetHelp extends Model
 
     public function providehelp()
     {
-        return $this->hasMany(ProvideHelp::class);
+        return $this->belongsToMany(ProvideHelp::class);
     }
 
     public function user()
@@ -21,9 +21,9 @@ class GetHelp extends Model
         return $this->belongsTo(User::class);
     }
 
-    public function transactions()
-    {
-        return $this->hasMany(GHTransaction::class, 'get_help_id', 'id');
-    }
+    // public function transactions()
+    // {
+    //     return $this->hasMany(GHTransaction::class, 'get_help_id', 'id');
+    // }
 
 }
