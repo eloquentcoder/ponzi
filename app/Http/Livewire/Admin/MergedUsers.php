@@ -4,6 +4,7 @@ namespace App\Http\Livewire\Admin;
 
 use App\Models\GetHelp;
 use Livewire\Component;
+use App\Models\GHTransaction;
 
 class MergedUsers extends Component
 {
@@ -13,15 +14,15 @@ class MergedUsers extends Component
 
     public function mount()
     {
-        $this->ids = auth()->user()->providehelp()->where('confirmed', 0)->pluck('get_help_id')->toArray();
-        $this->provider = auth()->user()->providehelp()->where('confirmed', 0)->exists();
+        $this->ids = auth()->user()->providehelp()->pluck('get_help_id')->toArray();
+        $this->provider = auth()->user()->providehelp()->exists();
     }
 
 
     public function render()
     {
         return view('livewire.admin.merged-users' , [
-            'gethelpers' => GetHelp::whereIn('id', $this->ids)->get()
+            'gethelpers' => GHTransaction::whereIn('id', $this->ids)->get()
         ]);
     }
 }

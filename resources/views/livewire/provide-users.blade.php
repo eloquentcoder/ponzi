@@ -26,18 +26,18 @@
                                         </tr>
                                         <tr>
                                             <th scope="row">Name</th>
-                                            <td>{{ $helper->user->full_name }}</td>
+                                            <td>{{ $helper->providehelp->user->full_name }}</td>
                                         </tr>
                                         <tr>
                                             <th scope="row"> Phone Number</th>
-                                            <td>{{ $helper->user->phone_number }}</td>
+                                            <td>{{ $helper->providehelp->user->phone_number }}</td>
                                         </tr>
                                     </tbody>
                                     </table>
                                 </div>
                             </div>
                             <div class="card-footer text-muted" style="text-align: center;">
-                                <span style="font-weight: 800">Time Expires At: <div style="color: red" data-countdown="{{ $helper->expiration_date ?? \Carbon\Carbon::now()->addDays(1) }}"></div></span>
+                                <span style="font-weight: 800">Time Expires At: <div style="color: red" data-countdown="{{ $helper->providehelp->expiration_date ?? \Carbon\Carbon::now()->addDays(1) }}"></div></span>
                             </div>
                         </div>
                     </div>

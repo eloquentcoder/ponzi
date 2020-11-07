@@ -7,6 +7,8 @@ use App\Models\GetHelp;
 use Livewire\Component;
 use App\Models\ProvideHelp;
 use App\Models\Transaction;
+use App\Models\GHTransaction;
+use App\Models\PHTransaction;
 use Illuminate\Support\Facades\Storage;
 
 class ProvideUsers extends Component
@@ -20,48 +22,50 @@ class ProvideUsers extends Component
 
     protected function mergeStatus()
     {
-        $this->get_ids = auth()->user()->gethelp()->where(
-            ['merge_status' => 1],
-            ['received' => 0]
-        )->pluck('id')->toArray();
-
+        $this->get_ids = auth()->user()->gethelp()->where('merge_status', 1)->pluck('id')->toArray();
     }
 
     public function confirmPay($helper)
     {
-        $provide_help = ProvideHelp::find($helper['id']);
-
+        $provide_help = PHTransaction::find($helper['id']);
         $provide_help->update([
             'confirmed' => 1
         ]);
-        $amount = $provide_help->amount + ($provide_help->amount * 0.5);
+        $amount = $provide_help->providehelp->amount + ($provide_help->providehelp->amount * 0.5);
 
-        $provide_help->gethelp()->update([
+        $gethelp = $provide_help->providehelp->gethelp;
+        $gh = GHTransaction::where([
+            ['get_help_id', $gethelp->id],
+            ['amount', $provide_help->amount]
+        ])->first();
+        $gh->update([
             'received' => 1,
         ]);
 
-        if ($provide_help->amount != 1000) {
+        $provide_exists = PHTransaction::where([['provide_help_id', $provide_help->providehelp->id], ['confirmed', 0]])->exists();
+
+        if ($provide_help->providehelp->amount != 1000 && !$provide_exists) {
             GetHelp::create([
                 'amount' => $amount,
-                'user_id' => $provide_help->user->id,
+                'user_id' => $provide_help->providehelp->user->id,
                 'maturity_period' => now()->addDays(6)
             ]);
 
-            if ($provide_help->user->referrer) {
+            if ($provide_help->$providehelp->user->referrer) {
                 // $amount_referral = $provide_help->amount * 0.02;
-                $amount_referral = $this->getReferralBonus($provide_help->user->referrer, $provide_help->amount);
-                $user = User::find($provide_help->user->referrer->id);
+                $amount_referral = $this->getReferralBonus($provide_help->providehelp->user->referrer, $provide_help->providehelp->amount);
+                $user = User::find($provide_help->providehelp->user->referrer->id);
                 $user->increment('referral_bonus', $amount_referral);
             }
 
             Transaction::create([
                 'amount' => $provide_help->amount,
                 'type' => 'provide_help',
-                'user_id' => $provide_help->user->id
+                'user_id' => $provide_help->providehelp->user->id
             ]);
 
             Transaction::create([
-                'amount' => $provide_help->amount,
+                'amount' => $provide_help->providehelp->amount,
                 'type' => 'get_help',
                 'user_id' => auth()->user()->id
             ]);
@@ -78,14 +82,14 @@ class ProvideUsers extends Component
 
         }
 
-        $provide_help->user()->update([
+        $provide_help->providehelp->user()->update([
             'activated' => 1
         ]);
 
         Transaction::create([
             'amount' => $provide_help->amount,
             'type' => 'activation',
-            'user_id' => $provide_help->user->id
+            'user_id' => $provide_help->providehelp->user->id
         ]);
 
         Transaction::create([
@@ -121,10 +125,12 @@ class ProvideUsers extends Component
 
     }
 
+
     public function render()
     {
+        $prov_ids = ProvideHelp::with('transactions')->whereIn('get_help_id', $this->get_ids ?? [])->pluck('id')->toArray();
         return view('livewire.provide-users', [
-            'providehelpers' => ProvideHelp::with('user')->whereIn('get_help_id', $this->get_ids ?? [])->where('confirmed', 0)->get()
+            'providehelpers' => PHTransaction::where('confirmed', 0)->whereIn('provide_help_id', $prov_ids ?? [])->get()
         ]);
     }
 }

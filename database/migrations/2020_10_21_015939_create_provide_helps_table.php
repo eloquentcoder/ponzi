@@ -17,13 +17,9 @@ class CreateProvideHelpsTable extends Migration
             $table->id();
             $table->integer('amount');
             $table->boolean('merge_status')->default(false);
-            $table->boolean('confirmed')->default(false);
-            $table->string('proof_of_payment')->nullable();
-            $table->string('receipt_no')->nullable();
             $table->unsignedBigInteger('get_help_id')->nullable();
             $table->dateTime('expiration_date')->nullable();
-            $table->boolean('is_admin')->default(0);
-            $table->boolean('is_activation')->default(0);
+            $table->boolean('confirmed')->default(false);
             $table->foreign('get_help_id')->references('id')->on('get_helps')->onDelete('cascade')->onUpdate('cascade');
             $table->unsignedBigInteger('user_id');
             $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade')->onUpdate('cascade');

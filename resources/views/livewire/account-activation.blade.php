@@ -81,7 +81,7 @@
                             <div class="input-group mt-2">
                                 <input type="file" class="form-control" wire:model="file_upload">
                                 <span class="input-group-append">
-                                    <button class="btn btn-success" wire:click="fileUpload" type="button">Upload</button>
+                                    <button class="btn btn-success" wire:click="fileUpload()" type="button">Upload</button>
                                 </span>
                             </div>
                             <div class="input-group mt-2">

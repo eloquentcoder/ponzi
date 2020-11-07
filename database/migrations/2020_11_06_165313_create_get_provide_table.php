@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateGetHelpsTable extends Migration
+class CreateGetProvideTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,15 +13,15 @@ class CreateGetHelpsTable extends Migration
      */
     public function up()
     {
-        Schema::create('get_helps', function (Blueprint $table) {
+        Schema::create('get_provide', function (Blueprint $table) {
             $table->id();
+            $table->unsignedBigInteger('get_help_id');
+            $table->unsignedBigInteger('provide_help_id');
             $table->integer('amount');
-            $table->boolean('awaiting_to_receive')->default(false);
-            $table->boolean('merge_status')->default(false);
-            $table->dateTime('maturity_period')->nullable();
             $table->boolean('received')->default(false);
-            $table->unsignedBigInteger('user_id');
-            $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade')->onUpdate('cascade');
+            $table->boolean('confirmed')->default(false);
+            $table->string('proof_of_payment')->nullable();
+            $table->string('receipt_no')->nullable();
             $table->timestamps();
         });
     }
@@ -33,6 +33,6 @@ class CreateGetHelpsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('get_helps');
+        Schema::dropIfExists('get_provide');
     }
 }

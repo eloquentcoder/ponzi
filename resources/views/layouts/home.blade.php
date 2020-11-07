@@ -32,8 +32,8 @@
     <div class="container">
       <div class="navbar-translate">
         <a class="navbar-brand" href="{{ route('home') }}">
-            <img src="{{ asset('home/logo.jpeg') }}" width="30" height="30" class="align-top" alt="">
-            <span>Green Rich Wide Investment</span>
+            <img src="{{ asset('home/logo.jpeg') }}" width="35" height="35" class="align-top" alt="">
+            <span style="font-size: 18px;">Green Rich Wide Investment</span>
         </a>
         <button class="navbar-toggler navbar-toggler" type="button" data-toggle="collapse" data-target="#navigation" aria-controls="navigation-index" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-bar bar1"></span>
@@ -88,7 +88,7 @@
               <a href="{{ route('home') }}/#about">About Us</a>
             </li>
             <li>
-              <a href="{{ route('home') }}">Contact Us</a>
+              <a href="{{ route('contact') }}">Contact Us</a>
             </li>
             <li>
               <a href="{{ route('register') }}">Get Started</a>
@@ -96,11 +96,11 @@
           </ul>
         </nav>
         <div class="credits ml-auto">
-          <span class="copyright">
+          <span class="copyright" style="font-size: 17px; font-weight: 800">
             ©
             <script>
               document.write(new Date().getFullYear())
-            </script>, made with <i class="fa fa-heart heart"></i> by Green Rich Wide Team
+            </script> Green Rich Wide Team
           </span>
         </div>
       </div>

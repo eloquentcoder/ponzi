@@ -35,7 +35,7 @@ use App\Http\Controllers\Admin\WithdrawalController as AdminWithdrawalController
 */
 
 Route::get('/', [HomeController::class, 'indexPage'])->name('home');
-// Route::get('/about', [HomeController::class, 'aboutPage'])->name('about');
+Route::get('/about', [HomeController::class, 'aboutPage'])->name('about');
 Route::get('/contact', [HomeController::class, 'contactPage'])->name('contact');
 Route::post('/contact', [HomeController::class, 'postContact'])->name('contact.post');
 
@@ -56,9 +56,8 @@ Route::group(['middleware' => 'guest'], function () {
 
 
 Route::group(['prefix' => 'user', 'middleware' => ['auth_user']], function () {
-        Route::group(['middleware' => ['updated_profile']], function () {
+        Route::group(['middleware' => ['updated_profile', 'restricted']], function () {
                 Route::group(['middleware' => ['activated']], function () {
-                    Route::group(['middleware' => ['restricted']], function () {
                         Route::get('dashboard', [DashboardController::class, 'index'])->name('dashboard');
                         Route::get('profile', [ProfileController::class, 'index'])->name('profile');
                         Route::post('profile/post', [ProfileController::class, 'post'])->name('post.profile');
@@ -75,11 +74,10 @@ Route::group(['prefix' => 'user', 'middleware' => ['auth_user']], function () {
                         Route::post('broker/apply', [BrokerController::class, 'apply'])->name('broker.apply');
                         Route::get('referrals/withdraw', [ReferralController::class, 'withdraw'])->name('referrals.withdraw');
                         Route::get('support', [SupportController::class, 'index'])->name('support');
-                    });
             });
-            Route::post('logout', [AuthController::class, 'logout'])->name('logout');
             Route::get('activation', [ActivationController::class, 'activationPage'])->name('activation');
         });
+    Route::post('logout', [AuthController::class, 'logout'])->name('logout');
     Route::get('restricted', [HomeController::class, 'restricted'])->name('restricted');
     Route::get('account', [ProfileController::class, 'profilePage'])->name('account');
     Route::post('account', [ProfileController::class, 'postProfile'])->name('account.post');

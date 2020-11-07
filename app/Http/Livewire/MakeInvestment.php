@@ -15,6 +15,12 @@ class MakeInvestment extends Component
     public $amount;
     public $password;
 
+    public function mount()
+    {
+
+    }
+
+
     protected function null()
     {
         $this->amount = null;
@@ -27,15 +33,9 @@ class MakeInvestment extends Component
             return $this->addError('password', 'Password Is Incorrect, Check And Try Again');
         }
 
-        $provided = ProvideHelp::where([
-            ['user_id', auth()->user()->id],
-            ['confirmed', 0],
-        ])->exists();
+        $provided = auth()->user()->phtransactions()->where('confirmed', 0)->exists();
 
-        $get_process = GetHelp::where([
-            ['user_id', auth()->user()->id],
-            ['received', 0],
-        ])->exists();
+        $get_process = auth()->user()->ghtransactions()->where('received', 0)->exists();
 
         $comp_amount = auth()->user()->providehelp()->latest('created_at')->value('amount');
 
@@ -58,10 +58,7 @@ class MakeInvestment extends Component
             'user_id' => auth()->user()->id,
             'amount' => $this->amount,
         ]);
-
-        ProcessGH::dispatch($provide_help, auth()->user()->id)->delay(now()->addMinutes(3));
-
-
+        ProcessGH::dispatch($provide_help, auth()->user()->id);
         $this->null();
         session()->flash('message', 'Investment has been created successfully. You will be merged to make payment soon.');
     }

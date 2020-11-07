@@ -5,7 +5,7 @@
 @section('content')
 
 @if (auth()->user()->activated == 0)
-    <livewire:account-activation />
+    {{-- <livewire:account-activation /> --}}
 @else
 <div class="row">
     <div class="col-lg-12 col-sm-12">

@@ -4,52 +4,45 @@ namespace App\Services;
 
 class MergeServices {
 
-    public static function mergeGetters($gethelp)
+    public static function mergeGetters()
     {
-        $amount = $gethelp->amount;
+        $provideHelp = ProvideHelp::where([['is_activation', 0], ['merge_status', 0], ['is_admin', 0]])->get();
+        $gethelp = GetHelp::where([['merge_status', 0], ['awaiting_to_receive', 1]])->get()->toArray();
 
-        $provider_one = ProvideHelp::where(
-            ['merge_status', 0],
-            ['amount', $amount]
-            )->first();
-        $provider_two = ProvideHelp::where(
-            ['merge_status', 0],
-            ['amount', $amount/ 2]
-            )->first();
+        $sumProvidersCount;
+        $sumGettersCount;
 
-        if ($provider_one) {
-            $provider_one->update([
-                'merge_status' => 1,
-                'get_help_id' => $gethelp->id
-            ]);
-        } else {
-            self::mergeAdmin($amount, $gethelp->id);
+        $sumProvidersArray;
+        $sumGettersArray;
+
+        $counter = count($provideHelp) < 4 ? count($provideHelp) : 4;
+
+        for ($i=0; $i < $counter; $i++) {
+            $sumProvidersCount += $provideHelp[$counter]->amount;
+            array_push($sumProvidersArray, $provideHelp[$counter]);
         }
-
-        if ($provider_two) {
-            $provider_two->update([
-                'merge_status' => 1,
-                'get_help_id' => $gethelp->id
-            ]);
-        } else {
-            self::mergeAdmin($amount / 2, $gethelp->id);
+        for ($i=0; $i < count($gethelp); $i++) {
+            $sumGettersCount += $gethelp[$counter]->amount;
+            if ($sumGettersCount > $sumProvidersCount) {
+                return self::mergeAdmin($sumProvidersArray, $sumGettersArray);
+            }
+            if ($sumGettersCount == $sumProvidersCount) {
+                return self::mergeUsers($sumProvidersArray, $sumGettersArray);
+            }
+            return self::mergeGetters();
         }
-
-        return $gethelp->update([
-            'merge_status' => 1
-        ]);
-
     }
 
-    public static function mergeAdmin($amount, $gethelp_id)
+    public static function mergeAdmin($providers, $getters)
     {
-        $user = User::where([['role', 'admin'], ['is_special', 1]])->first();
-        $provide = $user->providehelp()->create([
-            'amount' => $amount,
-            'merge_status' => 1,
-            'get_help_id' => $gethelp_id
-        ]);
-
+        foreach ($getters as $value) {
+            if ($value > $providers[$i]) {
+                $id = $value->id;
+                $rem = $value->amount - $providers[$i];
+                
+                $value->delete();
+            }
+        }
     }
 
 }

@@ -9,7 +9,7 @@
     <div class="container">
       <div class="motto text-center">
         <h1 style="font-weight: 800">Welcome: <br> Green Rich Wide Investment</h1>
-        <h3 style="font-weight: 700">Offers you daily growth of your INVESTMENT <br><del>(cashable every 24 Hours).</del></h3>
+        <h3 style="font-weight: 700">Offers you daily growth of your INVESTMENT <br>(cashable every 5 days).</h3>
         <br />
         <a href="{{ route('register') }}" class="btn btn-outline-neutral btn-round"><i class="fa fa-play"></i>Get Started</a>
         <a type="button" href="{{ route('home') }}/#about" class="btn btn-outline-neutral btn-round">Read More</a>
@@ -78,7 +78,7 @@
               </div>
               <div class="description">
                 <h4 class="info-title" style="font-size: 25px; font-weight: 800;">Total Investors</h4>
-                <p class="description" style="font-size: 18px; font-weight: 800;">{{30 + $investors }}</p>
+                <p class="description" style="font-size: 18px; font-weight: 800;">{{520 + $investors }}</p>
                 {{-- <p class="description">To connect people that shares similar ideas and orientation in making the world financially stable.</p> --}}
               </div>
             </div>
@@ -90,7 +90,7 @@
               </div>
               <div class="description">
                 <h4 class="info-title" style="font-size: 25px; font-weight: 800;">Total Brokers</h4>
-                <p style="font-size: 18px; font-weight: 800;">{{10 + $brokers}}</p>
+                <p style="font-size: 18px; font-weight: 800;">{{50 + $brokers}}</p>
               </div>
             </div>
           </div>
@@ -101,7 +101,7 @@
               </div>
               <div class="description">
                 <h4 class="info-title" style="font-size: 25px; font-weight: 800;">Total Transactions</h4>
-                <p style="font-size: 18px; font-weight: 800;">{{42 + $transactions}}</p>
+                <p style="font-size: 18px; font-weight: 800;">{{1142 + $transactions}}</p>
               </div>
             </div>
           </div>
@@ -116,18 +116,20 @@
             <div class="card card-profile card-plain">
               <div class="card-avatar">
                 <a href="#avatar">
-                  <img src="{{ asset('home/default.jpg') }}" alt="...">
+                  <img src="{{ asset('flag.jpg') }}" alt="...">
                 </a>
               </div>
               <div class="card-body">
                 <a href="#paper-kit">
                   <div class="author">
                     <h4 class="card-title">Alexander Obayomi</h4>
-                    <h6 class="card-category">Green Rich Wide Investor</h6>
+                    <h5 class="card-category">Green Rich Wide Investor</h5>
+                    <h6 class="card-category">8th November 2020</h6>
                   </div>
                 </a>
                 <p class="card-description text-center">
-                    Thank you Green Rich Wide investment. More grace
+                   Greenrich here we come.<br>
+                   <span style="font-weight: 800">INVESTED AMOUNT: ₦50,000</span>
                 </p>
               </div>
             </div>
@@ -136,18 +138,20 @@
             <div class="card card-profile card-plain">
               <div class="card-avatar">
                 <a href="#avatar">
-                  <img src="{{ asset('home/default.jpg') }}" alt="...">
+                  <img src="{{ asset('flag.jpg') }}" alt="...">
                 </a>
               </div>
               <div class="card-body">
                 <a href="#paper-kit">
                   <div class="author">
                     <h4 class="card-title">Ejimkonye Roxy</h4>
-                    <h6 class="card-category">Green Rich Wide Investor</h6>
+                    <h5 class="card-category">Green Rich Wide Investor</h5>
+                    <h6 class="card-category">8th November 2020</h6>
                   </div>
                 </a>
                 <p class="card-description text-center">
-                    Indeed Green Rich Wide is a wonderful platform I have now faith in them I just received #7500 today , 06-11-2020
+                   Thank God Greenrich is back. Xmas money <br>
+                   <span style="font-weight: 800">INVESTED AMOUNT: ₦10,000</span>
                 </p>
               </div>
             </div>
@@ -156,18 +160,20 @@
             <div class="card card-profile card-plain">
               <div class="card-avatar">
                 <a href="#avatar">
-                  <img src="{{ asset('home/default.jpg') }}" alt="...">
+                  <img src="{{ asset('flag.jpg') }}" alt="...">
                 </a>
               </div>
               <div class="card-body">
                 <a href="#paper-kit">
                   <div class="author">
-                    <h4 class="card-title">Destiny David</h4>
-                    <h6 class="card-category">Green Rich Wide Investor</h6>
+                    <h4 class="card-title">Mariam Kabiru</h4>
+                    <h5 class="card-category">Green Rich Wide Investor</h5>
+                    <h6 class="card-category">8th November 2020</h6>
                   </div>
                 </a>
                 <p class="card-description text-center">
-                    Reliable and trustworthy. Thanks to Greenwich investment
+                     Greenrich investment is the best. Thank you for coming back<br>
+                    <span style="font-weight: 800">INVESTED AMOUNT: ₦100,000</span>
                 </p>
               </div>
             </div>

@@ -6,6 +6,7 @@ use App\Models\User;
 use Livewire\Component;
 use App\Models\ProvideHelp;
 use App\Jobs\DeleteDefaulter;
+use App\Models\PHTransaction;
 use Livewire\WithFileUploads;
 
 class AccountActivation extends Component
@@ -22,18 +23,16 @@ class AccountActivation extends Component
 
     public function mount()
     {
-        $provide_help = auth()->user()->providehelp()->where([
+        $provide_help = auth()->user()->phtransactions()->where([
             ['is_activation', 1],
             ['merge_status', 1],
             ['confirmed', 0]
         ])->first();
 
-        // dd($provide_help->expiration_date);
-
         if ($provide_help) {
             $this->receipt_no = $provide_help->receipt_no;
             $this->help_id = $provide_help->id;
-            $this->user_id = $provide_help->gethelp->user->id;
+            $this->user_id = $provide_help->providehelp->gethelp->user->id;
             $this->merged = true;
         }
     }
@@ -43,7 +42,7 @@ class AccountActivation extends Component
         $user = User::where('role', 'admin')->get()->random();
         $this->user_id = $user->id;
 
-        $is_help = auth()->user()->providehelp()->where('is_activation', 1)->exists();
+        $is_help = auth()->user()->phtransactions()->where('is_activation', 1)->exists();
 
 
         if (!$is_help) {
@@ -52,11 +51,19 @@ class AccountActivation extends Component
                 'merge_status' => true,
             ]);
 
+            $get_help->transactions()->create([
+                'amount' => 1000
+            ]);
+
             $provide_help = $get_help->providehelp()->create([
                 'amount' => 1000,
                 'merge_status' => true,
-                'is_activation' => 1,
                 'user_id' => auth()->user()->id
+            ]);
+
+            $provide_help->transactions()->create([
+                'amount' => 1000,
+                'is_activation' => 1,
             ]);
 
             DeleteDefaulter::dispatch($provide_help, auth()->user()->id)->delay(now()->addHour(24));
@@ -72,7 +79,7 @@ class AccountActivation extends Component
             'receipt_no' => 'required', // 1MB Max
         ]);
 
-        $provide_help = ProvideHelp::find($this->help_id);
+        $provide_help = PHTransaction::find($this->help_id);
         $provide_help->update([
             'receipt_no' => $this->receipt_no
         ]);
@@ -88,7 +95,7 @@ class AccountActivation extends Component
         ]);
         $name = md5($this->file_upload . microtime()).'.'.$this->file_upload->extension();
         $this->file_upload->storeAs('photos', $name);
-        $provide_help = ProvideHelp::find($this->help_id);
+        $provide_help = PHTransaction::find($this->help_id);
         $provide_help->update([
             'proof_of_payment' => $name
         ]);
@@ -101,7 +108,7 @@ class AccountActivation extends Component
     {
         return view('livewire.account-activation', [
             'user' => User::find($this->user_id),
-            'provide_help' => ProvideHelp::find($this->help_id)
+            'provide_help' => PHTransaction::find($this->help_id)
         ]);
     }
 

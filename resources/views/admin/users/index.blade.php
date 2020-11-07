@@ -39,10 +39,10 @@
                                         <td>{{ $item->is_restricted == 0 ? 'Active' : 'Suspended' }}</td>
                                         <td style="white-space: nowrap; width: 15%;"><div class="tabledit-toolbar btn-toolbar" style="text-align: left;">
                                             <div class="btn-group btn-group-sm" style="float: none;">
-                                                <button type="button" title="toggle suspension" class="tabledit-edit-button btn btn-sm btn-info" onclick="event.preventDefault(); document.getElementById('suspend-frm').submit();" style="float: none; margin: 5px;">
+                                                <button type="button" title="toggle suspension" class="tabledit-edit-button btn btn-sm btn-info" onclick="event.preventDefault(); document.getElementById('suspend-frm{{$item->id}}').submit();" style="float: none; margin: 5px;">
                                                     <span class="ti-cut"></span>
                                                 </button>
-                                                <form id="suspend-frm" action="{{ route('admin.user.suspend', $item->id) }}" method="POST" style="display: none;">
+                                                <form id="suspend-frm{{$item->id}}" action="{{ route('admin.user.suspend', $item->id) }}" method="POST" style="display: none;">
                                                     {{ csrf_field() }}
 
                                                 </form>
