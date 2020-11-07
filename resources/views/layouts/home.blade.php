@@ -23,6 +23,13 @@
       .description {
           font-weight: 500;
       }
+
+      @media screen and (max-width: 991px) {
+        .navbar-collapse .navbar-nav>.nav-item>.nav-link {
+            color: darkgreen;
+        }
+      }
+
   </style>
 
 </head>

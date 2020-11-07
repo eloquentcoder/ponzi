@@ -7695,7 +7695,7 @@ License - nucleoapp.com/license/
   }
   .navbar-collapse .navbar-nav>.nav-item>.nav-link {
     margin: 0px 0px;
-    color: #9A9A9A !important;
+    color: darkgreen !important;
     text-transform: uppercase;
     font-weight: 600;
     font-size: 12px;

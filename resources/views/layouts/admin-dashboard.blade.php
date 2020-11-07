@@ -21,6 +21,11 @@
         <link href="{{ asset('dashboard/css/style.css')}}" rel="stylesheet">
         @livewireStyles
         <style>
+
+            html, body {
+                font-weight: 800;
+            }
+
             .page-head {
                 display: flex;
                 justify-content: space-between;
