@@ -44,8 +44,8 @@
                     Notice
                 </div>
                 <div class="card-body">
-                    <h5 class="card-title" style="font-weight: 800; color: green;">SORRY, THERE IS NO AVAILABLE PARTICIPANT TO RECEIVE FUND AT THE MOMENT.
-                        YOU WILL BE MERGED TO PAY OUT SOON.</h5>
+                    <h5 class="card-title" style="font-weight: 800; color: green;">Sorry, there are no available participants to receive funds at the moment.
+                        you will be merged to make payment soon.</h5>
                     {{-- <p class="card-text">With supporting text below as a natural lead-in to additional content.</p> --}}
                 </div>
             </div>

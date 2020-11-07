@@ -2,13 +2,15 @@
 
 namespace App\Http\Controllers\User;
 
-use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use App\Http\Controllers\Controller;
+use App\Http\Controllers\BaseController;
 
-class MergeController extends Controller
+class MergeController extends BaseController
 {
     public function mergeList()
     {
-        return view('user.merge.list');
+        $this->gethelp = auth()->user()->gethelp()->where([['received', 0]])->first();
+        return view('user.merge.list', $this->data);
     }
 }

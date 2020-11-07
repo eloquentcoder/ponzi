@@ -32,7 +32,8 @@
                 Broker's Referral Link
             </div>
             <div class="card-body">
-                <h5 class="card-title">{{ auth()->user()->referral_link }}</h5>
+                <h5 class="card-title"><span style="color: aqua">Congratulations! You are now a broker!</span><br><br>
+                    <span>{{ auth()->user()->referral_link }}</span></h5>
                 {{-- <p class="card-text">With supporting text below as a natural lead-in to additional content.</p> --}}
             </div>
         </div>

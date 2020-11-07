@@ -33,6 +33,11 @@
                                             <td>{{ $helper->providehelp->user->phone_number }}</td>
                                         </tr>
                                     </tbody>
+                                    <tfoot>
+                                        <p style="color: red">
+                                          NOTE: Please only click on the <b>'Approve Payment'</b> button when payment has been received in your bank account. Approval of payment that is not received by you is at your own risk!
+                                        </p><br>
+                                    </tfoot>
                                     </table>
                                 </div>
                             </div>
@@ -64,11 +69,13 @@
                         </div>
                     </div>
             </div>
+
+
             <div class="row">
                 <div class="col-lg-12 col-sm-12">
                     <div class="card bg-white m-b-30">
                         <div class="card-footer text-muted" style="text-align: center;">
-                        <a class="btn" wire:click="confirmPay({{$helper}})" style="background: yellow; color: red; font-weight: 900;">Confirm Payment!</a>
+                        <a class="btn" wire:click="confirmPay({{$helper}})" style="background: yellow; color: red; font-weight: 900;">Approve Payment!</a>
                         </div>
                     </div>
                 </div>

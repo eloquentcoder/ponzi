@@ -8,6 +8,9 @@
 
     <livewire:provide-users />
 
+
+    @if ($gethelp)
     <livewire:amount />
+    @endif
 
 @endsection
