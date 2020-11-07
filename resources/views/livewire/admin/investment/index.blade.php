@@ -18,7 +18,7 @@
                                         </tr>
                                     </thead>
                                     <tbody>
-                                        @forelse ($investments as $item)
+                                        {{-- @forelse ($investments as $item)
                                         <tr>
                                             <td>{{ $item->user->full_name }}</td>
                                             <td>{{ $item->amount }}</td>
@@ -32,7 +32,7 @@
                                         </div>
                                     @endforelse
                                     </tbody>
-                                    {{ $investments->links() }}
+                                    {{ $investments->links() }} --}}
                                 </table>
                             </div>
                         </div>
