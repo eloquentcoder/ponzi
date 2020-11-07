@@ -32,8 +32,8 @@
     <div class="container">
       <div class="navbar-translate">
         <a class="navbar-brand" href="{{ route('home') }}">
-            <img src="{{ asset('home/logo.jpeg') }}" width="35" height="35" class="align-top" alt="">
-            <span style="font-size: 18px;">Green Rich Wide Investment</span>
+            <img src="{{ asset('home/logo.jpeg') }}" width="30" height="30" class="align-top" alt="">
+            <span style="font-size: 15px;">Green Rich Wide Investment</span>
         </a>
         <button class="navbar-toggler navbar-toggler" type="button" data-toggle="collapse" data-target="#navigation" aria-controls="navigation-index" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-bar bar1"></span>
