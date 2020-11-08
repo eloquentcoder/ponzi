@@ -16,7 +16,7 @@ class ProvideHelp extends Model
 
     public function gethelp()
     {
-        return $this->belongsToMany(GetHelp::class, 'get_help_id', 'id');
+        return $this->belongsToMany(GetHelp::class, 'get_provide');
     }
 
     public function user()

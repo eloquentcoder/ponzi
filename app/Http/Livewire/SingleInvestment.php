@@ -20,8 +20,7 @@ class SingleInvestment extends Component
     {
         $this->ids = $id;
         $this->pro = ProvideHelp::where([
-            ['user_id', auth()->user()->id],
-            ['get_help_id', $id]
+            ['user_id', auth()->user()->id]
         ])->first();
 
         $this->receipt_no = $this->pro->receipt_no;

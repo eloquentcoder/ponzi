@@ -108,7 +108,6 @@ class ProvideUsers extends Component
             return redirect()->route('testimony.make');
     }
 
-
     private function getReferralBonus($referrer, $amount)
     {
         $user = User::find($referrer->id);
@@ -124,12 +123,11 @@ class ProvideUsers extends Component
 
     }
 
-
     public function render()
     {
         $prov_ids = DB::table('get_provide')->whereIn('get_help_id', $this->get_ids ?? [])->pluck('provide_help_id')->toArray();
         return view('livewire.provide-users', [
-            'providehelpers' => ProvideHelp::where('confirmed', 0)->whereIn('provide_help_id', $prov_ids ?? [])->get()
+            'providehelpers' => ProvideHelp::where('confirmed', 0)->whereIn('id', $prov_ids ?? [])->get()
         ]);
     }
 }

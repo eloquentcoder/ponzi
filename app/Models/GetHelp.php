@@ -13,7 +13,7 @@ class GetHelp extends Model
 
     public function providehelp()
     {
-        return $this->belongsToMany(ProvideHelp::class);
+        return $this->belongsToMany(ProvideHelp::class, 'get_provide');
     }
 
     public function user()

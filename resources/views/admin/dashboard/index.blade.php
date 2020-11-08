@@ -11,11 +11,11 @@
 @endif
 
     <livewire:admin.stat-boxes />
-    {{-- <livewire:admin.merged-users />
-    <livewire:provide-users /> --}}
-    {{-- @if ($gethelp) --}}
-    {{-- <livewire:amount /> --}}
-    {{-- @endif --}}
+    {{-- <livewire:admin.merged-users /> --}}
+    <livewire:provide-users />
+     @if ($gethelp)
+     <livewire:amount />
+     @endif
 
 
 @endsection
