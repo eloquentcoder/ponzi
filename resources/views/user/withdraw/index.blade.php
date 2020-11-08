@@ -23,7 +23,7 @@
                                     </thead>
                                     <tbody>
                                         @forelse ($withdrawals as $item)
-                                        <tr>
+                                        <tr style="color: green;">
                                             <td>{{ $item->amount }}</td>
                                             <td>{{ $item->received == 0 ? 'Processing' : 'Received' }}</td>
                                         </tr>

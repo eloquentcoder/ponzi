@@ -24,8 +24,8 @@
                                         </tr>
                                     </thead>
                                     <tbody>
-                                        {{-- @forelse ($investments as $item)
-                                        <tr>
+                                         @forelse ($investments as $item)
+                                        <tr style="color: green">
                                             <td>{{ $item->amount }}</td>
                                             <td>{{ $item->confirmed == 0 ? 'Processing' : 'Confirmed' }}</td>
                                             <td>{{ $item->gethelp ? $item->gethelp->user->full_name : '' }}</td>
@@ -34,7 +34,7 @@
                                         <div class="container">
                                             <p style="text-align: center">No Investments Yet</p>
                                         </div>
-                                    @endforelse --}}
+                                    @endforelse
                                     </tbody>
                                 </table>
                             </div>

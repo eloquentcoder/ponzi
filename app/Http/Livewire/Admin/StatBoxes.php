@@ -16,8 +16,8 @@ class StatBoxes extends Component
             'total_withdrawals' => GetHelp::sum('amount'),
             'total_investors' => User::where('role', 'user')->count(),
             'total_brokers' => User::where('is_broker', 1)->count(),
-            'personal_investment' => auth()->user()->transactions()->where('type', 'provide_help')->sum('amount'),
-            'personal_withdrawals' => auth()->user()->transactions()->where('type', 'get_help')->sum('amount'),
+            'personal_investment' => auth()->user()->providehelp()->where('confirmed', 1)->sum('amount'),
+            'personal_withdrawals' => auth()->user()->gethelp()->where('received', 1)->sum('amount'),
         ]);
     }
 }

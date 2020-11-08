@@ -20,6 +20,7 @@ class CreateGetHelpsTable extends Migration
             $table->boolean('merge_status')->default(false);
             $table->dateTime('maturity_period')->nullable();
             $table->boolean('received')->default(false);
+            $table->boolean('is_bonus_withdrawal')->default(false);
             $table->unsignedBigInteger('user_id');
             $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade')->onUpdate('cascade');
             $table->timestamps();

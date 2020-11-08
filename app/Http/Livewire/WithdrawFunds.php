@@ -15,10 +15,12 @@ class WithdrawFunds extends Component
     public $password;
     public $referral_bonus;
     public $hasbrokers;
+    public $user;
 
     public function mount()
     {
-       $this->referral_bonus = User::find(auth()->user()->id)->referral_bonus;
+       $this->user = User::find(auth()->user()->id);
+       $this->referral_bonus =  $this->user->referral_bonus;
        $this->hasbrokers = User::where([['activated', 1], ['referrer_id', auth()->user()->id]])->count();
     }
 
@@ -35,42 +37,32 @@ class WithdrawFunds extends Component
             return $this->addError('password', 'Password Is Incorrect, Check And Try Again');
         }
 
+        $provided = auth()->user()->providehelp()->where('confirmed', 0)->exists();
+
+        $get_process = auth()->user()->gethelp()->where('received', 0)->exists();
+
+        if ($provided || $get_process) {
+            session()->flash('error', 'You have a pending investment. Please complete that to continue');
+            return;
+        }
+
         if ($this->hasbrokers < 15) {
             session()->flash('error', 'Your Brokers should be no less than 15');
             return;
         }
 
+        if ($this->referral_bonus < 5000) {
+            session()->flash('error', 'Your Referral Bonus should be no less than 5000');
+            return;
+        }
+
         GetHelp::create([
             'amount' => $this->amount,
-            'user_id' => auth()->user()->id
+            'user_id' => auth()->user()->id,
+            'is_bonus_withdrawal' => true
         ]);
 
-        // $user = User::where([
-        //     ['activated', 1],
-        //     ['role', 'user'],
-        //     ['id', '!=', auth()->user()->id]
-        // ])->first();
-
-        // if (!$user) {
-        //     $admin = User::where('role', 'admin')->get()->random();
-
-        //     $get_help = $admin->gethelp()->create([
-        //         'amount' => $this->amount,
-        //         'merge_status' => true,
-        //     ]);
-
-        //     $provide_help = ProvideHelp::create([
-        //         'user_id' => auth()->user()->id,
-        //         'merge_status' => 1,
-        //         'amount' => $this->amount,
-        //         'get_help_id' => $get_help->id
-        //     ]);
-        // } else {
-        //     $provide_help = ProvideHelp::create([
-        //         'user_id' => auth()->user()->id,
-        //         'amount' => $this->amount,
-        //     ]);
-        // }
+        $this->user->decrement('referral_bonus', $this->amount);
 
         $this->null();
         session()->flash('message', 'Withdrawal Made Successfully! You will be merged soon.');

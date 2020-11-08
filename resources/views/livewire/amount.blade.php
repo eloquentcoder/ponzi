@@ -27,7 +27,7 @@
                 </div>
                 <div class="card-footer text-muted" style="text-align: center;">
                     @if ($percent == 100 && $awaiting == 0)
-                        <button class="btn btn-yellow" wire:click="requestPayment">Request Withdrawal</button>
+                        <button class="btn btn-success" wire:click="requestPayment">Request Withdrawal</button>
                     @endif
                     @if ($awaiting == 1)
                     <span style="color: blue; font-weight:800">Withdrawal has been created successfully. You'll be merged to receive payment soon.</span>

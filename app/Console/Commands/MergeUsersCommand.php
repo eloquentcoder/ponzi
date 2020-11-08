@@ -47,6 +47,7 @@ class MergeUsersCommand extends Command
                 MergeServices::mergeGetters($value);
             }
         });
+
         $this->info('Merged Sucessfully');
     }
 }

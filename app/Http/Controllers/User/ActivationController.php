@@ -10,7 +10,6 @@ class ActivationController extends Controller
 {
     public function activationPage()
     {
-
         return view('user.activation.index');
     }
 }

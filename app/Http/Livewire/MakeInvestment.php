@@ -49,18 +49,13 @@ class MakeInvestment extends Component
             return;
         }
 
-        if ($provided || $get_process) {
-            session()->flash('error', 'You have a pending investment. Please complete that to continue');
-            return;
-        }
-
         $provide_help = ProvideHelp::create([
             'user_id' => auth()->user()->id,
             'amount' => $this->amount,
         ]);
         // $provide_helper = ProvideHelp::where([['amount', '!=', 1000], ['id', '!=',$provide_help->id]])->orWhere([['merge_status', 0], ['id', '!=',$provide_help->id]])->first();
         // dd(!$provide_helper);
-        ProcessGH::dispatch($provide_help, auth()->user()->id)->delay(now()->addMinutes(1));
+        ProcessGH::dispatch($provide_help, auth()->user()->id)->delay(now()->addMinutes(3));
         $this->null();
         session()->flash('message', 'Investment has been created successfully. You will be merged to make payment soon.');
     }

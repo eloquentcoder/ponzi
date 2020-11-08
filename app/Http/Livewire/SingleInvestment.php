@@ -6,6 +6,7 @@ use App\Models\GetHelp;
 use Livewire\Component;
 use App\Models\ProvideHelp;
 use Livewire\WithFileUploads;
+use Illuminate\Support\Facades\DB;
 
 class SingleInvestment extends Component
 {
@@ -19,10 +20,8 @@ class SingleInvestment extends Component
     public function mount($id)
     {
         $this->ids = $id;
-        $this->pro = ProvideHelp::where([
-            ['user_id', auth()->user()->id]
-        ])->first();
-
+        $provs_id = DB::table('get_provide')->where('get_help_id', $id)->pluck('provide_help_id')->toArray();
+        $this->pro = ProvideHelp::whereIn('id', $provs_id)->where('user_id', auth()->user()->id)->first();
         $this->receipt_no = $this->pro->receipt_no;
     }
 

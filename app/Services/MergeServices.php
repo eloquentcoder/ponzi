@@ -2,47 +2,63 @@
 
 namespace App\Services;
 
+use App\Models\User;
+use App\Models\ProvideHelp;
+
 class MergeServices {
 
-    public static function mergeGetters()
+    public static function mergeGetters($get_help)
     {
-        $provideHelp = ProvideHelp::where([['is_activation', 0], ['merge_status', 0], ['is_admin', 0]])->get();
-        $gethelp = GetHelp::where([['merge_status', 0], ['awaiting_to_receive', 1]])->get()->toArray();
+        $provider = ProvideHelp::where([['is_activation', 0], ['merge_status', 0], ['amount', '<', $get_help->amount]])->get();
+        dd($provider);
 
-        $sumProvidersCount;
-        $sumGettersCount;
-
-        $sumProvidersArray;
-        $sumGettersArray;
-
-        $counter = count($provideHelp) < 4 ? count($provideHelp) : 4;
-
-        for ($i=0; $i < $counter; $i++) {
-            $sumProvidersCount += $provideHelp[$counter]->amount;
-            array_push($sumProvidersArray, $provideHelp[$counter]);
-        }
-        for ($i=0; $i < count($gethelp); $i++) {
-            $sumGettersCount += $gethelp[$counter]->amount;
-            if ($sumGettersCount > $sumProvidersCount) {
-                return self::mergeAdmin($sumProvidersArray, $sumGettersArray);
-            }
-            if ($sumGettersCount == $sumProvidersCount) {
-                return self::mergeUsers($sumProvidersArray, $sumGettersArray);
-            }
-            return self::mergeGetters();
+        $single_provider = ProvideHelp::where([['amount', $get_help->amount], ['merge_status', 0]])->first();
+        if ($single_provider) {
+            $single_provider->update([
+                'merge_status' => 1
+            ]);
+            $get_help->update([
+                'merge_status' => 1
+            ]);
+        $get_help->providehelp()->sync($single_provider->id);
+        } else {
+            self::getTwoSum($provider, $get_help);
         }
     }
 
-    public static function mergeAdmin($providers, $getters)
+    // public static function getThreeSum($array, $sum)
+    // {
+    //      for ($i=0; $i < count($array); $i++) {
+
+    //      }
+    // }
+
+    public static function getTwoSum($array, $get_help)
     {
-        foreach ($getters as $value) {
-            if ($value > $providers[$i]) {
-                $id = $value->id;
-                $rem = $value->amount - $providers[$i];
-                
-                $value->delete();
+       foreach ($array as $value) {
+            $initialProvider = ProvideHelp::where([['amount', $get_help->amount - $value->amount], ['merge_status', 0]])->first();
+            if ($initialProvider) {
+                $value->update([
+                    'merge_status' => 1
+                ]);
+                $initialProvider->update([
+                    'merge_status' => 1
+                ]);
+              return  $get_help->providehelp()->sync([$initialProvider->id, $value->id]);
             }
-        }
+       }
+       if (count($array) > 0) {
+        $admin = User::where([['role', 'admin'], ['is_special', 1]])->get()->random();
+        $provide_admin = $admin->providehelp()->create([
+             'merge_status' => 1,
+             'amount' => $get_help->amount - $array[0]->amount
+        ]);
+        $secadmin = $array[0]->update([
+             'merge_status' => 1,
+        ]);
+        return  $get_help->providehelp()->sync([$provide_admin->id, $secadmin->id]);
+       }
     }
+
 
 }

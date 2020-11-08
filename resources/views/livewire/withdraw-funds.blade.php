@@ -27,7 +27,51 @@
                                 <label>Amount</label>
                                 <select class="form-control" wire:model="amount" required>
                                     <option value="">-- Select Amount --</option>
-                                    <option value="5000">₦5,000</option>
+                                    @if ($referral_bonus >= 5000)
+                                        <option value="5000">₦5,000</option>
+                                    @endif
+                                    @if ($referral_bonus >= 10000)
+                                        <option value="10000">₦10,000</option>
+                                    @endif
+                                    @if ($referral_bonus >= 20000)
+                                        <option value="20000">₦20,000</option>
+                                    @endif
+                                    @if ($referral_bonus >= 30000)
+                                        <option value="10000">₦30,000</option>
+                                    @endif
+
+                                    @if ($referral_bonus >= 50000)
+                                        <option value="50000">₦50,000</option>
+                                    @endif
+
+                                    @if ($referral_bonus >= 100000)
+                                        <option value="100000">₦100,000</option>
+                                    @endif
+
+                                    @if ($referral_bonus >= 150000)
+                                        <option value="150000">₦150,000</option>
+                                    @endif
+
+                                     @if ($referral_bonus >= 200000)
+                                        <option value="150000">₦200,000</option>
+                                    @endif
+
+                                    @if ($referral_bonus >= 250000)
+                                        <option value="250000">₦250,000</option>
+                                    @endif
+
+                                    @if ($referral_bonus >= 300000)
+                                        <option value="300000">₦300,000</option>
+                                    @endif
+
+                                    @if ($referral_bonus >= 400000)
+                                        <option value="400000">₦400,000</option>
+                                    @endif
+
+                                    @if ($referral_bonus >= 500000)
+                                        <option value="500000">₦500,000</option>
+                                    @endif
+
                                 </select>
                             </div>
                             @if ($amount)

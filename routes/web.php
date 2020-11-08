@@ -57,7 +57,8 @@ Route::group(['middleware' => 'guest'], function () {
 
 Route::group(['prefix' => 'user', 'middleware' => ['auth_user']], function () {
         Route::group(['middleware' => ['updated_profile', 'restricted']], function () {
-                    Route::get('dashboard', [DashboardController::class, 'index'])->name('dashboard');
+            Route::group(['middleware' => 'activated'], function () {
+                Route::get('dashboard', [DashboardController::class, 'index'])->name('dashboard');
                     Route::get('profile', [ProfileController::class, 'index'])->name('profile');
                     Route::post('profile/post', [ProfileController::class, 'post'])->name('post.profile');
                     Route::post('profile/password', [ProfileController::class, 'password'])->name('password.profile');
@@ -67,12 +68,15 @@ Route::group(['prefix' => 'user', 'middleware' => ['auth_user']], function () {
                     Route::get('investment/{id}', [DepositController::class, 'singleInvestment'])->name('invest.single');
                     Route::get('investments', [DepositController::class, 'index'])->name('investments');
                     Route::get('withdrawals', [WithdrawalController::class, 'index'])->name('withdrawals');
+                    Route::get('withdrawal/{id}', [WithdrawalController::class, 'singleWithdrawal'])->name('withdraw.single');
                     Route::get('testimony/make', [TestimonyController::class, 'make'])->name('testimony.make');
                     Route::post('testimony/make', [TestimonyController::class, 'post'])->name('post.testimony.make');
                     Route::get('broker', [BrokerController::class, 'index'])->name('broker');
                     Route::post('broker/apply', [BrokerController::class, 'apply'])->name('broker.apply');
                     Route::get('referrals/withdraw', [ReferralController::class, 'withdraw'])->name('referrals.withdraw');
                     Route::get('support', [SupportController::class, 'index'])->name('support');
+            });
+            Route::get('activation', [ActivationController::class, 'activationPage'])->name('activation');
         });
     Route::post('logout', [AuthController::class, 'logout'])->name('logout');
     Route::get('restricted', [HomeController::class, 'restricted'])->name('restricted');
@@ -98,6 +102,7 @@ Route::group(['prefix' => 'secure/admin', 'as' => 'admin.'], function () {
         Route::get('investment/{id}', [AdminDepositController::class, 'singleInvestment'])->name('invest.single');
         Route::get('my-investments', [AdminDepositController::class, 'personal'])->name('personal.deposits');
         Route::get('withdrawals', [AdminWithdrawalController::class, 'index'])->name('withdrawals');
+        Route::get('withdrawal/{id}', [AdminWithdrawalController::class, 'singleWithdrawals'])->name('withdraw.single');
         Route::get('my-withdrawals', [AdminWithdrawalController::class, 'personal'])->name('personal.withdrawals');
         Route::get('testimony/make', [AdminTestimonyController::class, 'make'])->name('testimony.make');
         Route::post('testimony/make', [AdminTestimonyController::class, 'post'])->name('post.testimony.make');

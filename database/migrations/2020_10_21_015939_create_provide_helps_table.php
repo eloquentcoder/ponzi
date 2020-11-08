@@ -19,6 +19,7 @@ class CreateProvideHelpsTable extends Migration
             $table->boolean('merge_status')->default(false);
             $table->string('proof_of_payment')->nullable();
             $table->string('receipt_no')->nullable();
+            $table->boolean('is_activation')->default(false);
             $table->dateTime('expiration_date')->nullable();
             $table->boolean('confirmed')->default(false);
             $table->unsignedBigInteger('user_id');
