@@ -22,6 +22,7 @@ class ProvideUsers extends Component
     protected function mergeStatus()
     {
         $this->get_ids = auth()->user()->gethelp()->where('merge_status', 1)->pluck('id')->toArray();
+        // dd($this->get_ids);
     }
 
 

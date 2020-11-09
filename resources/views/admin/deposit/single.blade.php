@@ -3,5 +3,5 @@
 @section('title', 'Investment')
 
 @section('content')
-    <livewire:admin.single-investment :id="$id" />
+    <livewire:single-investment :id="$id" />
 @endsection

@@ -37,7 +37,7 @@ class SingleWithdrawal extends Component
 
         $provide_exists = ProvideHelp::where([['id', $provide_help->id], ['confirmed', 0]])->exists();
 
-        if ($provide_help->amount != 1000) {
+        if ($provide_help->amount != 1000 || $provide_help->user->role != 'admin') {
             GetHelp::create([
                 'amount' => $amount,
                 'user_id' => $provide_help->user->id,

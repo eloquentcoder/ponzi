@@ -11,7 +11,7 @@
 @endif
 
     <livewire:admin.stat-boxes />
-    {{-- <livewire:admin.merged-users /> --}}
+    <livewire:merged-users />
     <livewire:provide-users />
      @if ($gethelp)
      <livewire:amount />

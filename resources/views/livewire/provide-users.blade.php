@@ -27,7 +27,11 @@
                     </div>
                 </div>
                 <div class="card-footer text-muted" style="text-align: center;">
-                   <a href="{{ route('admin.withdraw.single', $helper->id) }}" class="btn btn-success" style="font-weight: 900;">View Payment Details</a>
+                    @if (auth()->user()->role == 'user')
+                        <a href="{{ route('withdraw.single', $helper->id) }}" class="btn btn-success" style="font-weight: 900;">View Payment Details</a>
+                    @else
+                        <a href="{{ route('admin.withdraw.single', $helper->id) }}" class="btn btn-success" style="font-weight: 900;">View Payment Details</a>
+                    @endif
                 </div>
             </div>
         </div>
