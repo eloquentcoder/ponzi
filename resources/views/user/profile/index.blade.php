@@ -56,7 +56,7 @@
                                             @if (session()->has('message'))
                                                 <div class="alert alert-success alert-dismissible">
                                                     <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
-                                                    <strong>Success!</strong> {{ session('message') }}
+                                                      {{ session('message') }}
                                                 </div>
                                             @endif
                                             <form class="form-horizontal form-material" method="POST" action="{{ route('post.profile') }}">
@@ -108,13 +108,13 @@
                                                 @if (session()->has('message_password'))
                                                     <div class="alert alert-success alert-dismissible">
                                                         <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
-                                                        <strong>Success!</strong> {{ session('message_password') }}
+                                                          {{ session('message_password') }}
                                                     </div>
                                                 @endif
                                                 @if (session()->has('error'))
                                                     <div class="alert alert-success alert-dismissible">
                                                         <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
-                                                        <strong>Success!</strong> {{ session('error') }}
+                                                          {{ session('error') }}
                                                     </div>
                                                 @endif
                                                 @csrf
