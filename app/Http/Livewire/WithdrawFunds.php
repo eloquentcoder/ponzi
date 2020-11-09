@@ -6,6 +6,7 @@ use App\Models\User;
 use App\Models\GetHelp;
 use Livewire\Component;
 use App\Models\ProvideHelp;
+use App\Jobs\ProcessWithdrawRequest;
 use Illuminate\Support\Facades\Hash;
 
 class WithdrawFunds extends Component
