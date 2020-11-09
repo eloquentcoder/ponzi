@@ -196,7 +196,7 @@
                 </div><!--end container-->
 
                 <!--footer section start-->
-                <footer class="footer" style="margin-top: 40px;">
+                <footer class="footer" style="margin-top: 40px; position: relative;">
                     2020 &copy; Green Rich Wide Investment.
                 </footer>
                 <!--footer section end-->
