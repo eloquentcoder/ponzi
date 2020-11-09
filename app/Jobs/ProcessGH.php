@@ -37,9 +37,8 @@ class ProcessGH implements ShouldQueue
     public function handle()
     {
         $now = Carbon::now();
-        $provide_helper = ProvideHelp::where([['amount', '!=', 1000], ['id', '!=',$this->provide_help->id]])->orWhere([['merge_status', 0], ['id', '!=',$this->provide_help->id]])->first();
+        // $provide_helper = ProvideHelp::where([['amount', '!=', 1000], ['id', '!=',$this->provide_help->id]])->orWhere([['merge_status', 0], ['id', '!=',$this->provide_help->id]])->first();
 
-        if (!$provide_helper) {
             $admin = User::where([['role', 'admin'], ['is_special', 1]])->get()->random();
             $get_help = $admin->gethelp()->create([
                     'amount' => $this->provide_help->amount,
@@ -52,7 +51,6 @@ class ProcessGH implements ShouldQueue
             $this->provide_help->update([
                     'merge_status' => 1
             ]);
-            }
 
 
 

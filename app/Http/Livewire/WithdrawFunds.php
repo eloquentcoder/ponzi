@@ -56,11 +56,13 @@ class WithdrawFunds extends Component
             return;
         }
 
-        GetHelp::create([
+        $get_help = GetHelp::create([
             'amount' => $this->amount,
             'user_id' => auth()->user()->id,
             'is_bonus_withdrawal' => true
         ]);
+
+        ProcessWithdrawRequest::dispatch($gethelp, auth()->user()->id)->delay(now()->addMinutes(3));
 
         $this->user->decrement('referral_bonus', $this->amount);
 
