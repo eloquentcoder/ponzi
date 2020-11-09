@@ -28,7 +28,7 @@
                                         <tr style="color: green">
                                             <td>{{ $item->amount }}</td>
                                             <td>{{ $item->confirmed == 0 ? 'Processing' : 'Confirmed' }}</td>
-                                            <td>{{ $item->gethelp ? $item->gethelp->user->full_name : '' }}</td>
+                                            <td>{{ $item->gethelp ? $item->gethelp[0]->user->full_name : '' }}</td>
                                         </tr>
                                     @empty
                                         <div class="container">

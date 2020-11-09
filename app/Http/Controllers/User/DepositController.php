@@ -10,7 +10,7 @@ class DepositController extends BaseController
 
     public function index()
     {
-        // $this->investments = auth()->user()->providehelp;
+        $this->investments = auth()->user()->providehelp;
         return view('user.invest.index', $this->data);
     }
 
