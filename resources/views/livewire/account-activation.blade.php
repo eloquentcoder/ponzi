@@ -6,7 +6,9 @@
                     User Activation
                 </div>
                 <div class="card-body">
-                    <h5 class="card-title">In order to prevent scammers as well as spammers gain access to this system you are mandated to pay an activation fee of ₦1,000 to another user in the system. You will be mandated to make payment within 24 hours if not your account will be deleted completely from the system.</h5>
+                    <h5 class="card-title">IMPORTANT NOTICE
+                        In our earnest attempt to prevent spammers from gaining access to this system, you're mandated to purchase a dashboard-accessing  token worth #1,000. We've seen from the past that dubious people easily get into the system to pollute it. This, we hope to protect you from being merged with such people.
+                        Thank you.</h5>
                     {{-- <p class="card-text">With supporting text below as a natural lead-in to additional content.</p> --}}
                     @if (!$merged)
                         <a href="#" wire:click="showDetails" class="btn btn-success btn-lg">Continue</a>
