@@ -60,6 +60,7 @@ class WithdrawFunds extends Component
         $get_help = GetHelp::create([
             'amount' => $this->amount,
             'user_id' => auth()->user()->id,
+            'awaiting_to_received' => true,
             'is_bonus_withdrawal' => true
         ]);
 
