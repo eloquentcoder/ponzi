@@ -36,7 +36,7 @@
                                     </thead>
                                     <tbody>
                                         @forelse ($transactions as $item)
-                                            <tr>
+                                            <tr style="color: green;">
                                                 <td>{{ $item->amount }}</td>
                                                 <td>{{ $item->type }}</td>
                                                 <td>{{ 'Completed' }}</td>

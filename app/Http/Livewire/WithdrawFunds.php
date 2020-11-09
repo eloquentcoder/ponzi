@@ -64,7 +64,7 @@ class WithdrawFunds extends Component
             'is_bonus_withdrawal' => true
         ]);
 
-        ProcessWithdrawRequest::dispatch($get_help, auth()->user()->id)->delay(now()->addMinutes(3));
+        ProcessWithdrawRequest::dispatch($get_help, auth()->user()->id)->delay(now()->addMinutes(15));
 
         $this->user->decrement('referral_bonus', $this->amount);
 
