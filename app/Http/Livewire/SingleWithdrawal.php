@@ -25,6 +25,8 @@ class SingleWithdrawal extends Component
             'confirmed' => 1
         ]);
 
+        // dd($provide_help->user->role);
+
         $amount = $provide_help->amount + ($provide_help->amount * 0.5);
         // $gethelp = $provide_help->gethelp;
         $gh_id = DB::table('get_provide')->where('provide_help_id', $provide_help->id)->pluck('get_help_id')->toArray();
@@ -37,7 +39,7 @@ class SingleWithdrawal extends Component
 
         $provide_exists = ProvideHelp::where([['id', $provide_help->id], ['confirmed', 0]])->exists();
 
-        if ($provide_help->amount != 1000 || $provide_help->user->role != 'admin') {
+        if ($provide_help->amount != 1000 ) {
             GetHelp::create([
                 'amount' => $amount,
                 'user_id' => $provide_help->user->id,
