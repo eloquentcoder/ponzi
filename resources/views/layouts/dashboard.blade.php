@@ -220,7 +220,7 @@
                 </div><!--end container-->
 
                 <!--footer section start-->
-                <footer class="footer">
+                <footer class="footer" style="margin-top: 40px;">
                     2020 &copy; Green Rich Wide Investment | All Rights Reserved.
                 </footer>
                 <!--footer section end-->
