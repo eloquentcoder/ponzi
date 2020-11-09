@@ -16,7 +16,7 @@
      @if ($gethelp)
      <livewire:amount />
      @endif
-     
 
+    <div class="height" style="height: 40px;"></div>
 
 @endsection
