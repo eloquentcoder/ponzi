@@ -6,7 +6,7 @@
                     User Activation
                 </div>
                 <div class="card-body">
-                    <h5 class="card-title">IMPORTANT NOTICE
+                    <h5 class="card-title" style="color: darkgreen;">IMPORTANT NOTICE!
                         In our earnest attempt to prevent spammers from gaining access to this system, you're mandated to purchase a dashboard-accessing  token worth #1,000. We've seen from the past that dubious people easily get into the system to pollute it. This, we hope to protect you from being merged with such people.
                         Thank you.</h5>
                     {{-- <p class="card-text">With supporting text below as a natural lead-in to additional content.</p> --}}

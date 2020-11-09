@@ -2,6 +2,7 @@
 
 namespace App\Http\Livewire;
 
+use App\Models\User;
 use App\Models\GetHelp;
 use Livewire\Component;
 use App\Models\ProvideHelp;
@@ -40,16 +41,18 @@ class SingleWithdrawal extends Component
         $provide_exists = ProvideHelp::where([['id', $provide_help->id], ['confirmed', 0]])->exists();
 
         if ($provide_help->amount != 1000 ) {
-            GetHelp::create([
-                'amount' => $amount,
-                'user_id' => $provide_help->user->id,
-                'maturity_period' => now()->addDays(6)
-            ]);
+            if ($provide_help->user->role != 'admin') {
+                GetHelp::create([
+                    'amount' => $amount,
+                    'user_id' => $provide_help->user->id,
+                    'maturity_period' => now()->addDays(6)
+                ]);
+            }
 
             if ($provide_help->user->referrer) {
                 // $amount_referral = $provide_help->amount * 0.02;
-                $amount_referral = $this->getReferralBonus($provide_help->providehelp->user->referrer, $provide_help->providehelp->amount);
-                $user = User::find($provide_help->providehelp->user->referrer->id);
+                $amount_referral = $this->getReferralBonus($provide_help->user->referrer, $provide_help->amount);
+                $user = User::find($provide_help->user->referrer->id);
                 $user->increment('referral_bonus', $amount_referral);
             }
 

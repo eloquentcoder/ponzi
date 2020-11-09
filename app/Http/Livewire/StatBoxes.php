@@ -25,7 +25,7 @@ class StatBoxes extends Component
         return view('livewire.stat-boxes', [
             'total_investment' => auth()->user()->providehelp()->where('confirmed', 1)->sum('amount'),
             'total_withdrawals' => auth()->user()->gethelp()->where('received', 1)->sum('amount'),
-            'referral_bonus' => auth()->user()->value('referral_bonus'),
+            'referral_bonus' => auth()->user()->referral_bonus,
             'referrals' => auth()->user()->referrals()->count()
         ]);
     }
