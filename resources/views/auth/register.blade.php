@@ -88,7 +88,7 @@
 
                 <div class="form-group">
                     <div class="col-sm-12 mt-4">
-                        <button class="btn btn-success btn-block" type="submit">Register</button>
+                        <button class="btn btn-success btn-block" type="submit">Create Account</button>
                     </div>
                 </div>
 
