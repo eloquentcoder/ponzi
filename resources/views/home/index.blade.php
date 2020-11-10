@@ -173,7 +173,7 @@
                 </a>
                 <p class="card-description text-center">
                      Greenrich investment is the best. Thank you for coming back<br>
-                    <span style="font-weight: 800">INVESTED AMOUNT: ₦100,000</span>
+                    <span style="font-weight: 800">INVESTED AMOUNT: ₦30,000</span>
                 </p>
               </div>
             </div>
