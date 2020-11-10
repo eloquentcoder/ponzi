@@ -40,8 +40,8 @@
                                                     {{ csrf_field() }}
 
                                                 </form>
-                                                <a href="{{ route('admin.admins.edit', $item->id) }}" class="btn btn-sm btn-info">Edit</a>
                                             @endif
+                                            <a href="{{ route('admin.admins.edit', $item->id) }}" class="btn btn-sm btn-info">Edit</a>
                                         </td>
                                     </tr>
                                 @empty
