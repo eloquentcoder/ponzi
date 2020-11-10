@@ -88,7 +88,7 @@
 
                 <div class="form-group">
                     <div class="col-sm-12 mt-4 text-center">
-                        <a href="{{ route('login') }}"> Already Have an Account? <span style="color: blue">Sign In</span></a>
+                        <a href="{{ route('login') }}" style="font-weight: 800"> Already Have an Account? <span style="color: blue">Sign In</span></a>
                     </div>
                 </div>
 
