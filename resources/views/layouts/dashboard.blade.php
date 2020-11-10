@@ -192,7 +192,7 @@
                                 </li>
                                 <li>
                                     <a href="javascript:;" data-toggle="dropdown">
-                                        <img src="{{ asset('default.jpg') }}" alt="">
+                                        <img src="{{ asset('flag.jpg') }}" alt="">
                                     </a>
                                     <div class="dropdown-menu dropdown-menu-right profile-menu">
                                         <a class="dropdown-item" href="{{ route('profile') }}"><i class="mdi mdi-account-circle m-r-5 text-muted"></i> Profile</a>
@@ -221,7 +221,7 @@
 
                 <!--footer section start-->
                 <footer class="footer" style="margin-top: 40px;">
-                    2020 &copy; Green Rich Wide Investment | All Rights Reserved.
+                    2020 &copy; Green Rich Wide | All Rights Reserved.
                 </footer>
                 <!--footer section end-->
 

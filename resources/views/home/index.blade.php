@@ -150,7 +150,7 @@
                   </div>
                 </a>
                 <p class="card-description text-center">
-                   Thank God Greenrich is back. Xmas money <br>
+                   Thank God Greenrich is back <br>
                    <span style="font-weight: 800">INVESTED AMOUNT: ₦10,000</span>
                 </p>
               </div>
