@@ -11,7 +11,7 @@
                 <a href="{{ route('home') }}">
                     <img src="{{ asset('home/logo.jpeg') }}" alt="" class="" style="height: 50px">
                 </a>
-            <h5 class="mt-3"><b>Signup for a new Account</b></h5>
+            <h5 class="mt-3"><b>CREATE ACCOUNT</b></h5>
             </div>
             @if($errors->any())
                     <div class="alert alert-danger alert-dismissible fade show" role="alert">
@@ -77,6 +77,12 @@
                             I agree to the terms and conditions
                         </label>
                     </div>
+                </div>
+
+                <div class="form-group" style="font-weight: 900">
+                    By clicking on Create Account you agree that;<br>
+                    1) you are 18yrs or above<br>
+                    2) have your own personal bank acct
                 </div>
 
 
