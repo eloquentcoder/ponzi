@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Admin;
 
 use Carbon\Carbon;
+use App\Models\Bank;
 use App\Models\User;
 use App\Models\GetHelp;
 use Illuminate\Http\Request;
@@ -23,6 +24,20 @@ class HomeController extends BaseController
     {
         $this->admins = User::where('role', 'admin')->with('gethelp')->paginate(15);
         return view('admin.admins.index', $this->data);
+    }
+
+    public function editAdmin($id)
+    {
+        $this->user = User::find($id);
+        $this->banks = Bank::all();
+        return view('admin.admins.edit', $this->data);
+    }
+
+    public function updateAdmin(Request $request, $id)
+    {
+        $user = User::find($id);
+        $user->update($request->all());
+        return redirect()->route('admin.admins')->with('message', 'Admin Edited Successfully');
     }
 
     public function adminsPost(Request $request, $id)
