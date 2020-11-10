@@ -26,7 +26,7 @@ class Kernel extends ConsoleKernel
     protected function schedule(Schedule $schedule)
     {
         // $schedule->command('delete:defaulters')->everyMinute();
-        $schedule->command('merge:users')->everyMinute(10);
+        // $schedule->command('merge:users')->everyMinute(10);
     }
 
     /**
