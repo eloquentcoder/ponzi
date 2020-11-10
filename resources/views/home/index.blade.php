@@ -78,7 +78,7 @@
               </div>
               <div class="description">
                 <h4 class="info-title" style="font-size: 25px; font-weight: 800;">Total Investors</h4>
-                <p class="description" style="font-size: 18px; font-weight: 800;">{{520 + $investors }}</p>
+                <p class="description" style="font-size: 18px; font-weight: 800;">{{437 + $investors }}</p>
                 {{-- <p class="description">To connect people that shares similar ideas and orientation in making the world financially stable.</p> --}}
               </div>
             </div>
@@ -101,7 +101,7 @@
               </div>
               <div class="description">
                 <h4 class="info-title" style="font-size: 25px; font-weight: 800;">Total Transactions</h4>
-                <p style="font-size: 18px; font-weight: 800;">{{1142 + $transactions}}</p>
+                <p style="font-size: 18px; font-weight: 800;">{{800 + $transactions}}</p>
               </div>
             </div>
           </div>
