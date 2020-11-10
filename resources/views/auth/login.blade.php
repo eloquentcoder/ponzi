@@ -58,7 +58,7 @@
 
                 <div class="form-group">
                     <div class="col-sm-12 mt-4 text-center">
-                        <a href="{{ route('register') }}"> Don't Have an Account? <span style="color: blue">Sign up</span></a>
+                        <a href="{{ route('register') }}" style="font-weight: 800"> Need an Account? <span style="color: blue">Register Now</span></a>
                     </div>
                 </div>
 
