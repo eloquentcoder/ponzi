@@ -122,35 +122,13 @@
               <div class="card-body">
                 <a href="#paper-kit">
                   <div class="author">
-                    <h4 class="card-title">Alexander Obayomi</h4>
+                    <h4 class="card-title">Mark Judith</h4>
                     <h5 class="card-category">Green Rich Wide Investor</h5>
-                    <h6 class="card-category">8th November 2020</h6>
+                    <h6 class="card-category">10th November 2020</h6>
                   </div>
                 </a>
                 <p class="card-description text-center">
-                   Greenrich here we come.<br>
-                   <span style="font-weight: 800">INVESTED AMOUNT: ₦50,000</span>
-                </p>
-              </div>
-            </div>
-          </div>
-          <div class="col-md-4">
-            <div class="card card-profile card-plain">
-              <div class="card-avatar">
-                <a href="#avatar">
-                  <img src="{{ asset('flag.jpg') }}" alt="...">
-                </a>
-              </div>
-              <div class="card-body">
-                <a href="#paper-kit">
-                  <div class="author">
-                    <h4 class="card-title">Ejimkonye Roxy</h4>
-                    <h5 class="card-category">Green Rich Wide Investor</h5>
-                    <h6 class="card-category">8th November 2020</h6>
-                  </div>
-                </a>
-                <p class="card-description text-center">
-                   Thank God Greenrich is back <br>
+                   A wonderful investment platform to join.<br>
                    <span style="font-weight: 800">INVESTED AMOUNT: ₦10,000</span>
                 </p>
               </div>
@@ -166,14 +144,36 @@
               <div class="card-body">
                 <a href="#paper-kit">
                   <div class="author">
-                    <h4 class="card-title">Mariam Kabiru</h4>
+                    <h4 class="card-title">Suleiman Onoja</h4>
                     <h5 class="card-category">Green Rich Wide Investor</h5>
-                    <h6 class="card-category">8th November 2020</h6>
+                    <h6 class="card-category">10th November 2020</h6>
                   </div>
                 </a>
                 <p class="card-description text-center">
-                     Greenrich investment is the best. Thank you for coming back<br>
-                    <span style="font-weight: 800">INVESTED AMOUNT: ₦30,000</span>
+                   Beautiful design and feel. Feeling optimistic<br>
+                   <span style="font-weight: 800">INVESTED AMOUNT: ₦100,000</span>
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="card card-profile card-plain">
+              <div class="card-avatar">
+                <a href="#avatar">
+                  <img src="{{ asset('flag.jpg') }}" alt="...">
+                </a>
+              </div>
+              <div class="card-body">
+                <a href="#paper-kit">
+                  <div class="author">
+                    <h4 class="card-title">Kenneth Ogwoyi</h4>
+                    <h5 class="card-category">Green Rich Wide Investor</h5>
+                    <h6 class="card-category">10th November 2020</h6>
+                  </div>
+                </a>
+                <p class="card-description text-center">
+                     My investment is safe!<br>
+                    <span style="font-weight: 800">INVESTED AMOUNT: ₦50,000</span>
                 </p>
               </div>
             </div>
