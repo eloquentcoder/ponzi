@@ -11,7 +11,7 @@
                 <a href="{{ route('home') }}">
                     <img src="{{ asset('home/logo.jpeg') }}" alt="" class="" style="height: 50px">
                 </a>
-            <h5 class="mt-3"><b>Welcome! Signup for a new Account</b></h5>
+            <h5 class="mt-3"><b>Signup for a new Account</b></h5>
             </div>
             @if($errors->any())
                     <div class="alert alert-danger alert-dismissible fade show" role="alert">
