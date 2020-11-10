@@ -79,10 +79,10 @@
                     </div>
                 </div>
 
-                <div class="form-group" style="font-weight: 900">
-                    By clicking on Create Account you agree that;<br>
-                    1) you are 18yrs or above<br>
-                    2) have your own personal bank acct
+                <div class="form-group" style="font-weight: 600">
+                    By clicking <b style="font-weight: 900">Create Account</b>, I accept that:<br>
+                    1. I am at least 18 years of age<br>
+                    2. I have an active bank account
                 </div>
 
 
@@ -94,7 +94,7 @@
 
                 <div class="form-group">
                     <div class="col-sm-12 mt-4 text-center">
-                        <a href="{{ route('login') }}" style="font-weight: 800"> Already Have an Account? <span style="color: blue">Sign In</span></a>
+                        <a href="{{ route('login') }}" style="font-weight: 800"> Already Have an Account? <span style="color: blue">Login</span></a>
                     </div>
                 </div>
 
