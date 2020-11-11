@@ -10,6 +10,7 @@
                             </div>
                         @endif
 
+    <livewire:announcements />
     <livewire:stat-boxes />
     <livewire:merged-users />
     <livewire:provide-users />
