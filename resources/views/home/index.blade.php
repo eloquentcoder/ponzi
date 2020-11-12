@@ -78,7 +78,7 @@
               </div>
               <div class="description">
                 <h4 class="info-title" style="font-size: 25px; font-weight: 800;">Total Investors</h4>
-                <p class="description" style="font-size: 18px; font-weight: 800;">{{487 + $investors }}</p>
+                <p class="description" style="font-size: 18px; font-weight: 800;">{{557 + $investors }}</p>
                 {{-- <p class="description">To connect people that shares similar ideas and orientation in making the world financially stable.</p> --}}
               </div>
             </div>
@@ -90,7 +90,7 @@
               </div>
               <div class="description">
                 <h4 class="info-title" style="font-size: 25px; font-weight: 800;">Total Brokers</h4>
-                <p style="font-size: 18px; font-weight: 800;">{{70 + $brokers}}</p>
+                <p style="font-size: 18px; font-weight: 800;">{{84 + $brokers}}</p>
               </div>
             </div>
           </div>
@@ -101,7 +101,7 @@
               </div>
               <div class="description">
                 <h4 class="info-title" style="font-size: 25px; font-weight: 800;">Total Transactions</h4>
-                <p style="font-size: 18px; font-weight: 800;">{{900 + $transactions}}</p>
+                <p style="font-size: 18px; font-weight: 800;">{{1100 + $transactions}}</p>
               </div>
             </div>
           </div>
@@ -122,14 +122,14 @@
               <div class="card-body">
                 <a href="#paper-kit">
                   <div class="author">
-                    <h4 class="card-title">Mark Judith</h4>
+                    <h4 class="card-title">Marco Inemesit</h4>
                     <h5 class="card-category">Green Rich Wide Investor</h5>
-                    <h6 class="card-category">10th November 2020</h6>
+                    <h6 class="card-category">11th November 2020</h6>
                   </div>
                 </a>
                 <p class="card-description text-center">
-                   A wonderful investment platform to join.<br>
-                   <span style="font-weight: 800">INVESTED AMOUNT: ₦10,000</span>
+                   Looks legit. Definitely highly recommended<br>
+                   <span style="font-weight: 800">INVESTED AMOUNT: ₦20,000</span>
                 </p>
               </div>
             </div>
@@ -144,14 +144,14 @@
               <div class="card-body">
                 <a href="#paper-kit">
                   <div class="author">
-                    <h4 class="card-title">Suleiman Onoja</h4>
+                    <h4 class="card-title">Comfort Balogun</h4>
                     <h5 class="card-category">Green Rich Wide Investor</h5>
-                    <h6 class="card-category">10th November 2020</h6>
+                    <h6 class="card-category">11th November 2020</h6>
                   </div>
                 </a>
                 <p class="card-description text-center">
-                   Beautiful design and feel. Feeling optimistic<br>
-                   <span style="font-weight: 800">INVESTED AMOUNT: ₦100,000</span>
+                   I like their transparency. Keep it up<br>
+                   <span style="font-weight: 800">INVESTED AMOUNT: ₦50,000</span>
                 </p>
               </div>
             </div>
@@ -166,13 +166,13 @@
               <div class="card-body">
                 <a href="#paper-kit">
                   <div class="author">
-                    <h4 class="card-title">Kenneth Ogwoyi</h4>
+                    <h4 class="card-title">Mohammed Saliu</h4>
                     <h5 class="card-category">Green Rich Wide Investor</h5>
-                    <h6 class="card-category">10th November 2020</h6>
+                    <h6 class="card-category">11th November 2020</h6>
                   </div>
                 </a>
                 <p class="card-description text-center">
-                     My investment is safe!<br>
+                     Greenrich wide rules!<br>
                     <span style="font-weight: 800">INVESTED AMOUNT: ₦50,000</span>
                 </p>
               </div>

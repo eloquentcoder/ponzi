@@ -34,6 +34,11 @@ class HomeController extends BaseController
         return view('home.about');
     }
 
+    public function termsPage()
+    {
+        return view('home.terms');
+    }
+
 
     public function restricted()
     {
