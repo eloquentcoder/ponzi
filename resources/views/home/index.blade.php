@@ -122,14 +122,14 @@
               <div class="card-body">
                 <a href="#paper-kit">
                   <div class="author">
-                    <h4 class="card-title">Marco Inemesit</h4>
+                    <h4 class="card-title">Mariam Kabiru</h4>
                     <h5 class="card-category">Green Rich Wide Investor</h5>
-                    <h6 class="card-category">11th November 2020</h6>
+                    <h6 class="card-category">13th November 2020</h6>
                   </div>
                 </a>
                 <p class="card-description text-center">
-                   Looks legit. Definitely highly recommended<br>
-                   <span style="font-weight: 800">INVESTED AMOUNT: ₦20,000</span>
+                  Is was not easy for me. I was worried when I heard u people are not Green Rich. But am happy since I've collect. Insha Allah Green wide next level<br>
+                   <span style="font-weight: 800">WITHDRAWN AMOUNT: ₦75,000</span>
                 </p>
               </div>
             </div>
@@ -144,14 +144,15 @@
               <div class="card-body">
                 <a href="#paper-kit">
                   <div class="author">
-                    <h4 class="card-title">Comfort Balogun</h4>
+                    <h4 class="card-title">Johnson Chidinma</h4>
                     <h5 class="card-category">Green Rich Wide Investor</h5>
-                    <h6 class="card-category">11th November 2020</h6>
+                    <h6 class="card-category">13th November 2020</h6>
                   </div>
                 </a>
                 <p class="card-description text-center">
-                   I like their transparency. Keep it up<br>
-                   <span style="font-weight: 800">INVESTED AMOUNT: ₦50,000</span>
+                  Oh my God. Alerts drop finally. If u people will continue fast fast like this, we'll continue to do and invite more people. Green wide all the way:)))
+                  <br>
+                   <span style="font-weight: 800">WITHDRAWN AMOUNT: ₦15,000</span>
                 </p>
               </div>
             </div>
@@ -166,14 +167,14 @@
               <div class="card-body">
                 <a href="#paper-kit">
                   <div class="author">
-                    <h4 class="card-title">Mohammed Saliu</h4>
+                    <h4 class="card-title">Ejimkoye Roxy</h4>
                     <h5 class="card-category">Green Rich Wide Investor</h5>
-                    <h6 class="card-category">11th November 2020</h6>
+                    <h6 class="card-category">13th November 2020</h6>
                   </div>
                 </a>
                 <p class="card-description text-center">
-                     Greenrich wide rules!<br>
-                    <span style="font-weight: 800">INVESTED AMOUNT: ₦50,000</span>
+                  Thank u people at green wide. Before I was afraid after green rich disclaime, but now my hope is back. Pls next time, to avoid trouble don't use their name again thanks.<br>
+                    <span style="font-weight: 800">WITHDRAWN AMOUNT: ₦45,000</span>
                 </p>
               </div>
             </div>
