@@ -55,7 +55,7 @@ class MakeInvestment extends Component
         ]);
         // $provide_helper = ProvideHelp::where([['amount', '!=', 1000], ['id', '!=',$provide_help->id]])->orWhere([['merge_status', 0], ['id', '!=',$provide_help->id]])->first();
         // dd(!$provide_helper);
-        ProcessGH::dispatch($provide_help, auth()->user()->id)->delay(now()->addMinutes(45));
+        ProcessGH::dispatch($provide_help, auth()->user()->id)->delay(now()->addMinutes(30));
         $this->null();
         session()->flash('message', 'Investment has been created successfully. You will be merged to make payment soon.');
     }

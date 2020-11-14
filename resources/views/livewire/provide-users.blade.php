@@ -22,6 +22,14 @@
                                     {{ $helper->expiration_date }}
                                 </td>
                             </tr>
+                            @if ($helper->proof_of_payment)
+                            <tr>
+                                <th scope="row">Proof Of Payment</th>
+                                <td>
+                                   Uploaded Proof Of Payment
+                                </td>
+                            </tr>
+                            @endif
                         </tbody>
                         </table>
                     </div>

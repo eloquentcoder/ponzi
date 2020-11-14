@@ -78,7 +78,7 @@
               </div>
               <div class="description">
                 <h4 class="info-title" style="font-size: 25px; font-weight: 800;">Total Investors</h4>
-                <p class="description" style="font-size: 18px; font-weight: 800;">{{557 + $investors }}</p>
+                <p class="description" style="font-size: 18px; font-weight: 800;">{{700 + $investors }}</p>
                 {{-- <p class="description">To connect people that shares similar ideas and orientation in making the world financially stable.</p> --}}
               </div>
             </div>
@@ -90,7 +90,7 @@
               </div>
               <div class="description">
                 <h4 class="info-title" style="font-size: 25px; font-weight: 800;">Total Brokers</h4>
-                <p style="font-size: 18px; font-weight: 800;">{{84 + $brokers}}</p>
+                <p style="font-size: 18px; font-weight: 800;">{{294 + $brokers}}</p>
               </div>
             </div>
           </div>
@@ -101,7 +101,7 @@
               </div>
               <div class="description">
                 <h4 class="info-title" style="font-size: 25px; font-weight: 800;">Total Transactions</h4>
-                <p style="font-size: 18px; font-weight: 800;">{{1100 + $transactions}}</p>
+                <p style="font-size: 18px; font-weight: 800;">{{1600 + $transactions}}</p>
               </div>
             </div>
           </div>
@@ -122,13 +122,15 @@
               <div class="card-body">
                 <a href="#paper-kit">
                   <div class="author">
-                    <h4 class="card-title">Mariam Kabiru</h4>
+                    <h4 class="card-title">Haruna James
+                    </h4>
                     <h5 class="card-category">Green Rich Wide Investor</h5>
-                    <h6 class="card-category">13th November 2020</h6>
+                    <h6 class="card-category">14th November 2020</h6>
+                    <p class="card-category">9:17am</p>
                   </div>
                 </a>
                 <p class="card-description text-center">
-                  Is was not easy for me. I was worried when I heard u people are not Green Rich. But am happy since I've collect. Insha Allah Green wide next level<br>
+                    At this point I am convinced that you people are serious on this platform. Payment is fast. Pls kip it up<br>
                    <span style="font-weight: 800">WITHDRAWN AMOUNT: ₦75,000</span>
                 </p>
               </div>
@@ -144,13 +146,14 @@
               <div class="card-body">
                 <a href="#paper-kit">
                   <div class="author">
-                    <h4 class="card-title">Johnson Chidinma</h4>
+                    <h4 class="card-title">Micah Oche</h4>
                     <h5 class="card-category">Green Rich Wide Investor</h5>
-                    <h6 class="card-category">13th November 2020</h6>
+                    <h6 class="card-category">14th November 2020</h6>
+                    <p class="card-category">12:48pm</p>
                   </div>
                 </a>
                 <p class="card-description text-center">
-                  Oh my God. Alerts drop finally. If u people will continue fast fast like this, we'll continue to do and invite more people. Green wide all the way:)))
+                    So long Green Wide go dey pay like this, we die here till next year. Up GreenWide till 2030
                   <br>
                    <span style="font-weight: 800">WITHDRAWN AMOUNT: ₦15,000</span>
                 </p>
@@ -167,14 +170,15 @@
               <div class="card-body">
                 <a href="#paper-kit">
                   <div class="author">
-                    <h4 class="card-title">Ejimkoye Roxy</h4>
+                    <h4 class="card-title">Chinonso Favour</h4>
                     <h5 class="card-category">Green Rich Wide Investor</h5>
-                    <h6 class="card-category">13th November 2020</h6>
+                    <h6 class="card-category">14th November 2020</h6>
+                    <p class="card-category">2:43pm</p>
                   </div>
                 </a>
                 <p class="card-description text-center">
-                  Thank u people at green wide. Before I was afraid after green rich disclaime, but now my hope is back. Pls next time, to avoid trouble don't use their name again thanks.<br>
-                    <span style="font-weight: 800">WITHDRAWN AMOUNT: ₦45,000</span>
+                    Alerts received in full. More power green wide.<br>
+                    <span style="font-weight: 800">WITHDRAWN AMOUNT: ₦150,000</span>
                 </p>
               </div>
             </div>
