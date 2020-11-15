@@ -20,7 +20,7 @@ class Index extends Component
         return view('livewire.admin.withdrawal.index', [
             'withdrawals' => GetHelp::whereHas('user')
                             ->where(function($query){
-                                $query->with('User')->whereHas('User', function($q) use ($search) {
+                                $query->with('User')->whereHas('User', function($q) {
                                     $q->where('role', 'user');
                                 });
                             })
