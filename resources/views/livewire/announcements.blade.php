@@ -6,8 +6,9 @@
                     <b>IMPORTANT NOTICE:</b>
                 </div>
                 <div class="card-body">
-                    <h5 class="card-title" style="font-weight: 800; color: rgb(54, 120, 196);">In our quest to build confidence in our great community, it has become pertinent to address the question of identity.
-                        GREEN RICH WIDE is a team of passionate investors who believe in the power of idea to change lives across the globe. Haven't spent a lot of time trying to figure out why most platforms often abruptly go down, we have carefully put a lot of features in place to give you a sustainable one. Your faith in us is all we need to give you our best. You wouldn't regret investing with us. Help us to serve you better.
+                    <h5 class="card-title" style="font-weight: 800; color: rgb(54, 120, 196);">As we celebrate our one-week anniversary, we want to sincerely express our gratitude to all our investors who, despite all odds, took out courage to invest in our great community. Our primary aim is to make you proud of where you belong.<br>
+                        Please do not disclose your secret key to anybody. GREEN RICH WIDE will never ask for your password or login details.<br>
+                        Kindly direct all suggestions, complaints and requests to our online customer care for assistance.
                         Thank you.</h5>
                     {{-- <p class="card-text">With supporting text below as a natural lead-in to additional content.</p> --}}
                 </div>
