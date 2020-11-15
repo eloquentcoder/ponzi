@@ -16,6 +16,7 @@
                                             <th>Received Status</th>
                                             <th>Awaiting Status</th>
                                             <th>Merged User ID</th>
+                                            <th>Maturity Time</th>
                                         </tr>
                                     </thead>
                                     <tbody>
@@ -26,13 +27,13 @@
                                             <td>{{ $item->merge_status == 0 ? 'Not Merged' : 'Merged' }}</td>
                                             <td>{{ $item->received == 0 ? 'Not Confirmed' : 'Confirmed' }}</td>
                                             <td>{{ $item->awaiting_to_receive == 0 ? 'Not awaiting' : 'Awaiting' }}</td>
-                                            <td>{{ \Carbon\Carbon::parse($item->maturity_period)->toFormattedDateString() }}</td>
                                             <td>
                                                 @forelse ($item->providehelp as $item_help)
                                                 <li>{{ $item_help->user->full_name}}</li>
                                             @empty
                                                 No Merged Users
                                             @endforelse</td>
+                                            <td>{{ \Carbon\Carbon::parse($item->maturity_period)->toFormattedDateString() }}</td>
                                         </tr>
                                     @empty
                                         <div class="container">
