@@ -14,6 +14,7 @@
                                             <th>Amount</th>
                                             <th>Merge Status</th>
                                             <th>Received Status</th>
+                                            <th>Awaiting Status</th>
                                             <th>Merged User ID</th>
                                         </tr>
                                     </thead>
@@ -23,6 +24,7 @@
                                             <td>{{ $item->user->full_name }}</td>
                                             <td>{{ $item->amount }}</td>
                                             <td>{{ $item->merge_status == 0 ? 'Not Merged' : 'Merged' }}</td>
+                                            <td>{{ $item->awaiting_to_receive == 0 ? 'Not awaiting' : 'Awaiting' }}</td>
                                             <td>{{ $item->received == 0 ? 'Not Confirmed' : 'Confirmed' }}</td>
                                             <td>
                                                 @forelse ($item->providehelp as $item_help)
