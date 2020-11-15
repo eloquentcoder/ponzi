@@ -178,7 +178,7 @@
                 </a>
                 <p class="card-description text-center">
                     Everywhere is wide and green! Thanks<br>
-                    <span style="font-weight: 800">WITHDRAWN AMOUNT: ₦150,000</span>
+                    <span style="font-weight: 800">WITHDRAWN AMOUNT: ₦15,000</span>
                 </p>
               </div>
             </div>
