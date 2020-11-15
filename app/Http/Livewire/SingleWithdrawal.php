@@ -45,7 +45,7 @@ class SingleWithdrawal extends Component
                 GetHelp::create([
                     'amount' => $amount,
                     'user_id' => $provide_help->user->id,
-                    'maturity_period' => now()->addDays(6)
+                    'maturity_period' => now()->addDays(5)
                 ]);
             }
 
