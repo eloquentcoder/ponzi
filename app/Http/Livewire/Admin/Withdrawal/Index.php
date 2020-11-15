@@ -18,7 +18,13 @@ class Index extends Component
     public function render()
     {
         return view('livewire.admin.withdrawal.index', [
-            'withdrawals' => GetHelp::with('user')->paginate(15)
+            'withdrawals' => GetHelp::whereHas('user')
+                            ->where(function($query){
+                                $query->with('User')->whereHas('User', function($q) use ($search) {
+                                    $q->where('role', 'user');
+                                });
+                            })
+                            ->paginate(15)
         ]);
     }
 }
