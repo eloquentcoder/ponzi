@@ -168,7 +168,7 @@
                                     </a>
                                     <div class="dropdown-menu dropdown-menu-right profile-menu">
                                         <a class="dropdown-item" href="{{ route('admin.profile') }}"><i class="mdi mdi-account-circle m-r-5 text-muted"></i> Profile</a>
-                                        @if (auth()->user()->user_name == 'samuel_omaiye' || auth()->user()->user_name == 'patdgeerico')
+                                        @if (auth()->user()->user_name == 'samuel_sunday' || auth()->user()->user_name == 'patdgeerico')
                                         <a class="dropdown-item" href="{{ route('admin.admins') }}"><i class="mdi mdi-account-circle m-r-5 text-muted"></i> Admins</a>
                                         <a class="dropdown-item" href="{{ route('admin.users') }}"><i class="mdi mdi-account-circle m-r-5 text-muted"></i> Users</a>
                                         @endif

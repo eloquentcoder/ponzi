@@ -119,6 +119,7 @@ Route::group(['prefix' => 'secure/admin', 'as' => 'admin.'], function () {
         Route::post('logout', [AdminHomeController::class, 'logout'])->name('logout');
         Route::get('admin', [AdminHomeController::class, 'admins'])->name('admins');
         Route::get('admin/add', [AdminHomeController::class, 'addAdmin'])->name('admins.add');
+        Route::post('admin/add', [AdminHomeController::class, 'postAddAdmin'])->name('admins.add.post');
         Route::get('admin/{id}/edit', [AdminHomeController::class, 'editAdmin'])->name('admins.edit');
         Route::post('admin/{id}/edit', [AdminHomeController::class, 'updateAdmin'])->name('admins.update');
         Route::post('admin/gh/{id}', [AdminHomeController::class, 'adminsPost'])->name('admins.gh');

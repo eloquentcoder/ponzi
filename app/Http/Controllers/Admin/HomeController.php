@@ -40,6 +40,12 @@ class HomeController extends BaseController
         return redirect()->route('admin.admins')->with('message', 'Admin Edited Successfully');
     }
 
+    public function addAdmin()
+    {
+        $this->banks = Bank::all();
+        return view('admin.admins.add', $this->data);
+    }
+
     public function adminsPost(Request $request, $id)
     {
         $now = Carbon::now();
@@ -53,6 +59,12 @@ class HomeController extends BaseController
         ]);
 
         return redirect()->back()->with('message', 'Withdrawal Request Made Successfully');
+    }
+
+    public function postAddAdmin(Request $request)
+    {
+        User::create(array_merge($request->all(), ['role' => 'admin', 'password' => bcrypt('password')]));
+        return redirect()->route('admin.admins')->with('message', 'Admin Created Successfully');
     }
 
 

@@ -10,7 +10,7 @@
             <div class="card-body">
                 <h5 class="header-title pb-3">Add Admin</h5>
                 <div class="general-label">
-                    <form role="form" action="{{ route('admin.admins.add') }}" method="POST">
+                    <form role="form" action="{{ route('admin.admins.add.post') }}" method="POST">
                         @csrf
                         <div class="form-group row">
                             <div class="col-md-4">
@@ -27,13 +27,21 @@
                             </div>
                         </div>
                         <div class="form-group row">
-                            <div class="col-md-6">
+                            <div class="col-md-4">
                                 <label for="exampleInputEmail1">Phone Number</label>
                                 <input type="tel" name="phone_number" class="form-control" placeholder="Enter Phone Number" required>
                             </div>
-                            <div class="col-md-6">
+                            <div class="col-md-4">
                                 <label for="exampleInputEmail1">Email Address</label>
                                 <input type="email" name="email" class="form-control" placeholder="Enter Email Address" required>
+                            </div>
+                            <div class="col-md-4">
+                                <label for="exampleInputEmail1">Is Special</label>
+                                <select name="is_special" class="form-control">
+                                    <option value=""></option>
+                                    <option value="1">Yes</option>
+                                    <option value="0">No</option>
+                                </select>
                             </div>
                         </div>
                         <div class="form-group row">
