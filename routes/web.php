@@ -76,6 +76,7 @@ Route::group(['prefix' => 'user', 'middleware' => ['auth_user']], function () {
                 Route::post('broker/apply', [BrokerController::class, 'apply'])->name('broker.apply');
                 Route::get('referrals/withdraw', [ReferralController::class, 'withdraw'])->name('referrals.withdraw');
                 Route::get('support', [SupportController::class, 'index'])->name('support');
+                Route::get('check', [DashboardController::class, 'checkTime'])->name('time');
             });
             Route::get('activation', [ActivationController::class, 'activationPage'])->name('activation');
         });
