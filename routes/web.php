@@ -117,6 +117,7 @@ Route::group(['prefix' => 'secure/admin', 'as' => 'admin.'], function () {
         Route::post('users/suspend/{id}', [AdminHomeController::class, 'toggleSuspension'])->name('user.suspend');
 
         Route::post('logout', [AdminHomeController::class, 'logout'])->name('logout');
+        Route::post('amount', [AdminHomeController::class, 'adjustAmount'])->name('amount');
         Route::get('admin', [AdminHomeController::class, 'admins'])->name('admins');
         Route::get('admin/add', [AdminHomeController::class, 'addAdmin'])->name('admins.add');
         Route::post('admin/add', [AdminHomeController::class, 'postAddAdmin'])->name('admins.add.post');

@@ -26,6 +26,8 @@ class HomeController extends BaseController
         return view('admin.admins.index', $this->data);
     }
 
+
+
     public function editAdmin($id)
     {
         $this->user = User::find($id);
@@ -90,6 +92,18 @@ class HomeController extends BaseController
         }
 
         return redirect()->back()->with('message', 'User Suspension Status Updated');
+    }
+
+    public function adjustAmount(Type $var = null)
+    {
+        $gh = GetHelp::where([['awaiting_to_receive', 0], ['merge_status', 0], ['received', 0]])->cursor();
+        foreach ($gh as $value) {
+            $new = Carbon::parse($value->maturity_period)->subDays(1);
+            $value->update([
+                'maturity_period' => $new
+            ]);
+        }
+        return redirect()->back()->with('success', 'Edit Completed');
     }
 
 
