@@ -122,16 +122,16 @@
               <div class="card-body">
                 <a href="#paper-kit">
                   <div class="author">
-                    <h4 class="card-title">Olutayo Somide
+                    <h4 class="card-title">Usman monday
                     </h4>
                     <h5 class="card-category">Green Rich Wide Investor</h5>
-                    <h6 class="card-category">15th November 2020</h6>
+                    <h6 class="card-category">16th November 2020</h6>
                     <p class="card-category">5:23pm</p>
                   </div>
                 </a>
                 <p class="card-description text-center">
-                    I was doubting greenrich wide at first but believe me they are real. I invested 30k and got paid 45k. I am so happy I didn't give in to doubt.<br>
-                   <span style="font-weight: 800">WITHDRAWN AMOUNT: ₦45,000</span>
+                  All thanks to Green rich wide MANAGEMENT I INVEST #5000 in 5days I got #7,500 what a wonderful platform, I'm glad to be here, thanks once again.<br>
+                   <span style="font-weight: 800">WITHDRAWN AMOUNT: ₦7,500</span>
                 </p>
               </div>
             </div>
