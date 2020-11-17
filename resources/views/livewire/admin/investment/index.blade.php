@@ -14,7 +14,6 @@
                                             <th>Amount</th>
                                             <th>Merge Status</th>
                                             <th>Confirmation Status</th>
-                                            <th>Recipient</th>
                                         </tr>
                                     </thead>
                                     <tbody>
@@ -24,7 +23,7 @@
                                             <td>{{ $item->amount }}</td>
                                             <td>{{ $item->merge_status == 0 ? 'Not Merged' : 'Merged' }}</td>
                                             <td>{{ $item->confirmed == 0 ? 'Not Confirmed' : 'Confirmed' }}</td>
-                                            <td>{{ $item->gethelp ? $item->gethelp->user->full_name : '' }}</td>
+                                            {{-- <td>{{ $item->gethelp ? $item->gethelp->user->full_name : '' }}</td> --}}
                                         </tr>
                                     @empty
                                         <div class="container">
