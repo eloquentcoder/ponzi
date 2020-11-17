@@ -16,6 +16,7 @@ class Index extends Component
     {
         return view('livewire.admin.investment.index', [
             'investments' => ProvideHelp::latest('created_at')
+                            ->where('amount', '!=', 1000)
                             ->where(function($query){
                                 $query->with('User')->whereHas('User', function($q) {
                                     $q->where('role', 'user');

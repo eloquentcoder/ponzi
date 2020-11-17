@@ -14,6 +14,7 @@
                                             <th>Amount</th>
                                             <th>Merge Status</th>
                                             <th>Confirmation Status</th>
+                                            <th>Time Paid</th>
                                         </tr>
                                     </thead>
                                     <tbody>
@@ -23,7 +24,7 @@
                                             <td>{{ $item->amount }}</td>
                                             <td>{{ $item->merge_status == 0 ? 'Not Merged' : 'Merged' }}</td>
                                             <td>{{ $item->confirmed == 0 ? 'Not Confirmed' : 'Confirmed' }}</td>
-                                            {{-- <td>{{ $item->gethelp ? $item->gethelp->user->full_name : '' }}</td> --}}
+                                            <td>{{ \Carbon\Carbon::parse($item->created_at)->toFormattedDateString() }}</td>
                                         </tr>
                                     @empty
                                         <div class="container">
