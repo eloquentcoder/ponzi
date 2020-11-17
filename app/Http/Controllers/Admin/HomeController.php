@@ -26,8 +26,6 @@ class HomeController extends BaseController
         return view('admin.admins.index', $this->data);
     }
 
-
-
     public function editAdmin($id)
     {
         $this->user = User::find($id);
@@ -92,6 +90,11 @@ class HomeController extends BaseController
         }
 
         return redirect()->back()->with('message', 'User Suspension Status Updated');
+    }
+
+    public function stats()
+    {
+        return view('admin.payment.stats');
     }
 
     // public function adjustAmount(Type $var = null)

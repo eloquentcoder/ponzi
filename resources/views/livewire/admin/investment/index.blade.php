@@ -3,7 +3,7 @@
         <div class="col-lg-12 col-sm-12">
             <div class="card m-b-30">
                 <div class="card-body">
-                    <h5 class="header-title pb-3">Referrals Summary</h5>
+                    <h5 class="header-title pb-3">Investment Summary</h5>
                     <div class="row">
                         <div class="col-sm-12">
                             <div class="table-responsive">
