@@ -15,7 +15,13 @@ class Index extends Component
     public function render()
     {
         return view('livewire.admin.investment.index', [
-            'investments' => ProvideHelp::paginate(10)
+            'investments' => ProvideHelp::latest('created_at')
+                            ->where(function($query){
+                                $query->with('User')->whereHas('User', function($q) {
+                                    $q->where('role', 'user');
+                                });
+                            })
+                            ->paginate(10)
         ]);
     }
 }
