@@ -131,7 +131,7 @@
                 </a>
                 <p class="card-description text-center">
                     Green rich wide is here to stay, just got my money.<br>
-                   <span style="font-weight: 800">WITHDRAWN AMOUNT: ₦7,500</span>
+                   <span style="font-weight: 800">WITHDRAWN AMOUNT: ₦15,000</span>
                 </p>
               </div>
             </div>

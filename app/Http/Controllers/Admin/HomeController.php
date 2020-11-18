@@ -9,6 +9,7 @@ use App\Models\GetHelp;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Auth;
+use App\Http\Requests\AddAdminRequest;
 use App\Http\Controllers\BaseController;
 
 class HomeController extends BaseController
@@ -61,7 +62,7 @@ class HomeController extends BaseController
         return redirect()->back()->with('message', 'Withdrawal Request Made Successfully');
     }
 
-    public function postAddAdmin(Request $request)
+    public function postAddAdmin(AddAdminRequest $request)
     {
         User::create(array_merge($request->all(), ['role' => 'admin', 'password' => bcrypt('password')]));
         return redirect()->route('admin.admins')->with('message', 'Admin Created Successfully');
