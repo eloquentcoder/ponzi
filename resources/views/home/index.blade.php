@@ -78,7 +78,7 @@
               </div>
               <div class="description">
                 <h4 class="info-title" style="font-size: 25px; font-weight: 800;">Total Investors</h4>
-                <p class="description" style="font-size: 18px; font-weight: 800;">{{913 + $investors }}</p>
+                <p class="description" style="font-size: 18px; font-weight: 800;">{{1213 + $investors }}</p>
                 {{-- <p class="description">To connect people that shares similar ideas and orientation in making the world financially stable.</p> --}}
               </div>
             </div>
@@ -101,7 +101,7 @@
               </div>
               <div class="description">
                 <h4 class="info-title" style="font-size: 25px; font-weight: 800;">Total Transactions</h4>
-                <p style="font-size: 18px; font-weight: 800;">{{2824 + $transactions}}</p>
+                <p style="font-size: 18px; font-weight: 800;">{{3324 + $transactions}}</p>
               </div>
             </div>
           </div>
@@ -122,16 +122,16 @@
               <div class="card-body">
                 <a href="#paper-kit">
                   <div class="author">
-                    <h4 class="card-title">Judith Egwoyi
+                    <h4 class="card-title">Blessing Ibeazor
                     </h4>
                     <h5 class="card-category">Green Rich Wide Investor</h5>
-                    <h6 class="card-category">17th November 2020</h6>
-                    <p class="card-category">5:23pm</p>
+                    <h6 class="card-category">19th November 2020</h6>
+                    <p class="card-category">1:34pm</p>
                   </div>
                 </a>
                 <p class="card-description text-center">
-                    Green rich wide is here to stay, just got my money.<br>
-                   <span style="font-weight: 800">WITHDRAWN AMOUNT: ₦15,000</span>
+                    GreenRich Wide won kill me with alert oo. Na here we die till December.<br>
+                   <span style="font-weight: 800">WITHDRAWN AMOUNT: ₦150,000</span>
                 </p>
               </div>
             </div>
@@ -146,16 +146,16 @@
               <div class="card-body">
                 <a href="#paper-kit">
                   <div class="author">
-                    <h4 class="card-title">Suleiman Yahaya</h4>
+                    <h4 class="card-title">Jessica Femi</h4>
                     <h5 class="card-category">Green Rich Wide Investor</h5>
-                    <h6 class="card-category">17th November 2020</h6>
-                    <p class="card-category">3:06pm</p>
+                    <h6 class="card-category">19th November 2020</h6>
+                    <p class="card-category">11:06am</p>
                   </div>
                 </a>
                 <p class="card-description text-center">
-                    Thank you green rich. Have collect my first payment. But Please work on the platform it should not be like the old one please.
+                    If u no fit beat them, u join them. I've joined green wide finally. My 75k alerts received in full. Tnx
                   <br>
-                   <span style="font-weight: 800">WITHDRAWN AMOUNT: ₦15,000</span>
+                   <span style="font-weight: 800">WITHDRAWN AMOUNT: ₦75,000</span>
                 </p>
               </div>
             </div>
@@ -170,15 +170,15 @@
               <div class="card-body">
                 <a href="#paper-kit">
                   <div class="author">
-                    <h4 class="card-title">Emmanuel Francis</h4>
+                    <h4 class="card-title">Ibrahim Donald</h4>
                     <h5 class="card-category">Green Rich Wide Investor</h5>
-                    <h6 class="card-category">17th November 2020</h6>
-                    <p class="card-category">2:43pm</p>
+                    <h6 class="card-category">19th November 2020</h6>
+                    <p class="card-category">7:39pm</p>
                   </div>
                 </a>
                 <p class="card-description text-center">
-                    This is real I encourage you all to invest. Thanks Greenrichwide<br>
-                    <span style="font-weight: 800">WITHDRAWN AMOUNT: ₦45,000</span>
+                    May God bless you Usman, for telling me about Greenwich wide. I appreciate it. God bless green rich also.<br>
+                    <span style="font-weight: 800">WITHDRAWN AMOUNT: ₦300,000</span>
                 </p>
               </div>
             </div>
