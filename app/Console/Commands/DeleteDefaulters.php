@@ -35,7 +35,7 @@ class DeleteDefaulters extends Command
     /**
      * Execute the console command.
      *
-     * @return 
+     * @return
      */
     public function handle()
     {

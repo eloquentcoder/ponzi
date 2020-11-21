@@ -98,6 +98,11 @@ class HomeController extends BaseController
         return view('admin.payment.stats');
     }
 
+    public function remerge()
+    {
+        return view('admin.merge.remerge');
+    }
+
     // public function adjustAmount(Type $var = null)
     // {
     //     $gh = GetHelp::where([['awaiting_to_receive', 0], ['merge_status', 0], ['received', 0]])->cursor();

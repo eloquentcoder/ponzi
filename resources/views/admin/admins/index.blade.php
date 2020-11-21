@@ -8,7 +8,12 @@
     <div class="col-lg-12 col-sm-12">
         <div class="card m-b-30">
             <div class="card-body">
-                <h5 class="header-title pb-3">Admins Summary</h5>
+                <h5 class="header-title pb-3">
+                    Admins Summary
+                    <div style="float: right">
+                        <a class="btn btn-success btn-sm" style="color: white;" href="{{ route('admin.admins.add') }}">Add Admin</a>
+                    </div>
+                </h5>
                 @if (session()->has('message'))
                     <div class="alert alert-success alert-dismissible">
                         <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
