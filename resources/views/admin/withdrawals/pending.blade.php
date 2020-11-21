@@ -23,10 +23,10 @@
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    @forelse ($users as $item)
+                                    @forelse ($withdrawals as $item)
                                     <tr>
-                                        <td>{{ $item->full_name }}</td>
-                                        <td>{{ $item->gethelp->amount }}</td>
+                                        <td>{{ $item->user->full_name }}</td>
+                                        <td>{{ $item->amount }}</td>
                                         <td>{{ \Carbon\Carbon::parse($item->maturity_period)->toFormattedDateString() }}</td>
                                         <td><a class="btn-btn-success btn-sm">Merge User</a></td>
                                     </tr>
@@ -36,7 +36,7 @@
                                     </div>
                                 @endforelse
                                 </tbody>
-                                {{ $users->links() }}
+                                {{ $withdrawals->links() }}
                             </table>
                         </div>
                     </div>

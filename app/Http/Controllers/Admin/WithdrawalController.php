@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Models\User;
+use App\Models\GetHelp;
 use App\Models\ProvideHelp;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
@@ -23,10 +24,7 @@ class WithdrawalController extends BaseController
 
     public function pending()
     {
-        $this->users = User::where('activated', true)
-        ->with('GetHelp')->whereHas('GetHelp', function($q) {
-            $q->where([['merge_status', 0], ['awaiting_to_receive', 1]]);
-        })->paginate(15);
+        $this->withdrawals = GetHelp::where([['merge_status', 0], ['awaiting_to_receive', 1]])->paginate(15);
         return view('admin.withdrawals.pending', $this->data);
     }
 
