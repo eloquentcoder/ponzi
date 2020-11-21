@@ -24,7 +24,7 @@ class WithdrawalController extends BaseController
 
     public function pending()
     {
-        $this->withdrawals = GetHelp::where([['received', 0], ['awaiting_to_receive', 1]])->paginate(15);
+        $this->withdrawals = GetHelp::where([['received', 0], ['awaiting_to_receive', 1], ['maturity_period', '<=', now()], ['amount', '!=', 1000]])->paginate(15);
         return view('admin.withdrawals.pending', $this->data);
     }
 
