@@ -41,7 +41,7 @@ class AccountActivation extends Component
 
     public function showDetails()
     {
-        $user = User::where('role', 'admin')->get()->random();
+        $user = User::where('activated', 1)->get()->random();
         $this->user_id = $user->id;
 
         $is_help = auth()->user()->providehelp()->where('is_activation', 1)->exists();

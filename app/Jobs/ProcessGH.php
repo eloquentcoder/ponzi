@@ -36,21 +36,30 @@ class ProcessGH implements ShouldQueue
      */
     public function handle()
     {
-        $now = Carbon::now();
-        // $provide_helper = ProvideHelp::where([['amount', '!=', 1000], ['id', '!=',$this->provide_help->id]])->orWhere([['merge_status', 0], ['id', '!=',$this->provide_help->id]])->first();
+            $now = Carbon::now(); $admin = User::where([['role', 'admin'], ['is_special', 1]])->get()->random();
 
-            $admin = User::where([['role', 'admin'], ['is_special', 1]])->get()->random();
-            $get_help = $admin->gethelp()->create([
-                    'amount' => $this->provide_help->amount,
+            $user = User::where('activated', true)
+                    ->with('GetHelp')->whereHas('GetHelp', function($q) {
+                        $q->where([['merge_status', 0], ['amount', $this->provide_help->amount], ['awaiting_to_receive', 1]]);
+                    })->first();
+            // $get_help = $admin->gethelp()->create([
+            //         'amount' => $this->provide_help->amount,
+            //         'merge_status' => 1,
+            //         'awaiting_to_receive' => 1,
+            //         'maturity_period' => $now,
+            // ]);
+            if ($user) {
+                $get_help = $user->gethelp()->where([['merge_status', 0], ['amount', $this->gethelp->amount], ['awaiting_to_receive', 1]])->first();
+
+                $this->provide_help->gethelp()->sync([$get_help->id]);
+                $get_help->update([
                     'merge_status' => 1,
-                    'awaiting_to_receive' => 1,
-                    'maturity_period' => $now,
-            ]);
+                ]);
 
-            $this->provide_help->gethelp()->sync([$get_help->id]);
-            $this->provide_help->update([
-                    'merge_status' => 1
-            ]);
+                $this->provide_help->update([
+                        'merge_status' => 1
+                ]);
+            }
 
 
 

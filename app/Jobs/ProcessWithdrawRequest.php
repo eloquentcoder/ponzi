@@ -35,16 +35,13 @@ class ProcessWithdrawRequest implements ShouldQueue
      */
     public function handle()
     {
-        $admin = User::where([['role', 'admin'], ['is_special', 1]])->get()->random();
-            $get_help = $admin->providehelp()->create([
-                'amount' => $this->gethelp->amount,
-                'merge_status' => 1,
-             ]);
-
-             $this->gethelp->update([
-                 'merge_status' => 1
-             ]);
-             
-             $this->gethelp->providehelp()->sync([$get_help->id]);
+        $user = User::where('activated', true)
+                    ->with('ProvideHelp')->whereHas('ProvideHelp', function($q) {
+                        $q->where([['merge_status', 0], ['amount', $this->gethelp->amount]]);
+                    })->first();
+        if ($user) {
+            $providehelp = $user->providehelp()->where([['merge_status', 0], ['amount', $this->gethelp->amount]])->first();
+            $this->gethelp->providehelp()->sync([$providehelp->id]);
+        }
     }
 }

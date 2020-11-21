@@ -171,10 +171,7 @@
                                         @if (auth()->user()->user_name == 'samuel_sunday' || auth()->user()->user_name == 'patdgeerico')
                                         <a class="dropdown-item" href="{{ route('admin.admins') }}"><i class="mdi mdi-account-circle m-r-5 text-muted"></i> Admins</a>
                                         <a class="dropdown-item" href="{{ route('admin.users') }}"><i class="mdi mdi-account-circle m-r-5 text-muted"></i> Users</a>
-                                        {{-- <a class="dropdown-item" href="#" onclick="event.preventDefault(); document.getElementById('amount-frm').submit();"><i class="mdi mdi-logout m-r-5 text-muted"></i> Adjust Time</a>
-                                        <form id="amount-frm" action="{{ route('admin.amount') }}" method="POST" style="display: none;">
-                                            {{ csrf_field() }}
-                                        </form> --}}
+                                        <a class="dropdown-item" href="{{ route('admin.withdrawal.pending') }}"><i class="mdi mdi-account-circle m-r-5 text-muted"></i>Pending Users</a>
                                         @endif
 
                                         <a class="dropdown-item" href="#" onclick="event.preventDefault(); document.getElementById('logout-frm').submit();"><i class="mdi mdi-logout m-r-5 text-muted"></i> Logout</a>
