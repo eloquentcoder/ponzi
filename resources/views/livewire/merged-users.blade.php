@@ -15,7 +15,7 @@
                                 <tbody>
                                     <tr>
                                         <th scope="row">Amount</th>
-                                        <td>₦{{ $helper->amount }}</td>
+                                        <td>₦{{ $amount }}</td>
                                     </tr>
                                     <tr>
                                         <th scope="row">Expiring Date</th>

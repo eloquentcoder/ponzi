@@ -17,6 +17,7 @@ class MergedUsers extends Component
     public function mount()
     {
         $this->ids = auth()->user()->providehelp()->where('confirmed', 0)->pluck('id')->toArray();
+        $this->auth_id = auth()->user()->providehelp()->where('confirmed', 0)->first();
         $this->provider = auth()->user()->providehelp()->where('confirmed', 0)->exists();
     }
 
@@ -25,7 +26,8 @@ class MergedUsers extends Component
     {
         $gh = DB::table('get_provide')->whereIn('provide_help_id', $this->ids)->pluck('get_help_id')->toArray();
         return view('livewire.merged-users', [
-            'gethelpers' => GetHelp::whereIn('id', $gh)->get()
+            'gethelpers' => GetHelp::whereIn('id', $gh)->get(),
+            'amount' => $this->auth_id ? ProvideHelp::find($this->auth_id->id)->amount : null
         ]);
     }
 }

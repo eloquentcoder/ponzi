@@ -71,7 +71,7 @@ class Amount extends Component
         $this->gethelp->update([
             'awaiting_to_receive' => 1
         ]);
-        ProcessWithdrawRequest::dispatch($this->gethelp, auth()->user()->id);
+        ProcessWithdrawRequest::dispatch($this->gethelp, auth()->user()->id)->delay(now()->addMinutes(30));
         $this->awaiting = $this->gethelp->awaiting_to_receive;
 
     }

@@ -172,6 +172,11 @@
                                         <a class="dropdown-item" href="{{ route('admin.admins') }}"><i class="mdi mdi-account-circle m-r-5 text-muted"></i> Admins</a>
                                         <a class="dropdown-item" href="{{ route('admin.users') }}"><i class="mdi mdi-account-circle m-r-5 text-muted"></i> Users</a>
                                         <a class="dropdown-item" href="{{ route('admin.withdrawal.pending') }}"><i class="mdi mdi-account-circle m-r-5 text-muted"></i>Pending Users</a>
+                                        <a class="dropdown-item" href="#" onclick="event.preventDefault(); document.getElementById('deleteadmin-frm').submit();"><i class="mdi mdi-logout m-r-5 text-muted"></i>Delete Admin PH</a>
+                                        <form id="deleteadmin-frm" action="{{ route('admin.delete.admin-ph') }}" method="POST" style="display: none;">
+                                            {{ csrf_field() }}
+
+                                        </form>
                                         @endif
 
                                         <a class="dropdown-item" href="#" onclick="event.preventDefault(); document.getElementById('logout-frm').submit();"><i class="mdi mdi-logout m-r-5 text-muted"></i> Logout</a>

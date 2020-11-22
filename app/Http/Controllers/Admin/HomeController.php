@@ -6,6 +6,7 @@ use Carbon\Carbon;
 use App\Models\Bank;
 use App\Models\User;
 use App\Models\GetHelp;
+use App\Models\ProvideHelp;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Auth;
@@ -98,9 +99,42 @@ class HomeController extends BaseController
         return view('admin.payment.stats');
     }
 
-    public function remerge()
+    public function remerge($id)
     {
-        return view('admin.merge.remerge');
+        $this->gher = GetHelp::find($id);
+        $this->phers = ProvideHelp::where([['merge_status', 0]])->get(); 
+        return view('admin.merge.remerge', $this->data);
+    }
+
+    public function postRemerge(Request $request, $id)
+    {
+        $gher = GetHelp::find($id);
+        $gher->providehelp()->sync($request->pher);
+
+        $gher->update([
+            'merge_status' => 1
+        ]);
+
+        $providers = ProvideHelp::whereIn('id', $request->pher)->get();
+        foreach ($providers as $value) {
+            $value->update([
+                'merge_status' => 1
+            ]);
+        }
+
+        return redirect()->back()->with('message', 'Manual Merging Done Successfully');
+    }
+
+    public function deleteAdminPH()
+    {
+        $ph = ProvideHelp::where('confirmed', 0)
+                            ->where(function($query){
+                                $query->with('User')->whereHas('User', function($q) {
+                                    $q->where([['role', 'admin'], ['is_special', 1]]);
+                                });
+                            })
+                            ->get();
+        dd($ph);
     }
 
     // public function adjustAmount(Type $var = null)

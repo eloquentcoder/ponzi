@@ -73,7 +73,7 @@ class AccountActivation extends Component
     public function receiptUpload()
     {
         $this->validate([
-            'receipt_no' => 'required', // 1MB Max
+            'receipt_no' => 'required', 
         ]);
 
         $provide_help = ProvideHelp::find($this->help_id);

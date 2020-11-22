@@ -115,9 +115,11 @@ Route::group(['prefix' => 'secure/admin', 'as' => 'admin.'], function () {
         Route::post('profile/password', [ProfileController::class, 'password'])->name('password.profile');
         Route::get('users', [AdminHomeController::class, 'users'])->name('users');
         Route::get('pending/withdrawal', [AdminWithdrawalController::class, 'pending'])->name('withdrawal.pending');
+        Route::get('admin/remerge/{id}', [AdminHomeController::class, 'remerge'])->name('remerge');
+        Route::post('admin/remerge/{id}', [AdminHomeController::class, 'postRemerge'])->name('remerge.post');
 
         Route::post('users/suspend/{id}', [AdminHomeController::class, 'toggleSuspension'])->name('user.suspend');
-        Route::get('admin/remerge', [AdminHomeController::class, 'remerge'])->name('admin.remerge');
+        Route::post('admin/ph/delete', [AdminHomeController::class, 'deleteAdminPH'])->name('delete.admin-ph');
 
         Route::get('payment-stats', [AdminHomeController::class, 'stats'])->name('payment.stats');
 

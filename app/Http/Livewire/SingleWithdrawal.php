@@ -32,7 +32,8 @@ class SingleWithdrawal extends Component
         // $gethelp = $provide_help->gethelp;
         $gh_id = DB::table('get_provide')->where('provide_help_id', $provide_help->id)->pluck('get_help_id')->toArray();
 
-        $gh = GetHelp::whereIn('id', $gh_id)->where([['received', 0], ['user_id', auth()->user()->id]])->first();
+
+        $gh = GetHelp::whereIn('id', $gh_id)->where([['user_id', auth()->user()->id]])->first();
 
         $gh->update([
             'received' => 1,

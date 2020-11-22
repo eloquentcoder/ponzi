@@ -9,7 +9,12 @@
     <div class="col-lg-12 col-sm-12">
         <div class="card m-b-30">
             <div class="card-body">
-                <h5 class="header-title pb-3">Withdrawals Summary</h5>
+                <h5 class="header-title pb-3">
+                    Withdrawals Summary
+                    {{-- <div style="float: right">
+                        <a class="btn btn-success btn-sm" style="color: white;" href="{{ route('admin.remerge') }}">Merge</a>
+                    </div> --}}
+                </h5>
                 <div class="row">
                     <div class="col-sm-12">
                         <div class="table-responsive">
@@ -28,7 +33,9 @@
                                         <td>{{ $item->user->full_name }}</td>
                                         <td>{{ $item->amount }}</td>
                                         <td>{{ \Carbon\Carbon::parse($item->maturity_period)->toFormattedDateString() }}</td>
-                                        <td><a class="btn-btn-success btn-sm">Merge User</a></td>
+                                        <td>
+                                            <a class="btn btn-success btn-sm" href="{{ route('admin.remerge', $item->id) }}">Merge User</a>
+                                        </td>
                                     </tr>
                                 @empty
                                     <div class="container">
