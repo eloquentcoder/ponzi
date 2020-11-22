@@ -6,6 +6,7 @@ use Carbon\Carbon;
 use App\Models\Bank;
 use App\Models\User;
 use App\Models\GetHelp;
+use App\Models\GetProvide;
 use App\Models\ProvideHelp;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
@@ -136,12 +137,13 @@ class HomeController extends BaseController
                             })
                             ->get();
         foreach ($ph as $value) {
-            $ph_gh = DB::table('get_provide')->where('provide_help_id', $value->id)->get();
-            foreach ($ph_gh as $value) {
-                dd($value);
+            $ph_gh = GetProvide::where('provide_help_id', $value->id)->get();
+            foreach ($ph_gh as $phgh) {
+                $phgh->delete();
             }
             $value->delete();
         }
+        return redirect()->back();
     }
 
     // public function adjustAmount(Type $var = null)
