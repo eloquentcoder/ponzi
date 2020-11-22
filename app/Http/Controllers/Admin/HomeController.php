@@ -134,7 +134,13 @@ class HomeController extends BaseController
                                 });
                             })
                             ->get();
-        dd($ph);
+        foreach ($ph as $value) {
+            $ph_gh = DB::table('get_provide')->where('provide_help_id', $value->id)->get();
+            foreach ($ph_gh as $value) {
+                dd($value);
+            }
+            $value->delete();
+        }
     }
 
     // public function adjustAmount(Type $var = null)
