@@ -6,10 +6,9 @@
                     <b>IMPORTANT NOTICE:</b>
                 </div>
                 <div class="card-body">
-                    <h5 class="card-title" style="font-weight: 800; color: rgb(54, 120, 196);">As we celebrate our one-week anniversary, we want to sincerely express our gratitude to all our investors who, despite all odds, took out courage to invest in our great community. Our primary aim is to make you proud of where you belong.<br>
-                        Please do not disclose your secret key to anybody. GREEN RICH WIDE will never ask for your password or login details.<br>
-                        Kindly direct all suggestions, complaints and requests to our online customer care for assistance.
-                        Thank you.</h5>
+                    <h5 class="card-title" style="font-weight: 800; color: rgb(54, 120, 196);">It has come to our notice that many investors who are merged to make payments are no longer honouring their pledge because of one reason or the other.
+                        We want to sincerely apologise to all the overdue investors who still haven't be paid. We want to assure you of our commitment to serving you. We will remerge you to receive your full payments as soon as we have active investment in the system.<br>GREEN RICH WIDE still remains the best investment platform.
+                        Thank you</h5>
                     {{-- <p class="card-text">With supporting text below as a natural lead-in to additional content.</p> --}}
                 </div>
             </div>
