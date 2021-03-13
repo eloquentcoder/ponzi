@@ -15,6 +15,7 @@ class CreateTransactionsTable extends Migration
     {
         Schema::create('transactions', function (Blueprint $table) {
             $table->id();
+            $table->string('name');
             $table->integer('amount');
             $table->enum('type', ['get_help', 'provide_help', 'activation']);
             $table->unsignedBigInteger('user_id');

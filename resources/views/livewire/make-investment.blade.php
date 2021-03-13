@@ -8,15 +8,15 @@
                         @if (session()->has('message'))
                             <div class="alert alert-success alert-dismissible">
                                 <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
-                                  {{ session('message') }}
+                                  Yaay!{{ session('message') }}
                             </div>
                         @endif
                         @if (session()->has('error'))
-                        <div class="alert alert-info alert-dismissible">
-                            <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
-                            <strong>Note!</strong> {{ session('error') }}
-                        </div>
-                    @endif
+                            <div class="alert alert-info alert-dismissible">
+                                <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+                                <strong>Note!</strong> {{ session('error') }}
+                            </div>
+                        @endif
                         <form role="form" wire:submit.prevent="submitInvestment">
                             <div class="form-group">
                                 <label>Amount</label>

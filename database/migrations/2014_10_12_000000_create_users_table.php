@@ -34,7 +34,6 @@ class CreateUsersTable extends Migration
             $table->string('bank_name')->nullable();
             $table->string('account_name')->nullable();
             $table->string('password');
-            $table->softDeletes();
             $table->rememberToken();
             $table->timestamps();
 
